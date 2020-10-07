@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+/* Components general */
+import Container from './components/Container/Container';
+import Card from './components/Card/Card';
+import BigCard from './components/BigCard/BigCard';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <BigCard title="Desempenho geral" firstOption="Turma" secondOption="Alunos" />
+        <Card title="Avisos" />
+        <Card title="Nível de aprendizagem da turma" />
+        <Card title="Gestão do tempo" firstOption="Turma" secondOption="Alunos" />
+        <Card title="Ranking da turma" />
+      </Container>
     </div>
   );
 }
