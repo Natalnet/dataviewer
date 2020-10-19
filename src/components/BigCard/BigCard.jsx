@@ -26,6 +26,7 @@ export default (props) => {
             <Option>{props.secondOption}</Option>
           </Options>
         </HeaderCard>
+        {props.children}
       </BigCard>
     );
   } else {
@@ -34,6 +35,7 @@ export default (props) => {
         <HeaderCard>
           <TitleCard>{props.title}</TitleCard>
         </HeaderCard>
+        {props.children}
       </BigCard>
     );
   }

@@ -12,46 +12,39 @@ import {
 
 const data = [
   {
-    name: "Semana 01",
+    name: "Lista 01",
     Reprovados: 4000,
     Aprovados: 2400,
-    Prediação_de_Reprovados: 2400,
   },
   {
-    name: "Semana 02",
+    name: "Lista 02",
     Reprovados: 3000,
     Aprovados: 1398,
-    Prediação_de_Reprovados: 2210,
   },
   {
-    name: "Semana 03",
+    name: "Lista 03",
     Reprovados: 2000,
     Aprovados: 9800,
-    Prediação_de_Reprovados: 2290,
   },
   {
-    name: "Semana 04",
+    name: "Lista 04",
     Reprovados: 2780,
     Aprovados: 3908,
-    Prediação_de_Reprovados: 2000,
   },
   {
-    name: "Semana 05",
+    name: "Lista 05",
     Reprovados: 1890,
     Aprovados: 4800,
-    Prediação_de_Reprovados: 2181,
   },
   {
-    name: "Semana 06",
+    name: "Lista 06",
     Reprovados: 2390,
     Aprovados: 3800,
-    Prediação_de_Reprovados: 2500,
   },
   {
-    name: "Semana 07",
+    name: "Lista 07",
     Reprovados: 3490,
     Aprovados: 4300,
-    Prediação_de_Reprovados: 2100,
   },
 ];
 
@@ -76,9 +69,9 @@ export default class Example extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="Reprovados" stackId="a" fill="#8884d8" />
         <Bar dataKey="Aprovados" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="Prediação_de_Reprovados" fill="#ffc658" />
+        <Bar dataKey="Reprovados" stackId="b" fill="#F08080" />
+        {/* <Bar dataKey="Prediação_de_Reprovados" fill="#ffc658" /> */}
       </BarChart>
     );
   }
