@@ -15,28 +15,29 @@ export const BigCard = styled.div`
 `;
 
 export default (props) => {
-  if (props.firstOption) {
-    return (
-      <BigCard>
-        <HeaderCard>
-          <TitleCard>{props.title}</TitleCard>
-          <Options>
-            <Option>{props.firstOption}</Option>
-            <Line />
-            <Option>{props.secondOption}</Option>
-          </Options>
-        </HeaderCard>
-        {props.children}
-      </BigCard>
-    );
-  } else {
-    return (
-      <BigCard>
-        <HeaderCard>
-          <TitleCard>{props.title}</TitleCard>
-        </HeaderCard>
-        {props.children}
-      </BigCard>
-    );
-  }
+  /* Passei as props para uma variável para 
+  *  não poluir muito o código 
+  *  Autor: Rafael Franco
+  */
+  const firstOption = props.firstOption;
+  const secondOption = props.secondOption;
+
+  return (
+    <BigCard>
+      <HeaderCard>
+        <TitleCard>{props.title}</TitleCard>
+        <Options>
+          {/*Estou executando a função passando o parâmetro desejado */}
+          <Option onClick={() => props.handleClick(firstOption)}>
+            {firstOption}
+          </Option>
+          <Line />
+          <Option onClick={() => props.handleClick(secondOption)}>
+            {secondOption}
+          </Option>
+        </Options>
+      </HeaderCard>
+      {props.children}   
+    </BigCard>
+  );
 };

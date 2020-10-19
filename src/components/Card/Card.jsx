@@ -47,39 +47,25 @@ export const Line = styled.div`
     height: 3vh;
 `;
 
-export const BigCard = styled.div`
-    width: 55vw;
-    margin-top: 5vh;
-    min-width: 26vw;
-    background: #fff;
-    height: 40vh;
-    border-radius: 15px;
-    overflow: hidden;
-`;
-
 
 export default props => {
-    if (props.firstOption) {
-        return (
-            <Card>
-                <HeaderCard>
-                    <TitleCard>{props.title}</TitleCard>
-                    <Options>
-                        <Option>{props.firstOption}</Option>
-                        <Line />
-                        <Option>{props.secondOption}</Option>
-                    </Options>
-                </HeaderCard>
-            </Card>
-        )
-    } else {
-        return (
-            <Card>
-                <HeaderCard>
-                    <TitleCard>{props.title}</TitleCard>
-                </HeaderCard>
-            </Card>
-        )
-    }
-
+    const firstOption = props.firstOption;
+    const secondOption = props.secondOption;
+    return (
+        <Card>
+            <HeaderCard>
+                <TitleCard>{props.title}</TitleCard>
+                <Options>
+                    {/*Estou executando a função passando o parâmetro desejado */}
+                    <Option onClick={() => props.handleClick(firstOption)}>
+                        {firstOption}
+                    </Option>
+                    <Line />
+                    <Option onClick={() => props.handleClick(secondOption)}>
+                        {secondOption}
+                    </Option>
+                </Options>
+            </HeaderCard>
+        </Card>
+    );
 }
