@@ -55,16 +55,18 @@ export default props => {
         <Card>
             <HeaderCard>
                 <TitleCard>{props.title}</TitleCard>
-                <Options>
-                    {/*Estou executando a função passando o parâmetro desejado */}
-                    <Option onClick={() => props.handleClick(firstOption)}>
-                        {firstOption}
-                    </Option>
-                    <Line />
-                    <Option onClick={() => props.handleClick(secondOption)}>
-                        {secondOption}
-                    </Option>
-                </Options>
+                {firstOption ?
+                    <Options>
+                        {/*Estou executando a função passando o parâmetro desejado */}
+                        <Option onClick={() => props.handleClick(firstOption)}>
+                            {firstOption}
+                        </Option>
+                        <Line />
+                        <Option onClick={() => props.handleClick(secondOption)}>
+                            {secondOption}
+                        </Option>
+                    </Options>
+                    : ""}
             </HeaderCard>
         </Card>
     );
