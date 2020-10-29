@@ -46,6 +46,7 @@ export const FilterOptions = styled.ul`
 
 export const FilterOption = styled.li`
     margin: 0.4vh;
+    cursor: pointer;
 `;
 
 export const Body = styled.div`
@@ -58,10 +59,17 @@ export const Body = styled.div`
 `;
 
 export const StudentData = styled.div`
-    margin: 0vh 1vh 1vh 1vh;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    margin: 1vh 0;
+    justify-content: space-between;
+    padding-right: 3vw;
+`;
+
+export const Div = styled.div`
+    display: flex;
+    align-items: center;
 `;
 
 export const StudentImage = styled.div`

@@ -10,43 +10,7 @@ import {
   Legend,
 } from "recharts";
 
-const data = [
-  {
-    name: "Lista 01",
-    Reprovados: 4000,
-    Aprovados: 2400,
-  },
-  {
-    name: "Lista 02",
-    Reprovados: 3000,
-    Aprovados: 1398,
-  },
-  {
-    name: "Lista 03",
-    Reprovados: 2000,
-    Aprovados: 9800,
-  },
-  {
-    name: "Lista 04",
-    Reprovados: 2780,
-    Aprovados: 3908,
-  },
-  {
-    name: "Lista 05",
-    Reprovados: 1890,
-    Aprovados: 4800,
-  },
-  {
-    name: "Lista 06",
-    Reprovados: 2390,
-    Aprovados: 3800,
-  },
-  {
-    name: "Lista 07",
-    Reprovados: 3490,
-    Aprovados: 4300,
-  },
-];
+import data from '../../json/df_less_more_70.json';
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = "https://jsfiddle.net/alidingling/9hjfkp73/";
@@ -65,12 +29,12 @@ export default class Example extends PureComponent {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="list" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="Aprovados" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="Reprovados" stackId="b" fill="#F08080" />
+        <Bar dataKey="more70" stackId="a" fill="#82ca9d" />
+        <Bar dataKey="less70" stackId="b" fill="#F08080" />
         {/* <Bar dataKey="Prediação_de_Reprovados" fill="#ffc658" /> */}
       </BarChart>
     );
