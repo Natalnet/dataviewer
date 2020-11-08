@@ -1,0 +1,86 @@
+[
+    {
+        "assunto": "ASSUNTO_EM_BRANCO",
+        "altoRendimento": 0,
+        "baixoRendimento": 40,
+        "faltosos": 4
+    },
+    {
+        "assunto": "Estruturas de Repetição",
+        "altoRendimento": 0,
+        "baixoRendimento": 29,
+        "faltosos": 15
+    },
+    {
+        "assunto": "Estruturas Condicionais",
+        "altoRendimento": 0,
+        "baixoRendimento": 37,
+        "faltosos": 7
+    },
+    {
+        "assunto": "Funções",
+        "altoRendimento": 0,
+        "baixoRendimento": 24,
+        "faltosos": 20
+    },
+    {
+        "assunto": "Estruturas de Repetição Condicional",
+        "altoRendimento": 0,
+        "baixoRendimento": 0,
+        "faltosos": 44
+    },
+    {
+        "assunto": "Vetores",
+        "altoRendimento": 0,
+        "baixoRendimento": 31,
+        "faltosos": 13
+    },
+    {
+        "assunto": "Operadores Aritméticos",
+        "altoRendimento": 0,
+        "baixoRendimento": 0,
+        "faltosos": 44
+    },
+    {
+        "assunto": "Matrizes",
+        "altoRendimento": 0,
+        "baixoRendimento": 21,
+        "faltosos": 23
+    },
+    {
+        "assunto": "Ponteiros",
+        "altoRendimento": 4,
+        "baixoRendimento": 13,
+        "faltosos": 27
+    },
+    {
+        "assunto": "Recursão",
+        "altoRendimento": 2,
+        "baixoRendimento": 16,
+        "faltosos": 26
+    },
+    {
+        "assunto": "Operadores Lógicos",
+        "altoRendimento": 0,
+        "baixoRendimento": 0,
+        "faltosos": 44
+    },
+    {
+        "assunto": "String",
+        "altoRendimento": 0,
+        "baixoRendimento": 1,
+        "faltosos": 43
+    },
+    {
+        "assunto": "Estruturas de Repetição Contada",
+        "altoRendimento": 0,
+        "baixoRendimento": 0,
+        "faltosos": 44
+    },
+    {
+        "assunto": "CN",
+        "altoRendimento": 0,
+        "baixoRendimento": 0,
+        "faltosos": 44
+    }
+]
