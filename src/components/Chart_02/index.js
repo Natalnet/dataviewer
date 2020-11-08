@@ -18,14 +18,14 @@ export default class Example extends PureComponent {
   render() {
     return (
       <BarChart
-        width={700}
-        height={200}
+        width={300}
+        height={170}
         data={data}
         margin={{
           top: 20,
           right: 30,
           left: 20,
-          bottom: 5,
+          bottom: 0,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />

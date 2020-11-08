@@ -49,6 +49,8 @@ export default props => {
         let nome = text.split("-")[0];
         return nome;
     }
+
+    
     return (
 
         <>
