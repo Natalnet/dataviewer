@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
-  Cell,
+ /* Cell,*/
   XAxis,
   YAxis,
   CartesianGrid,
@@ -46,12 +46,12 @@ export default class Example extends PureComponent {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="list" />
+          <XAxis dataKey="list"/>
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="more70" stackId="a" fill="#82ca9d" />
-          <Bar dataKey="less70" stackId="b" fill="#F08080" />
+          <Bar dataKey="more70" fill="#82ca9d" name="Bom Desempenho"/>
+          <Bar dataKey="less70" fill="#F08080" name="Baixo Desempenho"/>
           {/* <Bar dataKey="Prediação_de_Reprovados" fill="#ffc658" /> */}
         </BarChart>
       </>
