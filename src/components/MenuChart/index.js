@@ -10,11 +10,11 @@ export default props => {
     
     function alterChoice(i) {
 
-        if (i == 1 && prediction){
+        if (i === 1 && prediction){
             setStatistic(!statistic);
             setPrediction(!prediction);
         }
-        if (i == 2 && statistic) {
+        if (i === 2 && statistic) {
             setStatistic(!statistic);
             setPrediction(!prediction);
         }

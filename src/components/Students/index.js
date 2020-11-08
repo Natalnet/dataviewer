@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
@@ -11,7 +11,7 @@ export default props => {
 
     function filtrar(param) {
         let auxiliarAlunos;
-        if (param == "nome") {
+        if (param === "nome") {
 
             console.log("nome \n" + alunos) //*console
 
@@ -31,7 +31,7 @@ export default props => {
             setAlunos(auxiliarAlunos)
             console.log(alunos) //*console
         }
-        if (param == "nota") {
+        if (param === "nota") {
             console.log("nota\n" + alunos) //*console
             auxiliarAlunos = [...alunos].sort(function (a, b) {
                 return b.media - a.media;

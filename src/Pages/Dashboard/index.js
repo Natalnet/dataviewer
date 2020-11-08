@@ -9,7 +9,7 @@ import Students from "../../components/Students";
 export default function Dashboard() {
 
   const [option, setOption] = useState(1);
-  const [option2, setOption2] = useState(1);
+  const [/*option2*/, setOption2] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
 
