@@ -10,7 +10,7 @@ import {
   Legend,
 } from "recharts";
 
-import data from '../../json/df_less_more_70.json';
+import data from '../../json/df_aprov_diff_7.json';
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = "https://jsfiddle.net/alidingling/9hjfkp73/";
@@ -18,7 +18,7 @@ export default class Example extends PureComponent {
   render() {
     return (
       <BarChart
-        width={300}
+        width={700}
         height={170}
         data={data}
         margin={{
@@ -29,12 +29,13 @@ export default class Example extends PureComponent {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="list" />
+        <XAxis dataKey="difficulty" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="more70" stackId="a" fill="#82ca9d" />
-        <Bar dataKey="less70" stackId="b" fill="#F08080" />
+        <Bar dataKey="aprovados" stackId="a" fill="#82ca9d" name="Aprovados" />
+        <Bar dataKey="reprovados" stackId="b" fill="#F08080" name="Reprovados" />
+        <Bar dataKey="faltosos" fill="#808080" name="Faltosos"/>
         {/* <Bar dataKey="Prediação_de_Reprovados" fill="#ffc658" /> */}
       </BarChart>
     );

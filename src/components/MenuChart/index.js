@@ -13,10 +13,12 @@ export default props => {
         if (i === 1 && prediction){
             setStatistic(!statistic);
             setPrediction(!prediction);
+            props.viewChart(1)
         }
         if (i === 2 && statistic) {
             setStatistic(!statistic);
             setPrediction(!prediction);
+            props.viewChart(4)
         }
 
     }

@@ -1,0 +1,578 @@
+[
+    {
+        "question": "Batalha naval",
+        "difficulty": 0.0,
+        "tag1": "Matrizes",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 24.0,
+        "erros": 458,
+        "soma": 482.0
+    },
+    {
+        "question": "C-Vector",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 1.0,
+        "erros": 9,
+        "soma": 10.0
+    },
+    {
+        "question": "Caça-Palavras (ponteiros)",
+        "difficulty": 0.0,
+        "tag1": "Ponteiros",
+        "tag2": "Matrizes",
+        "acertos": 0.0,
+        "erros": 121,
+        "soma": 121.0
+    },
+    {
+        "question": "Contador de substrings",
+        "difficulty": 0.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 36.0,
+        "erros": 318,
+        "soma": 354.0
+    },
+    {
+        "question": "Create, read, update and delete - CRUD",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 5.0,
+        "erros": 161,
+        "soma": 166.0
+    },
+    {
+        "question": "Crescente, decrescente ou nenhum dos dois",
+        "difficulty": 0.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": "Estruturas de Repetição Condicional",
+        "acertos": 21.0,
+        "erros": 134,
+        "soma": 155.0
+    },
+    {
+        "question": "Dia da semana (ponteiros)",
+        "difficulty": 0.0,
+        "tag1": "Ponteiros",
+        "tag2": 0,
+        "acertos": 18.0,
+        "erros": 1049,
+        "soma": 1067.0
+    },
+    {
+        "question": "Fluxograma 2",
+        "difficulty": 0.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": 0,
+        "acertos": 31.0,
+        "erros": 350,
+        "soma": 381.0
+    },
+    {
+        "question": "Funções - Ordenar vetor",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 36.0,
+        "erros": 253,
+        "soma": 289.0
+    },
+    {
+        "question": "Funções - número perfeito",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 38.0,
+        "erros": 159,
+        "soma": 197.0
+    },
+    {
+        "question": "Funções - teorema de Pitágoras",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 33.0,
+        "erros": 85,
+        "soma": 118.0
+    },
+    {
+        "question": "Gomoku",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": "Matrizes",
+        "acertos": 29.0,
+        "erros": 349,
+        "soma": 378.0
+    },
+    {
+        "question": "Hexadecimal",
+        "difficulty": 0.0,
+        "tag1": "Estruturas de Repetição",
+        "tag2": 0,
+        "acertos": 21.0,
+        "erros": 88,
+        "soma": 109.0
+    },
+    {
+        "question": "Maior partição com soma K ou menor - reucursiva",
+        "difficulty": 0.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 1.0,
+        "erros": 3,
+        "soma": 4.0
+    },
+    {
+        "question": "Multiplicação de matrizes",
+        "difficulty": 0.0,
+        "tag1": "Matrizes",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 46.0,
+        "erros": 281,
+        "soma": 327.0
+    },
+    {
+        "question": "Números na sequencia de Fibnot em um intervalo",
+        "difficulty": 0.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 22.0,
+        "erros": 97,
+        "soma": 119.0
+    },
+    {
+        "question": "Ordenação indireta (ponteiros)",
+        "difficulty": 0.0,
+        "tag1": "Ponteiros",
+        "tag2": "Vetores",
+        "acertos": 25.0,
+        "erros": 182,
+        "soma": 207.0
+    },
+    {
+        "question": "Palíndromo com recursão",
+        "difficulty": 0.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 33.0,
+        "erros": 547,
+        "soma": 580.0
+    },
+    {
+        "question": "Ponto Fixo",
+        "difficulty": 0.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 3.0,
+        "erros": 14,
+        "soma": 17.0
+    },
+    {
+        "question": "População de coelhos",
+        "difficulty": 0.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 46.0,
+        "erros": 56,
+        "soma": 102.0
+    },
+    {
+        "question": "Produto escalar entre vetores",
+        "difficulty": 0.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 62.0,
+        "erros": 334,
+        "soma": 396.0
+    },
+    {
+        "question": "Separação numérica",
+        "difficulty": 0.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": 0,
+        "acertos": 35.0,
+        "erros": 251,
+        "soma": 286.0
+    },
+    {
+        "question": "Substring (ponteiros)",
+        "difficulty": 0.0,
+        "tag1": "Ponteiros",
+        "tag2": "String",
+        "acertos": 17.0,
+        "erros": 416,
+        "soma": 433.0
+    },
+    {
+        "question": "Valor de Pi Recursivo",
+        "difficulty": 0.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 17.0,
+        "erros": 119,
+        "soma": 136.0
+    },
+    {
+        "question": "Valores em um intervalo",
+        "difficulty": 0.0,
+        "tag1": "Estruturas de Repetição",
+        "tag2": 0,
+        "acertos": 29.0,
+        "erros": 88,
+        "soma": 117.0
+    },
+    {
+        "question": "Contador de maiúsculas e minúsculas",
+        "difficulty": 1.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 6.0,
+        "erros": 12,
+        "soma": 18.0
+    },
+    {
+        "question": "Contar quantos são maiores de 18 anos",
+        "difficulty": 1.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 63.0,
+        "erros": 42,
+        "soma": 105.0
+    },
+    {
+        "question": "Funções - cifra de César",
+        "difficulty": 1.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 33.0,
+        "erros": 413,
+        "soma": 446.0
+    },
+    {
+        "question": "Inversor de números (ponteiros)",
+        "difficulty": 1.0,
+        "tag1": "Ponteiros",
+        "tag2": 0,
+        "acertos": 2.0,
+        "erros": 4,
+        "soma": 6.0
+    },
+    {
+        "question": "Matriz de permutação (0\/1)",
+        "difficulty": 1.0,
+        "tag1": "Matrizes",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 45.0,
+        "erros": 179,
+        "soma": 224.0
+    },
+    {
+        "question": "Matriz identidade",
+        "difficulty": 1.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 18.0,
+        "erros": 12,
+        "soma": 30.0
+    },
+    {
+        "question": "Palíndromo",
+        "difficulty": 1.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 40.0,
+        "erros": 240,
+        "soma": 280.0
+    },
+    {
+        "question": "Soma de dois vetores",
+        "difficulty": 1.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 12.0,
+        "erros": 25,
+        "soma": 37.0
+    },
+    {
+        "question": "Soma de dois vetores (ponteiros)",
+        "difficulty": 1.0,
+        "tag1": "Ponteiros",
+        "tag2": "Vetores",
+        "acertos": 4.0,
+        "erros": 5,
+        "soma": 9.0
+    },
+    {
+        "question": "Somando o intervalo",
+        "difficulty": 1.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 220.0,
+        "erros": 375,
+        "soma": 595.0
+    },
+    {
+        "question": "Comparação com switch",
+        "difficulty": 2.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": 0,
+        "acertos": 29.0,
+        "erros": 114,
+        "soma": 143.0
+    },
+    {
+        "question": "Exponencial do Número Neperiano - Recursivo",
+        "difficulty": 2.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 2.0,
+        "erros": 6,
+        "soma": 8.0
+    },
+    {
+        "question": "Fluxograma",
+        "difficulty": 2.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 31.0,
+        "erros": 121,
+        "soma": 152.0
+    },
+    {
+        "question": "Funções - número primo",
+        "difficulty": 2.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 8.0,
+        "erros": 22,
+        "soma": 30.0
+    },
+    {
+        "question": "Loop com recursão",
+        "difficulty": 2.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 6.0,
+        "erros": 1,
+        "soma": 7.0
+    },
+    {
+        "question": "Máximo e mínimo de matriz quadrada (ponteiros)",
+        "difficulty": 2.0,
+        "tag1": "Ponteiros",
+        "tag2": "Matrizes",
+        "acertos": 1.0,
+        "erros": 2,
+        "soma": 3.0
+    },
+    {
+        "question": "Média de 3 notas",
+        "difficulty": 2.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 20.0,
+        "erros": 102,
+        "soma": 122.0
+    },
+    {
+        "question": "Média e desvio-padrão",
+        "difficulty": 2.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 28.0,
+        "erros": 191,
+        "soma": 219.0
+    },
+    {
+        "question": "Numeros Fracionários",
+        "difficulty": 2.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 0.0,
+        "erros": 4,
+        "soma": 4.0
+    },
+    {
+        "question": "Números de Fibonacci em um intervalo",
+        "difficulty": 2.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 3.0,
+        "erros": 5,
+        "soma": 8.0
+    },
+    {
+        "question": "Pares, ímpares, positivos e negativos",
+        "difficulty": 2.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 19.0,
+        "erros": 118,
+        "soma": 137.0
+    },
+    {
+        "question": "Soma de dois números pares",
+        "difficulty": 2.0,
+        "tag1": "Estruturas Condicionais",
+        "tag2": 0,
+        "acertos": 41.0,
+        "erros": 109,
+        "soma": 150.0
+    },
+    {
+        "question": "Soma de matrizes",
+        "difficulty": 2.0,
+        "tag1": "Matrizes",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 8.0,
+        "erros": 8,
+        "soma": 16.0
+    },
+    {
+        "question": "Substring",
+        "difficulty": 2.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 13.0,
+        "erros": 11,
+        "soma": 24.0
+    },
+    {
+        "question": "Batalha naval - 1 tiro",
+        "difficulty": 3.0,
+        "tag1": "Matrizes",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 4.0,
+        "erros": 7,
+        "soma": 11.0
+    },
+    {
+        "question": "Bingo (ponteiros)",
+        "difficulty": 3.0,
+        "tag1": "Ponteiros",
+        "tag2": "Matrizes",
+        "acertos": 0.0,
+        "erros": 2,
+        "soma": 2.0
+    },
+    {
+        "question": "Bubble sort recursivo",
+        "difficulty": 3.0,
+        "tag1": "Recursão",
+        "tag2": 0,
+        "acertos": 3.0,
+        "erros": 5,
+        "soma": 8.0
+    },
+    {
+        "question": "Conversão de CASE",
+        "difficulty": 3.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 10.0,
+        "erros": 131,
+        "soma": 141.0
+    },
+    {
+        "question": "Dígito na posição (com função)",
+        "difficulty": 3.0,
+        "tag1": "Funções",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 21.0,
+        "erros": 63,
+        "soma": 84.0
+    },
+    {
+        "question": "Funções - Médias UFRN",
+        "difficulty": 3.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 5.0,
+        "erros": 6,
+        "soma": 11.0
+    },
+    {
+        "question": "Funções - ordenação vetor",
+        "difficulty": 3.0,
+        "tag1": "Funções",
+        "tag2": 0,
+        "acertos": 4.0,
+        "erros": 13,
+        "soma": 17.0
+    },
+    {
+        "question": "Gomoku horizontal e vertical",
+        "difficulty": 3.0,
+        "tag1": "Matrizes",
+        "tag2": "Estruturas de Repetição",
+        "acertos": 4.0,
+        "erros": 15,
+        "soma": 19.0
+    },
+    {
+        "question": "Operações Enumeradas",
+        "difficulty": 3.0,
+        "tag1": "String",
+        "tag2": 0,
+        "acertos": 1.0,
+        "erros": 12,
+        "soma": 13.0
+    },
+    {
+        "question": "Palíndromo",
+        "difficulty": 3.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 40.0,
+        "erros": 240,
+        "soma": 280.0
+    },
+    {
+        "question": "Rotação de bits",
+        "difficulty": 3.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 18.0,
+        "erros": 134,
+        "soma": 152.0
+    },
+    {
+        "question": "Soma de valores ímpares",
+        "difficulty": 3.0,
+        "tag1": "Estruturas de Repetição",
+        "tag2": "Estruturas de Repetição Contada",
+        "acertos": 40.0,
+        "erros": 346,
+        "soma": 386.0
+    },
+    {
+        "question": "Soma dos dígitos",
+        "difficulty": 3.0,
+        "tag1": 0,
+        "tag2": 0,
+        "acertos": 48.0,
+        "erros": 156,
+        "soma": 204.0
+    },
+    {
+        "question": "União e ordenação de vetores",
+        "difficulty": 3.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 8.0,
+        "erros": 64,
+        "soma": 72.0
+    },
+    {
+        "question": "Duplicatas",
+        "difficulty": 4.0,
+        "tag1": "Vetores",
+        "tag2": 0,
+        "acertos": 33.0,
+        "erros": 233,
+        "soma": 266.0
+    }
+]

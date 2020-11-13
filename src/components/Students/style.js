@@ -65,6 +65,7 @@ export const StudentData = styled.div`
     margin: 1vh 0;
     justify-content: space-between;
     padding-right: 3vw;
+    cursor: pointer;
 `;
 
 export const Div = styled.div`

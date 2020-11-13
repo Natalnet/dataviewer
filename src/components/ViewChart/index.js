@@ -6,6 +6,7 @@ import MenuChart from '../MenuChart/index';
 import Chart1 from '../Chart_01/index';
 import Chart2 from '../Chart_02/index';
 import Chart3 from '../Chart_03/index';
+import Chart4 from '../Chart_04/index';
 
 export default props => {
     const [chart, setChart] = useState(1);
@@ -35,6 +36,14 @@ export default props => {
             <>
                 <MenuChart viewChart={viewChart} />
                 <Chart3 />
+            </>
+        )
+    }
+    if (chart == 4) {
+        return (
+            <>
+                <MenuChart viewChart={viewChart} />
+                <Chart4 />
             </>
         )
     }

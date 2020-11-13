@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Modal from './Modal';
+
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
@@ -49,6 +51,9 @@ export default props => {
         let nome = text.split("-")[0];
         return nome;
     }
+    function showModal(id){
+        return <h1>ooooooooo</h1>
+    }
 
     
     return (
@@ -71,7 +76,7 @@ export default props => {
                     alunos.map(aluno => {
 
                         return (
-                            <StudentData key={aluno.id}>
+                            <StudentData key={aluno.id} onClick={()=>{showModal(aluno.id)}}>
                                 <Div>
                                     <StudentImage />
                                     <Data>
@@ -90,6 +95,7 @@ export default props => {
 
                     })
                 }
+                <Modal />
             </Body>
         </>
     )
