@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Modal from './Modal';
+//import Modal from './Modal';
 
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
@@ -10,6 +10,15 @@ import { students } from '../../json/df_perfomance_list.json';
 
 export default props => {
     const [alunos, setAlunos] = useState(students);
+
+
+    function handleChange(e) {
+        let busca = e.target.value;
+        if(busca!=='')
+        setAlunos(students.filter(item => (item.nome.includes(busca))));
+        else
+        setAlunos(students);
+    }
 
     function filtrar(param) {
         let auxiliarAlunos;
@@ -51,17 +60,17 @@ export default props => {
         let nome = text.split("-")[0];
         return nome;
     }
-    function showModal(id){
-        return <h1>ooooooooo</h1>
-    }
+    // function showModal(id) {
+    //     return <h1>ooooooooo</h1>
+    // }
 
-    
+
     return (
 
         <>
             <Header>
                 <FilterSpace>
-                    <FilterInput type="text" />
+                    <FilterInput type="text" onChange={handleChange} />
                     <FilterButton className="fas fa-filter" />
                 </FilterSpace>
                 <FilterOptions>
@@ -73,29 +82,27 @@ export default props => {
 
             <Body>
                 {
-                    alunos.map(aluno => {
+                    alunos.map(aluno => (
+                        <StudentData key={aluno.id} >
+                            <Div>
+                                <StudentImage />
+                                <Data>
+                                    <Name>{getNome(aluno.nome)}</Name>
+                                    <Name>Matricula: {getMatricula(aluno.nome)}</Name>
+                                    <Note>Nota: {aluno.media}</Note>
+                                </Data>
+                            </Div>
+                            {aluno.media >= 5 ?
+                                <Indicator success={true} />
+                                : <Indicator success={false} />
+                            }
 
-                        return (
-                            <StudentData key={aluno.id} onClick={()=>{showModal(aluno.id)}}>
-                                <Div>
-                                    <StudentImage />
-                                    <Data>
-                                        <Name>{getNome(aluno.nome)}</Name>
-                                        <Name>Matricula: {getMatricula(aluno.nome)}</Name>
-                                        <Note>Nota: {aluno.media}</Note>
-                                    </Data>
-                                </Div>
-                                {aluno.media >= 5 ?
-                                    <Indicator success={true} />
-                                    : <Indicator success={false} />
-                                }
+                        </StudentData>
+                    )
 
-                            </StudentData>
-                        )
-
-                    })
+                    )
                 }
-                <Modal />
+                {/* <Modal /> */}
             </Body>
         </>
     )
