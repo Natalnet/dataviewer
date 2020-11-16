@@ -1,0 +1,932 @@
+[
+  {
+    "Nome": "ANTONIO AUGUSTO DE LIMA SILVA ",
+    "Matrícula": " 20180069652",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 21.2519491525
+  },
+  {
+    "Nome": "ANTONIO AUGUSTO DE LIMA SILVA ",
+    "Matrícula": " 20180069652",
+    "difficulty": "Médio",
+    "mediaDificuldade": 0.5813953488
+  },
+  {
+    "Nome": "ANTONIO AUGUSTO DE LIMA SILVA ",
+    "Matrícula": " 20180069652",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 1.9230769231
+  },
+  {
+    "Nome": "ANTONIO AUGUSTO DE LIMA SILVA ",
+    "Matrícula": " 20180069652",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 3.75
+  },
+  {
+    "Nome": "Abílio Fontenelle ",
+    "Matrícula": " 20180067952",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 26.0638983051
+  },
+  {
+    "Nome": "Abílio Fontenelle ",
+    "Matrícula": " 20180067952",
+    "difficulty": "Médio",
+    "mediaDificuldade": 0.726744186
+  },
+  {
+    "Nome": "Abílio Fontenelle ",
+    "Matrícula": " 20180067952",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 10.5769230769
+  },
+  {
+    "Nome": "Abílio Fontenelle ",
+    "Matrícula": " 20180067952",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 4.5
+  },
+  {
+    "Nome": "Allef Vinicius ",
+    "Matrícula": " 20180069714",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 79.945
+  },
+  {
+    "Nome": "Allef Vinicius ",
+    "Matrícula": " 20180069714",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 26.625
+  },
+  {
+    "Nome": "Allef Vinicius ",
+    "Matrícula": " 20180069714",
+    "difficulty": "Médio",
+    "mediaDificuldade": 13.8662790698
+  },
+  {
+    "Nome": "Allef Vinicius ",
+    "Matrícula": " 20180069714",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 44.2307692308
+  },
+  {
+    "Nome": "Allef Vinicius ",
+    "Matrícula": " 20180069714",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 30.2661111111
+  },
+  {
+    "Nome": "André Luiz Rodrigues Soares ",
+    "Matrícula": " 20180001960",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 14.3518055556
+  },
+  {
+    "Nome": "André Luiz Rodrigues Soares ",
+    "Matrícula": " 20180001960",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 9.87495
+  },
+  {
+    "Nome": "André Luiz Rodrigues Soares ",
+    "Matrícula": " 20180001960",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 6.7307692308
+  },
+  {
+    "Nome": "André Luiz Rodrigues Soares ",
+    "Matrícula": " 20180001960",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 41.2711864407
+  },
+  {
+    "Nome": "André Luiz Rodrigues Soares ",
+    "Matrícula": " 20180001960",
+    "difficulty": "Médio",
+    "mediaDificuldade": 10.9787209302
+  },
+  {
+    "Nome": "Arthur Learth ",
+    "Matrícula": " 20180071294",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 1.0
+  },
+  {
+    "Nome": "Arthur Learth ",
+    "Matrícula": " 20180071294",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 12.7823728814
+  },
+  {
+    "Nome": "Arthur Learth ",
+    "Matrícula": " 20180071294",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 0.9615384615
+  },
+  {
+    "Nome": "Arthur Learth ",
+    "Matrícula": " 20180071294",
+    "difficulty": "Médio",
+    "mediaDificuldade": 1.976744186
+  },
+  {
+    "Nome": "Daniel ",
+    "Matrícula": " 20190046016",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 1.0
+  },
+  {
+    "Nome": "Daniel ",
+    "Matrícula": " 20190046016",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 31.4266101695
+  },
+  {
+    "Nome": "Daniel ",
+    "Matrícula": " 20190046016",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 0.0
+  },
+  {
+    "Nome": "Deborah Dantas ",
+    "Matrícula": " 20190036691",
+    "difficulty": "Médio",
+    "mediaDificuldade": 8.1395348837
+  },
+  {
+    "Nome": "Deborah Dantas ",
+    "Matrícula": " 20190036691",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 0.9615384615
+  },
+  {
+    "Nome": "Deborah Dantas ",
+    "Matrícula": " 20190036691",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 0.0
+  },
+  {
+    "Nome": "Deborah Dantas ",
+    "Matrícula": " 20190036691",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 52.0433050847
+  },
+  {
+    "Nome": "Deborah Dantas ",
+    "Matrícula": " 20190036691",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 8.375
+  },
+  {
+    "Nome": "Dimitri Lima ",
+    "Matrícula": " Ufrn",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 8.5
+  },
+  {
+    "Nome": "Dimitri Lima ",
+    "Matrícula": " Ufrn",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 31.7307692308
+  },
+  {
+    "Nome": "Dimitri Lima ",
+    "Matrícula": " Ufrn",
+    "difficulty": "Médio",
+    "mediaDificuldade": 2.7906976744
+  },
+  {
+    "Nome": "Dimitri Lima ",
+    "Matrícula": " Ufrn",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 76.393559322
+  },
+  {
+    "Nome": "Felipe Costa ",
+    "Matrícula": " 20190043453",
+    "difficulty": "Médio",
+    "mediaDificuldade": 12.9263372093
+  },
+  {
+    "Nome": "Felipe Costa ",
+    "Matrícula": " 20190043453",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 23.0769230769
+  },
+  {
+    "Nome": "Felipe Costa ",
+    "Matrícula": " 20190043453",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 29.5
+  },
+  {
+    "Nome": "Felipe Costa ",
+    "Matrícula": " 20190043453",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 28.5169491525
+  },
+  {
+    "Nome": "Felipe Costa ",
+    "Matrícula": " 20190043453",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 14.2361111111
+  },
+  {
+    "Nome": "GABRIEL FERNANDES LAURINDO ",
+    "Matrícula": " 20190126761",
+    "difficulty": "Médio",
+    "mediaDificuldade": 0.5813953488
+  },
+  {
+    "Nome": "GABRIEL FERNANDES LAURINDO ",
+    "Matrícula": " 20190126761",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 197.1153846154
+  },
+  {
+    "Nome": "GABRIEL FERNANDES LAURINDO ",
+    "Matrícula": " 20190126761",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 236.0961016949
+  },
+  {
+    "Nome": "GABRIEL FERNANDES LAURINDO ",
+    "Matrícula": " 20190126761",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 26.75
+  },
+  {
+    "Nome": "Gabriel Bassani ",
+    "Matrícula": " 20190043794",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 4.0
+  },
+  {
+    "Nome": "Gabriel Bassani ",
+    "Matrícula": " 20190043794",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 43.6862711864
+  },
+  {
+    "Nome": "Gabriel Bassani ",
+    "Matrícula": " 20190043794",
+    "difficulty": "Médio",
+    "mediaDificuldade": 3.5270930233
+  },
+  {
+    "Nome": "Gabriel Bassani ",
+    "Matrícula": " 20190043794",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 3.8461538462
+  },
+  {
+    "Nome": "Gabriel Bassani ",
+    "Matrícula": " 20190043794",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 1.3888888889
+  },
+  {
+    "Nome": "Gabriel Vinícius Lima da Costa Medeiros ",
+    "Matrícula": " 20190041978",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.7777777778
+  },
+  {
+    "Nome": "Gabriel Vinícius Lima da Costa Medeiros ",
+    "Matrícula": " 20190041978",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 5.7692307692
+  },
+  {
+    "Nome": "Gabriel Vinícius Lima da Costa Medeiros ",
+    "Matrícula": " 20190041978",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 8.375
+  },
+  {
+    "Nome": "Gabriel Vinícius Lima da Costa Medeiros ",
+    "Matrícula": " 20190041978",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 37.7072033898
+  },
+  {
+    "Nome": "Gabriel Vinícius Lima da Costa Medeiros ",
+    "Matrícula": " 20190041978",
+    "difficulty": "Médio",
+    "mediaDificuldade": 6.8410465116
+  },
+  {
+    "Nome": "Guilherme Augusto Santana de Lima ",
+    "Matrícula": " 20190044138",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.7777777778
+  },
+  {
+    "Nome": "Guilherme Augusto Santana de Lima ",
+    "Matrícula": " 20190044138",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 5.0
+  },
+  {
+    "Nome": "Guilherme Augusto Santana de Lima ",
+    "Matrícula": " 20190044138",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 12.7542372881
+  },
+  {
+    "Nome": "Guilherme Augusto Santana de Lima ",
+    "Matrícula": " 20190044138",
+    "difficulty": "Médio",
+    "mediaDificuldade": 3.7595930233
+  },
+  {
+    "Nome": "Guilherme Augusto Santana de Lima ",
+    "Matrícula": " 20190044138",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 0.0
+  },
+  {
+    "Nome": "Iury Lamonie ",
+    "Matrícula": " Monitor",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 0.8474576271
+  },
+  {
+    "Nome": "Iury Lamonie ",
+    "Matrícula": " Monitor",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 2.8846153846
+  },
+  {
+    "Nome": "Jackson D ",
+    "Matrícula": " 20200038945",
+    "difficulty": "Médio",
+    "mediaDificuldade": 3.1395348837
+  },
+  {
+    "Nome": "Jackson D ",
+    "Matrícula": " 20200038945",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 37.6931355932
+  },
+  {
+    "Nome": "Jackson D ",
+    "Matrícula": " 20200038945",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 3.8461538462
+  },
+  {
+    "Nome": "Jackson D ",
+    "Matrícula": " 20200038945",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 5.75
+  },
+  {
+    "Nome": "Joao Victor Leandro ",
+    "Matrícula": " 20190146693",
+    "difficulty": "Médio",
+    "mediaDificuldade": 0.0
+  },
+  {
+    "Nome": "João Gabriel Trindade ",
+    "Matrícula": " 20190010588",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 8.0
+  },
+  {
+    "Nome": "João Gabriel Trindade ",
+    "Matrícula": " 20190010588",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 1.9230769231
+  },
+  {
+    "Nome": "João Gabriel Trindade ",
+    "Matrícula": " 20190010588",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 19.8306779661
+  },
+  {
+    "Nome": "João Gabriel Trindade ",
+    "Matrícula": " 20190010588",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 4.8611111111
+  },
+  {
+    "Nome": "João Gabriel Trindade ",
+    "Matrícula": " 20190010588",
+    "difficulty": "Médio",
+    "mediaDificuldade": 6.5697674419
+  },
+  {
+    "Nome": "João Maria Mauricio ",
+    "Matrícula": " 20180118944",
+    "difficulty": "Médio",
+    "mediaDificuldade": 5.9496511628
+  },
+  {
+    "Nome": "João Maria Mauricio ",
+    "Matrícula": " 20180118944",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 2.0
+  },
+  {
+    "Nome": "João Maria Mauricio ",
+    "Matrícula": " 20180118944",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 2.1186440678
+  },
+  {
+    "Nome": "João Maria Mauricio ",
+    "Matrícula": " 20180118944",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 4.8613888889
+  },
+  {
+    "Nome": "Lucas da Costa Fontes ",
+    "Matrícula": " 20180122141",
+    "difficulty": "Médio",
+    "mediaDificuldade": 5.1937790698
+  },
+  {
+    "Nome": "Lucas da Costa Fontes ",
+    "Matrícula": " 20180122141",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 11.5
+  },
+  {
+    "Nome": "Lucas da Costa Fontes ",
+    "Matrícula": " 20180122141",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 23.0769230769
+  },
+  {
+    "Nome": "Lucas da Costa Fontes ",
+    "Matrícula": " 20180122141",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 51.8640677966
+  },
+  {
+    "Nome": "Lucas da Costa Fontes ",
+    "Matrícula": " 20180122141",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 8.3333333333
+  },
+  {
+    "Nome": "Luiz Paulo Assis Cavalcante de Freitas ",
+    "Matrícula": " 20190103408",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 19.4445833333
+  },
+  {
+    "Nome": "Luiz Paulo Assis Cavalcante de Freitas ",
+    "Matrícula": " 20190103408",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 33.0743220339
+  },
+  {
+    "Nome": "Luiz Paulo Assis Cavalcante de Freitas ",
+    "Matrícula": " 20190103408",
+    "difficulty": "Médio",
+    "mediaDificuldade": 4.8449418605
+  },
+  {
+    "Nome": "Luiz Paulo Assis Cavalcante de Freitas ",
+    "Matrícula": " 20190103408",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 16.3461538462
+  },
+  {
+    "Nome": "Luiz Paulo Assis Cavalcante de Freitas ",
+    "Matrícula": " 20190103408",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 5.25
+  },
+  {
+    "Nome": "Matheus Alves ",
+    "Matrícula": " 20180062956",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 30.1505932203
+  },
+  {
+    "Nome": "Matheus Alves ",
+    "Matrícula": " 20180062956",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 3.8461538462
+  },
+  {
+    "Nome": "Matheus Alves ",
+    "Matrícula": " 20180062956",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 3.5
+  },
+  {
+    "Nome": "Matheus Alves ",
+    "Matrícula": " 20180062956",
+    "difficulty": "Médio",
+    "mediaDificuldade": 0.5813953488
+  },
+  {
+    "Nome": "Matheus Henrique Fonseca Valerio ",
+    "Matrícula": " 20180063597",
+    "difficulty": "Médio",
+    "mediaDificuldade": 5.2713372093
+  },
+  {
+    "Nome": "Matheus Henrique Fonseca Valerio ",
+    "Matrícula": " 20180063597",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 3.9351388889
+  },
+  {
+    "Nome": "Matheus Henrique Fonseca Valerio ",
+    "Matrícula": " 20180063597",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 20.6634745763
+  },
+  {
+    "Nome": "Matheus Henrique Fonseca Valerio ",
+    "Matrícula": " 20180063597",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 4.0
+  },
+  {
+    "Nome": "Patrick Miguel Souza de Melo ",
+    "Matrícula": " 20170068277",
+    "difficulty": "Médio",
+    "mediaDificuldade": 6.9186627907
+  },
+  {
+    "Nome": "Patrick Miguel Souza de Melo ",
+    "Matrícula": " 20170068277",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 17.585
+  },
+  {
+    "Nome": "Patrick Miguel Souza de Melo ",
+    "Matrícula": " 20170068277",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 2.5
+  },
+  {
+    "Nome": "Patrick Miguel Souza de Melo ",
+    "Matrícula": " 20170068277",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 1.3888888889
+  },
+  {
+    "Nome": "Paulo Carvalho ",
+    "Matrícula": " 2016034522",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 5.7692307692
+  },
+  {
+    "Nome": "Paulo Carvalho ",
+    "Matrícula": " 2016034522",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 5.125
+  },
+  {
+    "Nome": "Paulo Carvalho ",
+    "Matrícula": " 2016034522",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.7777777778
+  },
+  {
+    "Nome": "Paulo Carvalho ",
+    "Matrícula": " 2016034522",
+    "difficulty": "Médio",
+    "mediaDificuldade": 4.8060465116
+  },
+  {
+    "Nome": "Paulo Carvalho ",
+    "Matrícula": " 2016034522",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 25.188220339
+  },
+  {
+    "Nome": "Paulo Víctor de Medeiros Andrade ",
+    "Matrícula": " 20190003046",
+    "difficulty": "Médio",
+    "mediaDificuldade": 1.7441860465
+  },
+  {
+    "Nome": "Paulo Víctor de Medeiros Andrade ",
+    "Matrícula": " 20190003046",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 2.125
+  },
+  {
+    "Nome": "Paulo Víctor de Medeiros Andrade ",
+    "Matrícula": " 20190003046",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 7.2738983051
+  },
+  {
+    "Nome": "Pedro Garcia Pereira ",
+    "Matrícula": " 20190040658",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 12.5
+  },
+  {
+    "Nome": "Pedro Garcia Pereira ",
+    "Matrícula": " 20190040658",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 65.5977118644
+  },
+  {
+    "Nome": "Pedro Garcia Pereira ",
+    "Matrícula": " 20190040658",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 14.0
+  },
+  {
+    "Nome": "Pedro Garcia Pereira ",
+    "Matrícula": " 20190040658",
+    "difficulty": "Médio",
+    "mediaDificuldade": 12.5
+  },
+  {
+    "Nome": "Pedro Garcia Pereira ",
+    "Matrícula": " 20190040658",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 20.8332638889
+  },
+  {
+    "Nome": "Pedro Henrique Dantas de Aragão Mendes ",
+    "Matrícula": " 20190003681",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 3.8461538462
+  },
+  {
+    "Nome": "Pedro Henrique Dantas de Aragão Mendes ",
+    "Matrícula": " 20190003681",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 14.8022033898
+  },
+  {
+    "Nome": "Pedro Henrique Dantas de Aragão Mendes ",
+    "Matrícula": " 20190003681",
+    "difficulty": "Médio",
+    "mediaDificuldade": 2.6744186047
+  },
+  {
+    "Nome": "Pedro Henrique Dantas de Aragão Mendes ",
+    "Matrícula": " 20190003681",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 3.0
+  },
+  {
+    "Nome": "Pedro Leite ",
+    "Matrícula": " 20190000830",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 50.7861016949
+  },
+  {
+    "Nome": "Pedro Leite ",
+    "Matrícula": " 20190000830",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 28.8461538462
+  },
+  {
+    "Nome": "Pedro Leite ",
+    "Matrícula": " 20190000830",
+    "difficulty": "Médio",
+    "mediaDificuldade": 2.9069767442
+  },
+  {
+    "Nome": "Pedro Leite ",
+    "Matrícula": " 20190000830",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 3.0
+  },
+  {
+    "Nome": "Pedro Leite ",
+    "Matrícula": " 20190000830",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 4.1666666667
+  },
+  {
+    "Nome": "Samuel Souza ",
+    "Matrícula": " 20200046160",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 8.25
+  },
+  {
+    "Nome": "Samuel Souza ",
+    "Matrícula": " 20200046160",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 110.3673728814
+  },
+  {
+    "Nome": "Samuel Souza ",
+    "Matrícula": " 20200046160",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 18.2692307692
+  },
+  {
+    "Nome": "Samuel Souza ",
+    "Matrícula": " 20200046160",
+    "difficulty": "Médio",
+    "mediaDificuldade": 9.1280232558
+  },
+  {
+    "Nome": "Tales Vinícius de Medeiros Alves ",
+    "Matrícula": " 20200040685",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 26.9070338983
+  },
+  {
+    "Nome": "Tales Vinícius de Medeiros Alves ",
+    "Matrícula": " 20200040685",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 48.0769230769
+  },
+  {
+    "Nome": "Tales Vinícius de Medeiros Alves ",
+    "Matrícula": " 20200040685",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 18.3911805556
+  },
+  {
+    "Nome": "Tales Vinícius de Medeiros Alves ",
+    "Matrícula": " 20200040685",
+    "difficulty": "Médio",
+    "mediaDificuldade": 11.0755813953
+  },
+  {
+    "Nome": "Tales Vinícius de Medeiros Alves ",
+    "Matrícula": " 20200040685",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 12.50005
+  },
+  {
+    "Nome": "Vitória Morais ",
+    "Matrícula": " 20190046571",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 5.875
+  },
+  {
+    "Nome": "Vitória Morais ",
+    "Matrícula": " 20190046571",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 25.4236440678
+  },
+  {
+    "Nome": "Vitória Morais ",
+    "Matrícula": " 20190046571",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.7777777778
+  },
+  {
+    "Nome": "Vitória Morais ",
+    "Matrícula": " 20190046571",
+    "difficulty": "Médio",
+    "mediaDificuldade": 5.3488372093
+  },
+  {
+    "Nome": "Vitória Morais ",
+    "Matrícula": " 20190046571",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 11.5384615385
+  },
+  {
+    "Nome": "Vítor Dantas Costa ",
+    "Matrícula": " 20190146700",
+    "difficulty": "Médio",
+    "mediaDificuldade": 6.3468604651
+  },
+  {
+    "Nome": "Vítor Dantas Costa ",
+    "Matrícula": " 20190146700",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 7.875
+  },
+  {
+    "Nome": "Vítor Dantas Costa ",
+    "Matrícula": " 20190146700",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 19.811779661
+  },
+  {
+    "Nome": "Vítor Dantas Costa ",
+    "Matrícula": " 20190146700",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 9.7222222222
+  },
+  {
+    "Nome": "alyssonblack ",
+    "Matrícula": " 20170070435",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 5.0
+  },
+  {
+    "Nome": "alyssonblack ",
+    "Matrícula": " 20170070435",
+    "difficulty": "Médio",
+    "mediaDificuldade": 3.2751744186
+  },
+  {
+    "Nome": "alyssonblack ",
+    "Matrícula": " 20170070435",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 2.3163559322
+  },
+  {
+    "Nome": "ellen Melo ",
+    "Matrícula": " 20190105224",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 54.1948305085
+  },
+  {
+    "Nome": "ellen Melo ",
+    "Matrícula": " 20190105224",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 7.0
+  },
+  {
+    "Nome": "ellen Melo ",
+    "Matrícula": " 20190105224",
+    "difficulty": "Médio",
+    "mediaDificuldade": 5.8139534884
+  },
+  {
+    "Nome": "ellen Melo ",
+    "Matrícula": " 20190105224",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.7777777778
+  },
+  {
+    "Nome": "ellen Melo ",
+    "Matrícula": " 20190105224",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 13.4615384615
+  },
+  {
+    "Nome": "enzo lopes danjour de souza ",
+    "Matrícula": " 20190035658",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 22.5234745763
+  },
+  {
+    "Nome": "enzo lopes danjour de souza ",
+    "Matrícula": " 20190035658",
+    "difficulty": "Médio",
+    "mediaDificuldade": 8.0231976744
+  },
+  {
+    "Nome": "enzo lopes danjour de souza ",
+    "Matrícula": " 20190035658",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.7777777778
+  },
+  {
+    "Nome": "enzo lopes danjour de souza ",
+    "Matrícula": " 20190035658",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 8.125
+  },
+  {
+    "Nome": "enzo lopes danjour de souza ",
+    "Matrícula": " 20190035658",
+    "difficulty": "Muito Difícil",
+    "mediaDificuldade": 31.7307692308
+  },
+  {
+    "Nome": "kaio cesar de sousa pinheiro ",
+    "Matrícula": " 20180144793",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 0.8474576271
+  },
+  {
+    "Nome": "marciotenorio ",
+    "Matrícula": " 20180119880",
+    "difficulty": "Médio",
+    "mediaDificuldade": 1.5502906977
+  },
+  {
+    "Nome": "marciotenorio ",
+    "Matrícula": " 20180119880",
+    "difficulty": "Fácil",
+    "mediaDificuldade": 2.25
+  },
+  {
+    "Nome": "marciotenorio ",
+    "Matrícula": " 20180119880",
+    "difficulty": "Muito Fácil",
+    "mediaDificuldade": 0.0
+  },
+  {
+    "Nome": "marciotenorio ",
+    "Matrícula": " 20180119880",
+    "difficulty": "Difícil",
+    "mediaDificuldade": 2.0833333333
+  },
+  {
+    "Nome": null,
+    "Matrícula": null,
+    "difficulty": 5.0,
+    "mediaDificuldade": 0.0
+  }
+]

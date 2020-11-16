@@ -1,23 +1,36 @@
 import React, { useState } from 'react';
 
-//import Modal from './Modal';
+import Modal from './Modal';
 
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
 import { students } from '../../json/df_perfomance_list.json';
-
+import medialist from '../../json/df_mediadif_2.json';
+import Grafico from '../Chart_students';
 
 export default props => {
     const [alunos, setAlunos] = useState(students);
+    const [open, setOpen] = useState(false);
+    const [matricula, setMatricula] = useState('');
+    const [nome, setNome] = useState('');
+    function handleOpen(nome, matricula) {
+        setOpen(true);
+        setNome(nome);
+        setMatricula(matricula);
+    };
 
+    const handleClose = () => {
+        setOpen(false);
+
+    };
 
     function handleChange(e) {
         let busca = e.target.value;
-        if(busca!=='')
-        setAlunos(students.filter(item => (item.nome.includes(busca))));
+        if (busca !== '')
+            setAlunos(students.filter(item => (item.nome.includes(busca))));
         else
-        setAlunos(students);
+            setAlunos(students);
     }
 
     function filtrar(param) {
@@ -60,11 +73,15 @@ export default props => {
         let nome = text.split("-")[0];
         return nome;
     }
-    // function showModal(id) {
-    //     return <h1>ooooooooo</h1>
-    // }
-
-
+    const body = (
+        <div>
+            <h2 id="simple-modal-title">{nome}</h2>
+            <p id="simple-modal-description">
+                {matricula}
+            </p>
+            <Grafico matricula={matricula} />
+        </div>
+    )
     return (
 
         <>
@@ -83,7 +100,7 @@ export default props => {
             <Body>
                 {
                     alunos.map(aluno => (
-                        <StudentData key={aluno.id} >
+                        <StudentData key={aluno.id} onClick={() => handleOpen(getNome(aluno.nome),getMatricula(aluno.nome))} >
                             <Div>
                                 <StudentImage />
                                 <Data>
@@ -96,13 +113,11 @@ export default props => {
                                 <Indicator success={true} />
                                 : <Indicator success={false} />
                             }
-
                         </StudentData>
-                    )
 
-                    )
+                    ))
                 }
-                {/* <Modal /> */}
+                <Modal open={open} body={body} close={handleClose} />
             </Body>
         </>
     )
