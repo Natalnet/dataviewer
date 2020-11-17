@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BarChart,
   Bar,
@@ -6,19 +6,18 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
+  Legend
 } from "recharts";
-
+import './style.css';
 import list from '../../json/df_mediadif_2.json';
 
 
-export default function App (props) {
-
+export default function App(props) {
   const [aluno, setAluno] = useState(list);
 
-  
+
   useEffect(() => {
-    setAluno(list.filter(item => item.Matrícula!==null && props.matricula.trim() === item.Matrícula.trim()));
+    setAluno(list.filter(item => item.Matrícula !== null && props.matricula.trim() === item.Matrícula.trim()));
   }, [props.matricula]);
 
   return (
@@ -35,11 +34,11 @@ export default function App (props) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="difficulty"/>
-        <YAxis />
+        <XAxis dataKey="difficulty" />
+        <YAxis unit="%" />
         <Tooltip />
         <Legend />
-        <Bar dataKey="mediaDificuldade" fill="#82ca9d" name="Média de dificuldade"/>
+        <Bar dataKey="mediaDificuldade" fill="#82ca9d" name="Média de dificuldade" />
       </BarChart>
     </>
   );

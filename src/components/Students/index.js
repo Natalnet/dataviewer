@@ -6,8 +6,7 @@ import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOp
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
 import { students } from '../../json/df_perfomance_list.json';
-import medialist from '../../json/df_mediadif_2.json';
-import Grafico from '../Chart_students';
+import Grafico from '../Grafic/StudentsGrafic';
 
 export default props => {
     const [alunos, setAlunos] = useState(students);
