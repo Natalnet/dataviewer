@@ -30,9 +30,9 @@ export default props => {
                     <Check state={statistic} />
                     <Label id="estatistica">
                         <Select onChange={e => props.viewChart(e.target.value)} >
-                            <option value="1">Lista</option>
-                            <option value="2">Assunto</option>
-                            <option value="3">Dificuldade</option>
+                            <option value={1}>{props.option1}</option>
+                            <option value={2}>{props.option2}</option>
+                            <option value={3}>{props.option3}</option>
                         </Select>
                     </Label>
                 </Choice>

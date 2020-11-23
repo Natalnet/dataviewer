@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 
 import Modal from './Modal';
+import MenuChart from '../MenuChart';
 
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
-import { students } from '../../json/df_perfomance_list.json';
-import Grafico from '../Grafic/StudentsGrafic';
+import students from '../../json/df_students_subjects_performance_sorted_names_alphabetically.json';
+
+import MediaPerList from '../Grafic/StudentsGraficMediaPerList';
+import MediaPerLevel from '../Grafic/StudentGraficMediaPerLevel';
+import MediaPerMean from '../Grafic/StudentGraficByMean';
 
 export default props => {
     const [alunos, setAlunos] = useState(students);
     const [open, setOpen] = useState(false);
     const [matricula, setMatricula] = useState('');
     const [nome, setNome] = useState('');
+    const [chart, setChart] = useState(1);
+
+    function viewChart(value) {
+        setChart(parseInt(value));
+
+    }
     function handleOpen(nome, matricula) {
         setOpen(true);
         setNome(nome);
@@ -21,13 +31,13 @@ export default props => {
 
     const handleClose = () => {
         setOpen(false);
-
+        setChart(1);
     };
 
     function handleChange(e) {
         let busca = e.target.value;
         if (busca !== '')
-            setAlunos(students.filter(item => (item.nome.includes(busca))));
+            setAlunos(students.filter(item => (item.user.includes(busca))));
         else
             setAlunos(students);
     }
@@ -39,8 +49,8 @@ export default props => {
             console.log("nome \n" + alunos) //*console
 
             auxiliarAlunos = [...alunos].sort(function (a, b) {
-                const nomeA = a.nome.toUpperCase();
-                const nomeB = b.nome.toUpperCase();
+                const nomeA = a.user.toUpperCase();
+                const nomeB = b.user.toUpperCase();
 
                 if (nomeA === nomeB) {
                     return 0;
@@ -64,21 +74,26 @@ export default props => {
         }
     }
 
-    function getMatricula(text) {
-        let matricula = text.split("-")[1];
-        return matricula;
-    }
-    function getNome(text) {
-        let nome = text.split("-")[0];
-        return nome;
-    }
+    // function getMatricula(text) {
+    //     let matricula = text.split("-")[1];
+    //     return matricula;
+    // }
+    // function getNome(text) {
+    //     let nome = text.split("-")[0];
+    //     return nome;
+    // }
     const body = (
         <div>
             <h2 id="simple-modal-title">{nome}</h2>
             <p id="simple-modal-description">
                 {matricula}
             </p>
-            <Grafico matricula={matricula} />
+            <MenuChart viewChart={viewChart} option1={'Lista'} option2={'Assunto'} option3={'Dificuldade'} />
+            {chart === 1 ?
+                <MediaPerList registration={matricula} />
+                : chart === 2 ? <MediaPerMean registration={matricula} />
+                : <MediaPerLevel matricula={matricula} />
+            }
         </div>
     )
     return (
@@ -99,16 +114,16 @@ export default props => {
             <Body>
                 {
                     alunos.map(aluno => (
-                        <StudentData key={aluno.id} onClick={() => handleOpen(getNome(aluno.nome),getMatricula(aluno.nome))} >
+                        <StudentData key={aluno.registration} onClick={() => handleOpen(aluno.user, aluno.registration)} >
                             <Div>
                                 <StudentImage />
                                 <Data>
-                                    <Name>{getNome(aluno.nome)}</Name>
-                                    <Name>Matricula: {getMatricula(aluno.nome)}</Name>
-                                    <Note>Nota: {aluno.media}</Note>
+                                    <Name>{aluno.user}</Name>
+                                    <Name>Matricula: {aluno.registration}</Name>
+                                    <Note>Nota: 70</Note>
                                 </Data>
                             </Div>
-                            {aluno.media >= 5 ?
+                            {7 >= 5 ?
                                 <Indicator success={true} />
                                 : <Indicator success={false} />
                             }
