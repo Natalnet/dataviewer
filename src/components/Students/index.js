@@ -6,7 +6,7 @@ import MenuChart from '../MenuChart';
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
-import students from '../../json/df_students_subjects_performance_sorted_names_alphabetically.json';
+import students from '../../json/graph_performance_student_list_2.json';
 
 import MediaPerList from '../Grafic/StudentsGraficMediaPerList';
 import MediaPerLevel from '../Grafic/StudentGraficMediaPerLevel';
@@ -46,8 +46,6 @@ export default props => {
         let auxiliarAlunos;
         if (param === "nome") {
 
-            console.log("nome \n" + alunos) //*console
-
             auxiliarAlunos = [...alunos].sort(function (a, b) {
                 const nomeA = a.user.toUpperCase();
                 const nomeB = b.user.toUpperCase();
@@ -61,27 +59,19 @@ export default props => {
                 }
 
             })
-            setAlunos(auxiliarAlunos)
-            console.log(alunos) //*console
-        }
-        if (param === "nota") {
-            console.log("nota\n" + alunos) //*console
+            setAlunos(auxiliarAlunos);
+        } else if (param === "nota") {
             auxiliarAlunos = [...alunos].sort(function (a, b) {
-                return b.media - a.media;
+                return b.meanLists - a.meanLists;
             })
-            setAlunos(auxiliarAlunos)
-            console.log(alunos) //*console
+            setAlunos(auxiliarAlunos);
+        } else {
+            auxiliarAlunos = [...alunos].sort(function (a, b) {
+                return a.meanLists - b.meanLists;
+            })
+            setAlunos(auxiliarAlunos);
         }
     }
-
-    // function getMatricula(text) {
-    //     let matricula = text.split("-")[1];
-    //     return matricula;
-    // }
-    // function getNome(text) {
-    //     let nome = text.split("-")[0];
-    //     return nome;
-    // }
     const body = (
         <div>
             <h2 id="simple-modal-title">{nome}</h2>
@@ -120,10 +110,10 @@ export default props => {
                                 <Data>
                                     <Name>{aluno.user}</Name>
                                     <Name>Matricula: {aluno.registration}</Name>
-                                    <Note>Nota: 70</Note>
+                                    <Note>Nota: {aluno.meanLists.toFixed(2)}</Note>
                                 </Data>
                             </Div>
-                            {7 >= 5 ?
+                            {aluno.meanLists >= 50 ?
                                 <Indicator success={true} />
                                 : <Indicator success={false} />
                             }
