@@ -26,7 +26,6 @@ function App(props) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis />
         <YAxis unit="%" />
         <Tooltip />
         <Legend />
