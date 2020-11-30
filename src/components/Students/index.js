@@ -17,10 +17,10 @@ export default props => {
     const [open, setOpen] = useState(false);
     const [matricula, setMatricula] = useState('');
     const [nome, setNome] = useState('');
-    const [chart, setChart] = useState(1);
+    const [chart, setChart] = useState('Lista');
 
     function viewChart(value) {
-        setChart(parseInt(value));
+        setChart(value);
 
     }
     function handleOpen(nome, matricula) {
@@ -78,10 +78,10 @@ export default props => {
             <p id="simple-modal-description">
                 {matricula}
             </p>
-            <MenuChart viewChart={viewChart} option1={'Lista'} option2={'Assunto'} option3={'Dificuldade'} />
-            {chart === 1 ?
+            <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'}/>
+            {chart === 'Lista' ?
                 <MediaPerList registration={matricula} />
-                : chart === 2 ? <MediaPerMean registration={matricula} />
+                : chart === 'Assunto' ? <MediaPerMean registration={matricula} />
                 : <MediaPerLevel matricula={matricula} />
             }
         </div>
@@ -110,7 +110,7 @@ export default props => {
                                 <Data>
                                     <Name>{aluno.user}</Name>
                                     <Name>Matricula: {aluno.registration}</Name>
-                                    <Note>Nota: {aluno.meanLists.toFixed(2)}</Note>
+                                    <Note>Média das listas: {aluno.meanLists.toFixed(2)}</Note>
                                 </Data>
                             </Div>
                             {aluno.meanLists >= 50 ?

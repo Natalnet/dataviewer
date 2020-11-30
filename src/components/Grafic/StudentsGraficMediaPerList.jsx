@@ -2,7 +2,6 @@ import React from 'react';
 import {
   BarChart,
   Bar,
-  XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
@@ -26,7 +25,7 @@ function App(props) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <YAxis />
+        <YAxis unit="%"/>
         <Tooltip />
         <Legend />
         <Bar dataKey="IMD0012 - 2020.6: Lista Obrigatória, Semana 1" fill="#0FFF00" name="Lista semana 1" />
