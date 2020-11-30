@@ -11,7 +11,6 @@ export default function App(props) {
     return (
         <>
             <FormControl component="fieldset">
-                <FormLabel component="legend">Gráficos</FormLabel>
                 <RadioGroup row aria-label="Gráficos" value={selectedValue} name="Gráficos" onChange={handleChange}>
                     <FormControlLabel value={props.name1} control={<Radio />} label={props.name1} />
                     <FormControlLabel value={props.name2} control={<Radio />} label={props.name2} />
