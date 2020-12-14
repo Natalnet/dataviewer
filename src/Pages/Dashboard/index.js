@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 /* Components general */
 import Container from '../../components/Container/Container';
-import Card from '../../components/Card/Card';
 import BigCard from '../../components/BigCard/BigCard';
 import ViewChart from '../../components/ViewChart/index';
 import Students from "../../components/Students";
@@ -9,7 +8,8 @@ import Students from "../../components/Students";
 export default function Dashboard() {
 
   const [option, setOption] = useState(1);
-  const [/*option2*/, setOption2] = useState(1);
+  const [option2, setOption2] = useState(1);
+  const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
 
@@ -26,20 +26,28 @@ export default function Dashboard() {
     else
       setOption2(2);
   }
+  function handleClickThirdCard(option) {
+    if (option === firstOption)
+      setOption3(1);
+    else
+      setOption3(2);
+  }
 
   return (
     <div>
       <Container>
-        <BigCard title="Desempenho geral" firstOption={firstOption}
+        <BigCard title="Desempenho nas listas" firstOption={firstOption}
           secondOption={secondOption} handleClick={handleClick}>
           { option === 1 ? <ViewChart /> : <Students /> }
         </BigCard>
-        
-        <Card title="Avisos" />
-        <Card title="Nível de aprendizagem da turma" />
-        <Card title="Gestão do tempo" firstOption={firstOption}
-          secondOption={secondOption} handleClick={handleClickSecondCard} />
-        <Card title="Ranking da turma" />
+        <BigCard title="Desempenho nas provas" firstOption={firstOption}
+          secondOption={secondOption} handleClick={handleClickSecondCard}>
+          { option2 === 1 ? <ViewChart /> : <Students /> }
+        </BigCard>
+        <BigCard title="Desempenho geral" firstOption={firstOption}
+          secondOption={secondOption} handleClick={handleClickThirdCard}>
+          { option3 === 1 ? <ViewChart /> : <Students /> }
+        </BigCard>
       </Container>
     </div>
   );
