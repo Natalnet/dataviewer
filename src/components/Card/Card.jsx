@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
-    width: 26vw;
+    width: 16em;
     margin-top: 5vh;
-    min-width: 26vw;
+    min-width: 16em;
     background: #fff;
-    height: 40vh;
-    border-radius: 15px;
+    height: 18em;
+    border-radius: 1em;
     overflow: hidden;
 `;
 

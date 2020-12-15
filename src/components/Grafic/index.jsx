@@ -13,7 +13,7 @@ import {
 export default function App(props) {
   
   return (
-    <ResponsiveContainer width="80%" height="60%">
+    <ResponsiveContainer width="100%" height="60%">
       <BarChart
         data={props.data}
         margin={{
@@ -27,7 +27,7 @@ export default function App(props) {
         <XAxis dataKey={props.dataKeyX} />
         <YAxis unit={props.yUnit ? props.yUnit : ''} />
         <Tooltip />
-        <Legend />
+        <Legend verticalAlign="top"/>
         <Bar dataKey={props.dataKeyBar0} fill={props.fill0} name={props.nameBar0} />
         { props.dataKeyBar1 ? 
         <Bar dataKey={props.dataKeyBar1} fill={props.fill1} name={props.nameBar1} /> : ''}

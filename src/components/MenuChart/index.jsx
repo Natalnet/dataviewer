@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FormControl, FormControlLabel, RadioGroup, Radio, Checkbox } from '@material-ui/core';
-
+import './style.css'
 
 export default function App(props) {
     const [selectedValue, setSelectedValue] = useState(props.name1);
@@ -19,7 +19,6 @@ export default function App(props) {
                         control={<Checkbox checked={selectedValue === props.name4} onChange={handleChange} name={props.name4} />}
                         label={props.name4}
                     />
-                    {console.log(selectedValue===props.name4)}
                 </RadioGroup>
             </FormControl>
 

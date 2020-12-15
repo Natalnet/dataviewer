@@ -6,7 +6,7 @@ import MenuChart from '../MenuChart';
 import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
-import students from '../../json/graph_performance_student_list_2.json';
+import students from '../../json/df_student_practice_mean_performance_all_subjects.json';
 
 import MediaPerList from '../Grafic/StudentsGraficMediaPerList';
 import MediaPerLevel from '../Grafic/StudentGraficMediaPerLevel';
@@ -110,10 +110,11 @@ export default props => {
                                 <Data>
                                     <Name>{aluno.user}</Name>
                                     <Name>Matricula: {aluno.registration}</Name>
-                                    <Note>Média das listas: {aluno.meanLists.toFixed(2)}</Note>
+                                    <Note>Porcentagem das listas: {aluno.meanAllSubjects.toFixed(2)}%</Note>
+                                    {console.log(aluno.meanAllSubjects >= 50)}
                                 </Data>
                             </Div>
-                            {aluno.meanLists >= 50 ?
+                            {aluno.meanAllSubjects >= 50 ?
                                 <Indicator success={true} />
                                 : <Indicator success={false} />
                             }

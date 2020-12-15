@@ -4,8 +4,8 @@ import MenuChart from '../MenuChart/index';
 
 //Charts
 import Grafic from '../Grafic';
-import {graph1} from '../../json/teste2.json';
-import json2 from '../../json/df_featured_questions';
+import json1 from '../../json/graph_more_less_list_class.json';
+import json2 from '../../json/df_featured_practice_subjects.json';
 import json3 from '../../json/df_aprov_diff_7.json';
 import Chart4 from '../Chart_04/index';
 
@@ -20,17 +20,17 @@ export default function App(props) {
         <>
             <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'}/>
             {chart === 'Lista' ?
-                <Grafic data={graph1} dataKeyX={'list'}
-                    dataKeyBar0={'more70'} fill0={'#82ca9d'}
-                    nameBar0={'Bom Desempenho'} dataKeyBar1={'less70'}
+                <Grafic data={json1} dataKeyX={'list'}
+                    dataKeyBar0={'more'} fill0={'#82ca9d'}
+                    nameBar0={'Bom Desempenho'} dataKeyBar1={'less'}
                     fill1={'#F08080'} nameBar1={'Baixo Desempenho'} />
 
 
                 : chart === 'Assunto' ?
 
-                    <Grafic data={json2} dataKeyX={'assunto'}
-                        dataKeyBar0={'altoRendimento'} fill0={'#82ca9d'}
-                        nameBar0={'Alto Rendimento'} dataKeyBar1={'baixoRendimento'}
+                    <Grafic data={json2} dataKeyX={'subject'}
+                        dataKeyBar0={'highPerformance'} fill0={'#82ca9d'}
+                        nameBar0={'Alto Rendimento'} dataKeyBar1={'lowPerformance'}
                         fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
                         dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'} />
                     : chart === 'Dificuldade' ?
