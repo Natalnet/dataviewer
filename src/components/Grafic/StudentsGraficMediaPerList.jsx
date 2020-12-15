@@ -30,7 +30,7 @@ function App(props) {
         <YAxis unit="%"/>
         <Tooltip />
         <Legend />
-        <Bar dataKey="mediaList" fill="#0FFF00" />
+        <Bar dataKey="mediaList" fill="#0FFF00" name="Média da lista"/>
        
 
       </BarChart>

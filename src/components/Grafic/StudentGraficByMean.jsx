@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend
 } from "recharts";
-import json from '../../json/df_class_practice_mean_performance_by_subject.json';
+import json from '../../json/df_student_practice_mean_performance_by_subject.json';
 
 function App(props) {
   const data = json.filter(item => item.registration !== null && item.registration.trim() === props.registration.trim());
@@ -30,7 +30,7 @@ function App(props) {
         <YAxis unit="%"/>
         <Tooltip />
         <Legend />
-        <Bar dataKey="meanSubject" fill="#0FFF00" />
+        <Bar dataKey="meanSubject" fill="#0FFF00" name="Média por assunto"/>
       </BarChart>
     </>
   );
