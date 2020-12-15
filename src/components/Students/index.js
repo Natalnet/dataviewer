@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import MenuChart from '../MenuChart';
 
-import { Header, FilterInput, FilterSpace, FilterButton, FilterOptions, FilterOption } from './style';
+import { Header, FilterInput, FilterSpace, FilterButton } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
 import students from '../../json/df_student_practice_mean_performance_all_subjects.json';
@@ -45,7 +45,7 @@ export default props => {
 
     function filtrar(param) {
         let auxiliarAlunos;
-        if (param === "nome") {
+        if (param === "Nome") {
 
             auxiliarAlunos = [...alunos].sort(function (a, b) {
                 const nomeA = a.user.toUpperCase();
@@ -61,7 +61,7 @@ export default props => {
 
             })
             setAlunos(auxiliarAlunos);
-        } else if (param === "nota") {
+        } else if (param === "Nota") {
             auxiliarAlunos = [...alunos].sort(function (a, b) {
                 return b.meanAllSubjects - a.meanAllSubjects;
             })
@@ -79,15 +79,15 @@ export default props => {
             <p id="simple-modal-description">
                 {matricula}
             </p>
-            <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'}/>
+            <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'} />
             {chart === 'Lista' ?
-                <Grafic registration={matricula} 
-                json={json} dataKeyX={"list"} dataKeyBar={"mediaList"} 
-                fill={"#467fcf"} name={"Média da lista"} />
-                : chart === 'Assunto' ? <Grafic registration={matricula} 
-                json={json2} dataKeyX={"subject"} dataKeyBar={"meanSubject"} 
-                fill={"#467fcf"} name={"Média por assunto"} />
-                : <MediaPerLevel matricula={matricula} />
+                <Grafic registration={matricula}
+                    json={json} dataKeyX={"list"} dataKeyBar={"mediaList"}
+                    fill={"#467fcf"} name={"Média da lista"} />
+                : chart === 'Assunto' ? <Grafic registration={matricula}
+                    json={json2} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
+                    fill={"#467fcf"} name={"Média por assunto"} />
+                    : <MediaPerLevel matricula={matricula} />
             }
         </div>
     )
@@ -99,13 +99,8 @@ export default props => {
                     <FilterInput type="text" onChange={handleChange} />
                     <FilterButton className="fas fa-filter" />
                 </FilterSpace>
-                <FilterOptions>
-                    <FilterOption onClick={() => filtrar("nome")} >Nome</FilterOption>
-                    <FilterOption onClick={() => filtrar("nota")} >Nota</FilterOption>
-                    <FilterOption onClick={() => filtrar("desempenho")} >Desempenho</FilterOption>
-                </FilterOptions>
             </Header>
-
+            <MenuChart viewChart={filtrar} name1={'Nome'} name2={'Nota'} name3={'Desempenho'} />
             <Body>
                 {
                     alunos.map(aluno => (

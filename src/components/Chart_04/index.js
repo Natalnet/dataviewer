@@ -8,6 +8,7 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
+    ResponsiveContainer,
 } from "recharts";
 
 // import data from '../../json/df_less_more_70.json';
@@ -94,10 +95,8 @@ export default class Example extends PureComponent {
 
     render() {
         return (
-            <>
+            <ResponsiveContainer width="100%" height="60%">
                 <BarChart
-                    width={700}
-                    height={170}
                     data={data}
                     margin={{
                         top: 20,
@@ -116,7 +115,7 @@ export default class Example extends PureComponent {
                     <Bar dataKey="predict_more70" stackId="a" fill="#2E8B57" name="Predição Bom D." />
                     <Bar dataKey="predict_less70" stackId="b" fill="#CD5C5C" name="Predição Baixo D." />
                 </BarChart>
-            </>
+            </ResponsiveContainer>
         );
     }
 }
