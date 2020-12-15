@@ -8,9 +8,10 @@ import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } fro
 
 import students from '../../json/df_student_practice_mean_performance_all_subjects.json';
 
-import MediaPerList from '../Grafic/StudentsGraficMediaPerList';
 import MediaPerLevel from '../Grafic/StudentGraficMediaPerLevel';
-import MediaPerMean from '../Grafic/StudentGraficByMean';
+import Grafic from '../Grafic/StudentGrafic';
+import json from '../../json/graph_performance_student_list_3.json';
+import json2 from '../../json/df_student_practice_mean_performance_by_subject.json';
 
 export default props => {
     const [alunos, setAlunos] = useState(students);
@@ -62,12 +63,12 @@ export default props => {
             setAlunos(auxiliarAlunos);
         } else if (param === "nota") {
             auxiliarAlunos = [...alunos].sort(function (a, b) {
-                return b.meanLists - a.meanLists;
+                return b.meanAllSubjects - a.meanAllSubjects;
             })
             setAlunos(auxiliarAlunos);
         } else {
             auxiliarAlunos = [...alunos].sort(function (a, b) {
-                return a.meanLists - b.meanLists;
+                return a.meanAllSubjects - b.meanAllSubjects;
             })
             setAlunos(auxiliarAlunos);
         }
@@ -80,8 +81,12 @@ export default props => {
             </p>
             <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'}/>
             {chart === 'Lista' ?
-                <MediaPerList registration={matricula} />
-                : chart === 'Assunto' ? <MediaPerMean registration={matricula} />
+                <Grafic registration={matricula} 
+                json={json} dataKeyX={"list"} dataKeyBar={"mediaList"} 
+                fill={"#467fcf"} name={"Média da lista"} />
+                : chart === 'Assunto' ? <Grafic registration={matricula} 
+                json={json2} dataKeyX={"subject"} dataKeyBar={"meanSubject"} 
+                fill={"#467fcf"} name={"Média por assunto"} />
                 : <MediaPerLevel matricula={matricula} />
             }
         </div>
@@ -110,8 +115,9 @@ export default props => {
                                 <Data>
                                     <Name>{aluno.user}</Name>
                                     <Name>Matricula: {aluno.registration}</Name>
-                                    <Note>Porcentagem das listas: {aluno.meanAllSubjects.toFixed(2)}%</Note>
-                                    {console.log(aluno.meanAllSubjects >= 50)}
+                                    <Note>Média por listas: {aluno.meanAllSubjects.toFixed(2)}%</Note>
+                                    <Note>Média por assuntos: {aluno.meanAllSubjects.toFixed(2)}%</Note>
+                                    <Note>Média por dificuldade: {aluno.meanAllSubjects.toFixed(2)}%</Note>
                                 </Data>
                             </Div>
                             {aluno.meanAllSubjects >= 50 ?

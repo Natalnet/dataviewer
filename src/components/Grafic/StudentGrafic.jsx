@@ -8,10 +8,8 @@ import {
   Tooltip,
   Legend
 } from "recharts";
-import json from '../../json/graph_performance_student_list_3.json';
-
 function App(props) {
-  const data = json.filter(item => item.registration !== null && item.registration.trim() === props.registration.trim());
+  const data = props.json.filter(item => item.registration !== null && item.registration.trim() === props.registration.trim());
   return (
     <>
       <BarChart
@@ -26,13 +24,11 @@ function App(props) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="list"/>
-        <YAxis unit="%"/>
+        <XAxis dataKey={props.dataKeyX} />
+        <YAxis unit="%"label={{ value: 'Percentual por nota', angle: -90, viewBox: {x: 0, y: 45, width: 50, height: 50} }}/>
         <Tooltip />
         <Legend />
-        <Bar dataKey="mediaList" fill="#0FFF00" name="Média da lista"/>
-       
-
+        <Bar dataKey={props.dataKeyBar} fill={props.fill} name={props.name}/>
       </BarChart>
     </>
   );

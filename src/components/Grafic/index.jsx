@@ -22,10 +22,11 @@ export default function App(props) {
           left: 20,
           bottom: 0,
         }}
+        
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={props.dataKeyX} />
-        <YAxis unit={props.yUnit ? props.yUnit : ''} />
+        <YAxis unit={props.yUnit ? props.yUnit : ''} label={{ value: 'Quantidade de alunos', angle: -90, viewBox: {x: 20, y: 100, width: 50, height: 50} }}/>
         <Tooltip />
         <Legend verticalAlign="top"/>
         <Bar dataKey={props.dataKeyBar0} fill={props.fill0} name={props.nameBar0} />

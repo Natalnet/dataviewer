@@ -4,7 +4,7 @@ export const Header = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2vh;
+    padding: 1em;
 `;
 
 export const FilterSpace = styled.div`
@@ -15,7 +15,7 @@ export const FilterSpace = styled.div`
 `;
 
 export const FilterInput = styled.input`
-    padding: 1vh;
+    padding: 0.5em;
     border: 1px solid #C4C4C4;
     border-radius: 7px 0px 0px 7px;
     width: 70%;
@@ -25,9 +25,9 @@ export const FilterButton = styled.div`
     color: #C4C4C4;
     display: flex;
     align-items: center;
-    font-size: 1.3em;
+    font-size: 0.76em;
     border: solid 1px #C4C4C4;
-    padding: 0.8vh;
+    padding: 1em;
     :hover{
         cursor: pointer;
     }
@@ -38,14 +38,14 @@ export const FilterOptions = styled.ul`
     display: flex;
     flex-direction: column;
     overflow: auto;
-    height: 8vh;
+    height: 3.625em;
     width: 15%;
     list-style: none;
     font-size: 0.9em;
 `;
 
 export const FilterOption = styled.li`
-    margin: 0.4vh;
+    margin: 0.18em;
     cursor: pointer;
 `;
 
@@ -54,17 +54,17 @@ export const Body = styled.div`
     align-items: center;
     flex-wrap: wrap;
     overflow: auto;
-    height: 30vh;
-    max-height: 20vh;
+    height: 19em;
+    max-height: 100%;
 `;
 
 export const StudentData = styled.div`
     width: 50%;
     display: flex;
     align-items: center;
-    margin: 1vh 0;
+    margin: 0.5em 0;
     justify-content: space-between;
-    padding-right: 3vw;
+    padding-right: 1.3em;
     cursor: pointer;
 `;
 

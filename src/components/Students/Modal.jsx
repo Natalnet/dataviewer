@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Fade, Modal, Backdrop } from '@material-ui/core'
+import { Fade, Modal, Backdrop, Grid } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -22,25 +22,25 @@ export default function App({ body, open, close }) {
   const classes = useStyles();
 
   return (
-    <>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={close}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-        className={classes.modal}
-      >
+    <Modal
+      aria-labelledby="transition-modal-title"
+      aria-describedby="transition-modal-description"
+      open={open}
+      onClose={close}
+      closeAfterTransition
+      BackdropComponent={Backdrop}
+      BackdropProps={{
+        timeout: 500,
+      }}
+      className={classes.modal}
+    >
+      <Grid container item xs={12} sm={6}>
         <Fade in={open}>
           <div className={classes.paper}>
             {body}
           </div>
         </Fade>
-      </Modal>
-    </>
+      </Grid>
+    </Modal>
   );
 }

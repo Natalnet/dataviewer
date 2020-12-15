@@ -4,7 +4,7 @@ import Container from '../../components/Container/Container';
 import BigCard from '../../components/BigCard/BigCard';
 import ViewChart from '../../components/ViewChart/index';
 import Students from "../../components/Students";
-
+import {Box} from '@material-ui/core'
 export default function Dashboard() {
 
   const [option, setOption] = useState(1);
@@ -36,16 +36,16 @@ export default function Dashboard() {
   return (
     <div>
       <Container>
-        <BigCard title="Desempenho nas listas" firstOption={firstOption}
-          secondOption={secondOption} handleClick={handleClick}>
+        <BigCard title="Desempenho nas listas" firstOption={option === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
+          secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClick}>
           { option === 1 ? <ViewChart /> : <Students /> }
         </BigCard>
-        <BigCard title="Desempenho nas provas" firstOption={firstOption}
-          secondOption={secondOption} handleClick={handleClickSecondCard}>
+        <BigCard title="Desempenho nas provas" firstOption={option2 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
+          secondOption={option2 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClickSecondCard}>
           { option2 === 1 ? <ViewChart /> : <Students /> }
         </BigCard>
-        <BigCard title="Desempenho geral" firstOption={firstOption}
-          secondOption={secondOption} handleClick={handleClickThirdCard}>
+        <BigCard title="Desempenho geral" firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
+          secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClickThirdCard}>
           { option3 === 1 ? <ViewChart /> : <Students /> }
         </BigCard>
       </Container>
