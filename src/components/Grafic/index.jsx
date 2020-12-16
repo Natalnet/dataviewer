@@ -13,7 +13,7 @@ import {
 export default function App(props) {
   
   return (
-    <ResponsiveContainer width="100%" height="60%">
+    <ResponsiveContainer width="100%" height="68%">
       <BarChart
         data={props.data}
         margin={{

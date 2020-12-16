@@ -1,24 +1,38 @@
 import React, { useState } from 'react';
 
-import Modal from './Modal';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 import MenuChart from '../MenuChart';
 
 import { Header, FilterInput, FilterSpace, FilterButton } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
-import students from '../../json/df_student_practice_mean_performance_all_subjects.json';
-
 import MediaPerLevel from '../Grafic/StudentGraficMediaPerLevel';
 import Grafic from '../Grafic/StudentGrafic';
-import json from '../../json/graph_performance_student_list_3.json';
-import json2 from '../../json/df_student_practice_mean_performance_by_subject.json';
 
-export default props => {
+export default function App({ students, performance, bySubject, dataKeyX, dataKeyBar, name }) {
     const [alunos, setAlunos] = useState(students);
     const [open, setOpen] = useState(false);
     const [matricula, setMatricula] = useState('');
     const [nome, setNome] = useState('');
     const [chart, setChart] = useState('Lista');
+
+    useState(() => {
+        let auxiliarAlunos = [...alunos].sort(function (a, b) {
+            const nomeA = a.user.toUpperCase();
+            const nomeB = b.user.toUpperCase();
+
+            if (nomeA === nomeB) {
+                return 0;
+            } else if (nomeA < nomeB) {
+                return -1;
+            } else {
+                return 1;
+            }
+
+        })
+        setAlunos(auxiliarAlunos);
+    }, [])
 
     function viewChart(value) {
         setChart(value);
@@ -32,7 +46,7 @@ export default props => {
 
     const handleClose = () => {
         setOpen(false);
-        setChart(1);
+        setChart("Lista");
     };
 
     function handleChange(e) {
@@ -73,24 +87,6 @@ export default props => {
             setAlunos(auxiliarAlunos);
         }
     }
-    const body = (
-        <div>
-            <h2 id="simple-modal-title">{nome}</h2>
-            <p id="simple-modal-description">
-                {matricula}
-            </p>
-            <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'} />
-            {chart === 'Lista' ?
-                <Grafic registration={matricula}
-                    json={json} dataKeyX={"list"} dataKeyBar={"mediaList"}
-                    fill={"#467fcf"} name={"Média da lista"} />
-                : chart === 'Assunto' ? <Grafic registration={matricula}
-                    json={json2} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
-                    fill={"#467fcf"} name={"Média por assunto"} />
-                    : <MediaPerLevel matricula={matricula} />
-            }
-        </div>
-    )
     return (
 
         <>
@@ -123,7 +119,24 @@ export default props => {
 
                     ))
                 }
-                <Modal open={open} body={body} close={handleClose} />
+                <Modal center open={open} onClose={handleClose}>
+                    <div>
+                        <h2 id="simple-modal-title">{nome}</h2>
+                        <p id="simple-modal-description">
+                            {matricula}
+                        </p>
+                        <MenuChart viewChart={viewChart} name1={'Lista'} name2={'Assunto'} name3={'Dificuldade'} name4={'Prediction'} />
+                        {chart === 'Lista' ?
+                            <Grafic registration={matricula}
+                                json={performance} dataKeyX={dataKeyX} dataKeyBar={dataKeyBar}
+                                fill={"#467fcf"} name={name} />
+                            : chart === 'Assunto' ? <Grafic registration={matricula}
+                                json={bySubject} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
+                                fill={"#467fcf"} name={"Média por assunto"} />
+                                : <MediaPerLevel matricula={matricula} />
+                        }
+                    </div>
+                </Modal>
             </Body>
         </>
     )

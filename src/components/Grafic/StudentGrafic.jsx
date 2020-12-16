@@ -13,8 +13,8 @@ function App(props) {
   return (
     <>
       <BarChart
-        width={700}
-        height={170}
+        width={340}
+        height={360}
         data={data}
         margin={{
           top: 20,

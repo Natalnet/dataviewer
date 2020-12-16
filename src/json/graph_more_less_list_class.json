@@ -51,8 +51,8 @@
   },
   {
     "list": "Repetição contada - Lista Prática (LOP)",
-    "more": 19,
-    "less": 7.0
+    "more": 20,
+    "less": 6.0
   },
   {
     "list": "Repetição contada - Lista Resolvida (LOP)",
@@ -61,8 +61,8 @@
   },
   {
     "list": "Repetição contada - Lista de Exercícios (LOP)",
-    "more": 12,
-    "less": 9.0
+    "more": 14,
+    "less": 7.0
   },
   {
     "list": "Treinamento - Expressões Aritméticas",
@@ -71,17 +71,17 @@
   },
   {
     "list": "Vetores - Lista Prática (LOP)",
-    "more": 7,
+    "more": 13,
     "less": 6.0
   },
   {
     "list": "Vetores - Lista Resolvida (LOP)",
-    "more": 11,
-    "less": 7.0
+    "more": 19,
+    "less": 6.0
   },
   {
     "list": "Vetores - Lista de Exercícios (LOP)",
-    "more": 6,
-    "less": 5.0
+    "more": 11,
+    "less": 7.0
   }
 ]
