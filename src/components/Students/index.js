@@ -135,7 +135,7 @@ export default function App({ students, performance, bySubject, byDifficulty, da
                                 json={bySubject} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
                                 fill={"#467fcf"} name={"Média por assunto"} />
                                 : <Grafic registration={matricula} json={byDifficulty} dataKeyX={"difficulty"}
-                                    dataKeyBar={"averageDifficulty"} name={"Média por dificuldade"} fill={"#467fcf"}/>
+                                    dataKeyBar={"averageDifficulty"} name={"Média por nível de dificuldade"} fill={"#467fcf"}/>
                         }
                     </div>
                 </Modal>
