@@ -7,10 +7,9 @@ import MenuChart from '../MenuChart';
 import { Header, FilterInput, FilterSpace, FilterButton } from './style';
 import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } from './style';
 
-import MediaPerLevel from '../Grafic/StudentGraficMediaPerLevel';
 import Grafic from '../Grafic/StudentGrafic';
 
-export default function App({ students, performance, bySubject, dataKeyX, dataKeyBar, name }) {
+export default function App({ students, performance, bySubject, byDifficulty, dataKeyX, dataKeyBar, name, type, media, mediaMean, mediaDifficulty }) {
     const [alunos, setAlunos] = useState(students);
     const [open, setOpen] = useState(false);
     const [matricula, setMatricula] = useState('');
@@ -106,9 +105,11 @@ export default function App({ students, performance, bySubject, dataKeyX, dataKe
                                 <Data>
                                     <Name>{aluno.user}</Name>
                                     <Name>Matricula: {aluno.registration}</Name>
-                                    <Note>Média por listas: {aluno.meanAllSubjects.toFixed(2)}%</Note>
-                                    <Note>Média por assuntos: {aluno.meanAllSubjects.toFixed(2)}%</Note>
-                                    <Note>Média por dificuldade: {aluno.meanAllSubjects.toFixed(2)}%</Note>
+                                    <Note>Média por {type}: {type==="lista" ? 
+                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].medialist.toFixed(2) : 
+                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].mediatest.toFixed(2)}%</Note>
+                                    <Note>Média por assuntos: {mediaMean.filter(item=> item.registration.trim() === aluno.registration.trim())[0].meanAllSubjects.toFixed(2)}%</Note>
+                                    <Note>Média por dificuldade: {mediaDifficulty.filter(item=> item.registration.trim() === aluno.registration.trim())[0].averageAllDifficulty.toFixed(2)}%</Note>
                                 </Data>
                             </Div>
                             {aluno.meanAllSubjects >= 50 ?
@@ -133,7 +134,8 @@ export default function App({ students, performance, bySubject, dataKeyX, dataKe
                             : chart === 'Assunto' ? <Grafic registration={matricula}
                                 json={bySubject} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
                                 fill={"#467fcf"} name={"Média por assunto"} />
-                                : <MediaPerLevel matricula={matricula} />
+                                : <Grafic registration={matricula} json={byDifficulty} dataKeyX={"difficulty"}
+                                    dataKeyBar={"averageDifficulty"} name={"Média por dificuldade"} fill={"#467fcf"}/>
                         }
                     </div>
                 </Modal>

@@ -10,6 +10,7 @@ import {
 } from "recharts";
 function App(props) {
   const data = props.json.filter(item => item.registration !== null && item.registration.trim() === props.registration.trim());
+  
   return (
     <>
       <BarChart
