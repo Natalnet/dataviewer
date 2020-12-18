@@ -9,43 +9,43 @@
     "list": "(Lop) Estruturas de decisão - Operadores Lógicos",
     "more": 33,
     "less": 2.0,
-    "missing": 91.0
+    "missing": 87.0
   },
   {
     "list": "(Lop) Estruturas de decisão - problemas sobre divisibilidade",
     "more": 37,
     "less": 5.0,
-    "missing": 90.0
+    "missing": 80.0
   },
   {
     "list": "(Lop) Lista de Laboratório 2 - Estrutura de decisão",
     "more": 51,
     "less": 5.0,
-    "missing": 76.0
+    "missing": 66.0
   },
   {
     "list": "Aula - Funções Aritméticas",
     "more": 65,
     "less": 14.0,
-    "missing": 71.0
+    "missing": 43.0
   },
   {
     "list": "Aula - Introdução Expressões Aritiméticas",
     "more": 78,
     "less": 17.0,
-    "missing": 61.0
+    "missing": 27.0
   },
   {
     "list": "Laboratório 01 - Expressões Aritméticas",
     "more": 88,
     "less": 12.0,
-    "missing": 46.0
+    "missing": 22.0
   },
   {
     "list": "Repetição condicional - Lista Prática (LOP)",
     "more": 27,
     "less": 7.0,
-    "missing": 102.0
+    "missing": 88.0
   },
   {
     "list": "Repetição condicional - Lista Resolvida (LOP)",
@@ -57,48 +57,48 @@
     "list": "Repetição condicional - Lista de Exercícios (LOP)",
     "more": 22,
     "less": 6.0,
-    "missing": 106.0
+    "missing": 94.0
   },
   {
     "list": "Repetição contada - Lista Prática (LOP)",
     "more": 20,
     "less": 6.0,
-    "missing": 108.0
+    "missing": 96.0
   },
   {
     "list": "Repetição contada - Lista Resolvida (LOP)",
-    "more": 28,
+    "more": 29,
     "less": 3.0,
-    "missing": 97.0
+    "missing": 90.0
   },
   {
     "list": "Repetição contada - Lista de Exercícios (LOP)",
     "more": 14,
     "less": 7.0,
-    "missing": 115.0
+    "missing": 101.0
   },
   {
     "list": "Treinamento - Expressões Aritméticas",
     "more": 46,
     "less": 23.0,
-    "missing": 99.0
+    "missing": 53.0
   },
   {
     "list": "Vetores - Lista Prática (LOP)",
     "more": 14,
     "less": 7.0,
-    "missing": 115.0
+    "missing": 101.0
   },
   {
     "list": "Vetores - Lista Resolvida (LOP)",
-    "more": 21,
+    "more": 22,
     "less": 6.0,
-    "missing": 107.0
+    "missing": 94.0
   },
   {
     "list": "Vetores - Lista de Exercícios (LOP)",
     "more": 12,
     "less": 6.0,
-    "missing": 116.0
+    "missing": 104.0
   }
 ]
