@@ -19,7 +19,8 @@ export default function App({moreLess, dataKeyX, performance, byDifficulty, data
                 <Grafic data={moreLess} dataKeyX={dataKeyX}
                     dataKeyBar0={'more'} fill0={'#82ca9d'}
                     nameBar0={'Bom Desempenho'} dataKeyBar1={'less'}
-                    fill1={'#F08080'} nameBar1={'Baixo Desempenho'} />
+                    fill1={'#F08080'} nameBar1={'Baixo Desempenho'} 
+                    dataKeyBar2={'missing'} fill2={'#808080'} nameBar2={'Faltosos'} />
 
 
                 : chart === 'Assunto' ?

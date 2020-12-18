@@ -17,7 +17,7 @@ import bySubjectTest from '../../json/df_student_test_mean_performance_by_subjec
 import moreLessList from '../../json/graph_more_less_list_class.json';
 import moreLessTest from '../../json/graph_more_less_test_class.json'
 import performanceSubject from '../../json/df_featured_practice_subjects.json';
-import performanceSubjectTest from '../../json/df_class_test_mean_performance_by_subject.json'
+import performanceSubjectTest from '../../json/df_featured_test_subjects.json'
 import aprovDisaprovList from '../../json/df_aprov_disaprov_listas.json';
 import aprovDisaprovTest from '../../json/df_aprov_disaprov_provas.json';
 
@@ -30,7 +30,10 @@ import mediaMeanTest from '../../json/df_student_test_mean_performance_all_subje
 
 import mediaList from '../../json/graph_performance_student_list.json';
 import mediaTest from '../../json/graph_performance_student_test.json';
-
+import mediaAllMeanList from '../../json/df_class_practice_mean_performance_by_subject.json'
+import mediaAllMeanTest from '../../json/df_class_test_mean_performance_by_subject.json'
+import mediaAllDifficultyList from '../../json/df_classAverage_list.json'
+import mediaAllDifficultyTest from '../../json/df_classAverage_test.json'
 export default function Dashboard() {
 
   const [option, setOption] = useState(1);
@@ -74,18 +77,24 @@ export default function Dashboard() {
             :
             <Students students={studentsList} dataKeyX={"list"} dataKeyBar={"medialist"} name={"Média da lista"}
               performance={performanceList} bySubject={bySubjectList} byDifficulty={byDifficultyList} 
-              type={"lista"} media={mediaList} mediaMean={mediaMeanList} mediaDifficulty={mediaDifficultyList}/>}
+              type={"lista"} media={mediaList} mediaMean={mediaMeanList} mediaDifficulty={mediaDifficultyList}
+              mediaAllMean={mediaAllMeanList} mediaAllDifficulty={mediaAllDifficultyList}
+              />}
         </BigCard>
         <BigCard title="Desempenho nas provas" firstOption={option2 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
           secondOption={option2 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClickSecondCard}>
           {option2 === 1 ?
-            <ViewChart moreLess={moreLessTest} dataKeyX={"test"} dataKeyBar0={"classMean"}
-              nameBar0={'Média da turma'}
+            <ViewChart moreLess={moreLessTest} dataKeyX={"test"} dataKeyBar0={"highPerformance"}
+              nameBar0={'Alto Rendimento'}  dataKeyBar1={'lowPerformance'}
+              fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
+              dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'}
               performance={performanceSubjectTest} byDifficulty={aprovDisaprovTest} />
             :
             <Students students={studentsTest} dataKeyX={"test"} dataKeyBar={"mediatest"} name={"Média do teste"}
               performance={performanceTest} bySubject={bySubjectTest} byDifficulty={byDifficultyTest} 
-              type={"prova"} media={mediaTest} mediaMean={mediaMeanTest} mediaDifficulty={mediaDifficultyTest}/>}
+              type={"prova"} media={mediaTest} mediaMean={mediaMeanTest} mediaDifficulty={mediaDifficultyTest}
+              mediaAllMean={mediaAllMeanTest} mediaAllDifficulty={mediaAllDifficultyTest}
+              />}
         </BigCard>
         <BigCard title="Desempenho geral" firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
           secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClickThirdCard}>

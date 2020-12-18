@@ -9,7 +9,8 @@ import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } fro
 
 import Grafic from '../Grafic/StudentGrafic';
 
-export default function App({ students, performance, bySubject, byDifficulty, dataKeyX, dataKeyBar, name, type, media, mediaMean, mediaDifficulty }) {
+export default function App({ students, performance, bySubject, byDifficulty, 
+    dataKeyX, dataKeyBar, name, type, media, mediaMean, mediaDifficulty, mediaAllMean, mediaAllDifficulty }) {
     const [alunos, setAlunos] = useState(students);
     const [open, setOpen] = useState(false);
     const [matricula, setMatricula] = useState('');
@@ -133,9 +134,13 @@ export default function App({ students, performance, bySubject, byDifficulty, da
                                 fill={"#467fcf"} name={name} />
                             : chart === 'Assunto' ? <Grafic registration={matricula}
                                 json={bySubject} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
-                                fill={"#467fcf"} name={"Média por assunto"} />
+                                fill={"#467fcf"} name={"Média por assunto"} media={mediaAllMean}
+                                dataKeyBar1={"classMean"} 
+                                    fill1={"rgb(130, 202, 157)"} name1={"Média da turma"}/>
                                 : <Grafic registration={matricula} json={byDifficulty} dataKeyX={"difficulty"}
-                                    dataKeyBar={"averageDifficulty"} name={"Média por nível de dificuldade"} fill={"#467fcf"}/>
+                                    dataKeyBar={"averageDifficulty"} name={"Média por nível de dificuldade"} 
+                                    fill={"#467fcf"} media={mediaAllDifficulty} dataKeyBar1={"classAverage"} 
+                                    fill1={"rgb(130, 202, 157)"} name1={"Média da turma"} />
                         }
                     </div>
                 </Modal>
