@@ -113,10 +113,15 @@ export default function App({ students, performance, bySubject, byDifficulty,
                                     <Note>Média por dificuldade: {mediaDifficulty.filter(item=> item.registration.trim() === aluno.registration.trim())[0].averageAllDifficulty.toFixed(2)}%</Note>
                                 </Data>
                             </Div>
-                            {aluno.meanAllSubjects >= 50 ?
-                                <Indicator success={true} />
-                                : <Indicator success={false} />
-                            }
+                            {type==="lista" ? 
+                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].medialist.toFixed(2) >= 50 ?
+                                    <Indicator success={true} />
+                                    : <Indicator success={false} />
+                                 : 
+                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].mediatest.toFixed(2) >= 50 ?
+                                    <Indicator success={true} />
+                                    : <Indicator success={false} />
+                                }
                         </StudentData>
 
                     ))
