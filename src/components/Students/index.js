@@ -88,7 +88,6 @@ export default function App({ students, performance, bySubject, byDifficulty,
         }
     }
     return (
-
         <>
             <Header>
                 <FilterSpace>
@@ -138,14 +137,14 @@ export default function App({ students, performance, bySubject, byDifficulty,
                                 json={performance} dataKeyX={dataKeyX} dataKeyBar={dataKeyBar}
                                 fill={"#467fcf"} name={name} />
                             : chart === 'Assunto' ? <Grafic registration={matricula}
-                                json={bySubject} dataKeyX={"subject"} dataKeyBar={"meanSubject"}
-                                fill={"#467fcf"} name={"Média por assunto"} media={mediaAllMean}
-                                dataKeyBar1={"classMean"} 
+                                json={bySubject} dataKeyX={"subject"} dataKeyBar={"studentMeanSubject"}
+                                fill={"#467fcf"} name={"Média do aluno por assunto"} media={mediaAllMean}
+                                dataKeyBar1={"classMeanSubject"} 
                                     fill1={"rgb(130, 202, 157)"} name1={"Média da turma"}/>
                                 : <Grafic registration={matricula} json={byDifficulty} dataKeyX={"difficulty"}
                                     dataKeyBar={"averageDifficulty"} name={"Média por nível de dificuldade"} 
-                                    fill={"#467fcf"} media={mediaAllDifficulty} dataKeyBar1={"classAverage"} 
-                                    fill1={"rgb(130, 202, 157)"} name1={"Média da turma"} />
+                                    fill={"#467fcf"} media={mediaAllDifficulty} dataKeyBar2={"classAverage"} 
+                                    fill2={"rgb(130, 202, 157)"} name2={"Média da turma"} />
                         }
                     </div>
                 </Modal>

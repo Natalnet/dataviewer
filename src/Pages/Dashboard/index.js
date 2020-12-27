@@ -65,39 +65,45 @@ export default function Dashboard() {
   return (
     <div>
       <Container>
-        <BigCard title="Desempenho nas listas" firstOption={option === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
-          secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClick}>
+        <BigCard title="Desempenho nas listas"
+          firstOption={option === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
+          secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
+          handleClick={handleClick}>
           {option === 1 ?
             <ViewChart moreLess={moreLessList} dataKeyX={"list"} dataKeyBar0={"highPerformance"}
-            nameBar0={'Alto Rendimento'}  dataKeyBar1={'lowPerformance'}
-            fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
-            dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'}
-            performance={performanceSubject} byDifficulty={aprovDisaprovList} 
+              nameBar0={'Alto Rendimento'} dataKeyBar1={'lowPerformance'}
+              fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
+              dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'}
+              performance={performanceSubject} byDifficulty={aprovDisaprovList}
             />
             :
             <Students students={studentsList} dataKeyX={"list"} dataKeyBar={"medialist"} name={"Média da lista"}
-              performance={performanceList} bySubject={bySubjectList} byDifficulty={byDifficultyList} 
+              performance={performanceList} bySubject={bySubjectList} byDifficulty={byDifficultyList}
               type={"lista"} media={mediaList} mediaMean={mediaMeanList} mediaDifficulty={mediaDifficultyList}
               mediaAllMean={mediaAllMeanList} mediaAllDifficulty={mediaAllDifficultyList}
-              />}
+            />}
         </BigCard>
-        <BigCard title="Desempenho nas provas" firstOption={option2 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
-          secondOption={option2 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClickSecondCard}>
+        <BigCard title="Desempenho nas provas"
+          firstOption={option2 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
+          secondOption={option2 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
+          handleClick={handleClickSecondCard}>
           {option2 === 1 ?
             <ViewChart moreLess={moreLessTest} dataKeyX={"test"} dataKeyBar0={"highPerformance"}
-              nameBar0={'Alto Rendimento'}  dataKeyBar1={'lowPerformance'}
+              nameBar0={'Alto Rendimento'} dataKeyBar1={'lowPerformance'}
               fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
               dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'}
               performance={performanceSubjectTest} byDifficulty={aprovDisaprovTest} />
             :
             <Students students={studentsTest} dataKeyX={"test"} dataKeyBar={"mediatest"} name={"Média do teste"}
-              performance={performanceTest} bySubject={bySubjectTest} byDifficulty={byDifficultyTest} 
+              performance={performanceTest} bySubject={bySubjectTest} byDifficulty={byDifficultyTest}
               type={"prova"} media={mediaTest} mediaMean={mediaMeanTest} mediaDifficulty={mediaDifficultyTest}
               mediaAllMean={mediaAllMeanTest} mediaAllDifficulty={mediaAllDifficultyTest}
-              />}
+            />}
         </BigCard>
-        <BigCard title="Desempenho geral" firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
-          secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption} handleClick={handleClickThirdCard}>
+        <BigCard title="Desempenho geral"
+          firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
+          secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
+          handleClick={handleClickThirdCard}>
           {option3 === 1 ? <ViewChart /> : <Students />}
         </BigCard>
       </Container>

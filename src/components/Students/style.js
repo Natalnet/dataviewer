@@ -62,10 +62,13 @@ export const StudentData = styled.div`
     width: 50%;
     display: flex;
     align-items: center;
-    margin: 0.5em 0;
+    margin: 0.6em 0;
     justify-content: space-between;
-    padding-right: 1.3em;
+    padding-right: 1.2em;
     cursor: pointer;
+    &:hover {
+        color: #595959;
+    }
 `;
 
 export const Div = styled.div`
