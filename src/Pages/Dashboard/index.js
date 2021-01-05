@@ -103,13 +103,13 @@ export default function Dashboard() {
               mediaAllMean={mediaAllMeanTest} mediaAllDifficulty={mediaAllDifficultyTest}
             />}
         </BigCard>
-        <BigCard title="Desempenho geral"
+        {/* <BigCard title="Desempenho geral"
           firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
           secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
           handleClick={handleClickThirdCard}>
           {option3 === 1 ? <ViewChart /> : <Students />}
-        </BigCard>
-      </Container>
+        </BigCard>*/}
+        </Container> 
     </div>
   );
 }
