@@ -45,18 +45,27 @@ export default function App() {
   const [open, setOpen] = React.useState(false);
   const [show, setShow] = React.useState(false);
   const [type, setType] = React.useState('');
-  const [proporcao, setProporcao] = React.useState(50);
+  const [proporcaoLista, setProporcaoLista] = React.useState(50);
+  const [proporcaoProva, setProporcaoProva] = React.useState(50);
 
   function editData(type) {
     setType(type);
     setOpen(true);
   }
   function handleChange(e) {
-    setProporcao(e.target.value);
+    if (type === 'Lista') {
+      setProporcaoLista(e.target.value);
+    } else {
+      setProporcaoProva(e.target.value);
+    }
   }
   function handleClick(e) {
-    if(e.key==='Enter' || e.key===undefined) {
-      console.log("{\n type: '" + type + "'\n proporcao: " + proporcao + "\n}");
+    if (e.key === 'Enter' || e.key === undefined) {
+      if (type === 'Lista') {
+        console.log("{\n type: '" + type + "'\n proporcao: " + proporcaoLista + "\n}");
+      } else {
+        console.log("{\n type: '" + type + "'\n proporcao: " + proporcaoProva + "\n}");
+      }
       setType('');
       setOpen(false);
     }
@@ -90,7 +99,7 @@ export default function App() {
               </StyledTableCell>
                 <StyledTableCell id="number" align="right">
                   <Tooltip disableFocusListener disableTouchListener title="Edit">
-                    <Button onClick={() => editData('Lista')}>{proporcao}</Button>
+                    <Button onClick={() => editData('Lista')}>{proporcaoLista}</Button>
                   </Tooltip>
                 </StyledTableCell>
               </StyledTableRow>
@@ -100,7 +109,7 @@ export default function App() {
               </StyledTableCell>
                 <StyledTableCell align="right">
                   <Tooltip disableFocusListener disableTouchListener title="Edit">
-                    <Button onClick={() => editData('Prova')}>50</Button>
+                    <Button onClick={() => editData('Prova')}>{proporcaoProva}</Button>
                   </Tooltip>
                 </StyledTableCell>
               </StyledTableRow>
