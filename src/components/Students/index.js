@@ -142,7 +142,7 @@ export default function App({ students, performance, bySubject, byDifficulty,
                                 dataKeyBar1={"classMeanSubject"} 
                                     fill1={"rgb(130, 202, 157)"} name1={"Média da turma"}/>
                                 : <Grafic registration={matricula} json={byDifficulty} dataKeyX={"difficulty"}
-                                    dataKeyBar={"averageDifficulty"} name={"Média por nível de dificuldade"} 
+                                    dataKeyBar={"averageDifficulty"} name={"Média do aluno por nível de dificuldade"} 
                                     fill={"#467fcf"} media={mediaAllDifficulty} dataKeyBar1={"classAverage"} 
                                     fill1={"rgb(130, 202, 157)"} name1={"Média da turma"} />
                         }

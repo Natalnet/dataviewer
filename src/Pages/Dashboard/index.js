@@ -5,7 +5,7 @@ import BigCard from '../../components/BigCard/BigCard';
 import ViewChart from '../../components/ViewChart/index';
 import Students from "../../components/Students";
 import { Box } from '@material-ui/core'
-
+import Media from '../../components/Media'
 
 import studentsList from '../../json/df_student_practice_mean_performance_all_subjects.json';
 import performanceList from '../../json/graph_performance_student_list.json';
@@ -64,6 +64,9 @@ export default function Dashboard() {
 
   return (
     <div>
+      <Container>
+        <Media />
+      </Container>
       <Container>
         <BigCard title="Desempenho nas listas"
           firstOption={option === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
