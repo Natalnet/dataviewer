@@ -34,14 +34,22 @@ import mediaAllMeanList from '../../json/df_class_practice_mean_performance_by_s
 import mediaAllMeanTest from '../../json/df_class_test_mean_performance_by_subject.json'
 import mediaAllDifficultyList from '../../json/df_classAverage_list.json'
 import mediaAllDifficultyTest from '../../json/df_classAverage_test.json'
+import { useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 export default function Dashboard() {
 
   const [option, setOption] = useState(1);
   const [option2, setOption2] = useState(1);
-  const [option3, setOption3] = useState(1);
+  const history = useHistory();
+  const location = useLocation();
+  //const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
-
+  useEffect(()=>{
+    if(location.state){
+      history.push("/turmas");
+    }
+  },[location.state, history])
   function handleClick(option) {
     if (option === firstOption)
       setOption(1);
@@ -55,12 +63,12 @@ export default function Dashboard() {
     else
       setOption2(2);
   }
-  function handleClickThirdCard(option) {
-    if (option === firstOption)
-      setOption3(1);
-    else
-      setOption3(2);
-  }
+  // function handleClickThirdCard(option) {
+  //   if (option === firstOption)
+  //     setOption3(1);
+  //   else
+  //     setOption3(2);
+  // }
 
   return (
     <div>
