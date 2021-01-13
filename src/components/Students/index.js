@@ -52,7 +52,7 @@ export default function App({ students, performance, bySubject, byDifficulty,
     function handleChange(e) {
         let busca = e.target.value;
         if (busca !== '')
-            setAlunos(students.filter(item => (item.user.includes(busca))));
+            setAlunos(students.filter(item => (item.user.toLowerCase().includes(busca.toLowerCase()))));
         else
             setAlunos(students);
     }

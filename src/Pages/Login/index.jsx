@@ -5,11 +5,13 @@ import StoreContext from '../../components/Store/Context';
 import {
   Container,
   Typography,
-  TextField,
-  Button,
+  Link,
+  List,
+  ListItem,
   makeStyles,
   CssBaseline
 } from '@material-ui/core';
+import { FilterButton, FilterInput, FilterSpace } from '../../components/Students/style';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -17,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: '5%'
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: '2%'
   },
   form: {
     width: '90%', // Fix IE 11 issue.
@@ -33,33 +35,47 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     width: '100%',
     textAlign: 'center'
+  },
+  link: {
+    color: '#495057',
   }
 }));
 
 export default function App() {
   const classes = useStyles();
-  const [logins, setLogins] = useState();
+  const [logins, setLogins] = useState([]);
   const history = useHistory();
-  const [id, setId] = useState('');
   const { setToken } = useContext(StoreContext);
+  const [names, setNames] = useState([]);
 
   useEffect(() => {
-    api.get("/get_class").then(response => setLogins(response.data));
+    api.get("/get_class").then(response => {
+      setLogins(response.data);
+      setNames(response.data.filter((thing, index, self) =>
+        index === self.findIndex((t) => (
+          t.id_teacher === thing.id_teacher
+        ))));
+    });
   }
     , []);
-
-  function handleChange(e) {
-    setId(e.target.value);
-  }
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleClick(id) {
     const login = logins.filter(item => item.id_teacher !== null
-      && item.id_teacher.trim() === id.trim());
+      && item.id_teacher.trim() === id);
     if (login.length !== 0) {
-      setToken(id);
+      setToken(login[0].id_teacher);
       return history.push("/turmas", login);
     }
-    setId('');
+  }
+
+  function handleChange(e) {
+    let busca = e.target.value;
+    if (busca !== '')
+      setNames(names.filter(item => (item.name_teacher.toLowerCase().includes(busca.toLowerCase()))));
+    else
+      setNames(logins.filter((thing, index, self) =>
+        index === self.findIndex((t) => (
+          t.id_teacher === thing.id_teacher
+        ))));
   }
   return (
     <Container component="main" maxWidth="xs" >
@@ -67,22 +83,26 @@ export default function App() {
       <div className={classes.paper}>
         <div className={classes.text} >
           <Typography component="h1" variant="h4">
-            Olá, Professor
+            Olá, Professor(a)
           </Typography>
           <Typography component="h4" variant="h6">
-            Poderia nos informar o seu id no campo abaixo?
+            Poderia selecionar o seu nome dentre as opções abaixo?
           </Typography>
         </div>
-        <form className={classes.form} onSubmit={handleSubmit} >
-          <TextField variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="id_professor"
-            autoFocus
-            onChange={handleChange} />
-          <Button type="submit" className={classes.submit}>Enviar</Button>
-        </form>
+        <FilterSpace>
+          <FilterInput type="text" onChange={handleChange} placeholder="Digite seu nome para facilitar a busca" />
+          <FilterButton className="fas fa-filter" />
+        </FilterSpace>
+        <List component="nav" className={classes.list} aria-label="Turmas">
+          {names.map(item => (
+            <ListItem key={item.id_teacher}>
+              <Link component="button" onClick={() => handleClick(item.id_teacher)} className={classes.link} >
+                {item.name_teacher}
+              </Link>
+            </ListItem>
+          )
+          )}
+        </List>
       </div>
     </Container>
   );
