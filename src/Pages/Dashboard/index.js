@@ -13,9 +13,6 @@ import performanceTest from '../../json/graph_performance_student_test.json';
 import bySubjectList from '../../json/df_student_practice_mean_performance_by_subject.json';
 import studentsTest from '../../json/df_student_test_mean_performance_all_subjects.json';
 import bySubjectTest from '../../json/df_student_test_mean_performance_by_subject.json';
-
-import moreLessList from '../../json/graph_more_less_list_class.json';
-import moreLessTest from '../../json/graph_more_less_test_class.json'
 import performanceSubject from '../../json/df_featured_practice_subjects.json';
 import performanceSubjectTest from '../../json/df_featured_test_subjects.json'
 import aprovDisaprovList from '../../json/df_aprov_disaprov_listas.json';
@@ -27,9 +24,6 @@ import mediaDifficultyList from '../../json/df_averageAllDifficulty_list.json';
 import mediaDifficultyTest from '../../json/df_averageAllDifficulty_test.json';
 import mediaMeanList from '../../json/df_student_practice_mean_performance_all_subjects.json';
 import mediaMeanTest from '../../json/df_student_test_mean_performance_all_subjects.json';
-
-import mediaList from '../../json/graph_performance_student_list.json';
-import mediaTest from '../../json/graph_performance_student_test.json';
 import mediaAllMeanList from '../../json/df_class_practice_mean_performance_by_subject.json'
 import mediaAllMeanTest from '../../json/df_class_test_mean_performance_by_subject.json'
 import mediaAllDifficultyList from '../../json/df_classAverage_list.json'
@@ -45,10 +39,18 @@ export default function Dashboard() {
   //const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
+  const [mediaList, setList] = useState([]);
+  const [mediaTest, setTest] = useState([]);
+  const [moreLessList, setMoreLessList] = useState([]);
+  const [moreLessTest, setMoreLessTest] = useState([]);
   useEffect(()=>{
-    if(location.state){
-      history.push("/turmas");
+    if(!location.state){
+      return history.push("/login");
     }
+    setList(location.state.g1);
+    setTest(location.state.g2);
+    setMoreLessList(location.state.g3);
+    setMoreLessTest(location.state.g3);
   },[location.state, history])
   function handleClick(option) {
     if (option === firstOption)
@@ -56,7 +58,6 @@ export default function Dashboard() {
     else
       setOption(2);
   }
-
   function handleClickSecondCard(option) {
     if (option === firstOption)
       setOption2(1);

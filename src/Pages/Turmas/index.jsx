@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import {
   Container,
   Typography,
@@ -36,9 +36,18 @@ export default function App(props) {
   const classes = useStyles();
   const location = useLocation();
   const turmas = location.state;
+  const history = useHistory();
 
+  useEffect(() => {
+    if(!location.state){
+      history.push("/login");
+    }
+  },[location.state, history])
   function handleClick(id) {
-    api.post("/graphs", {id_class: id}).then(response => console.log(response.data));
+    api.get(`/get_graphs/${id}`).then(response => {
+      const graphs = response.data;
+      history.push('/', graphs);
+    });
   }
   return (
     <Container component="main" maxWidth="xs" className={classes.paper}>
