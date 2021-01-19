@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import StoreProvider from './components/Store/Provider';
 import RoutesPrivate from './components/Routes/Private/Private';
-import Home from './Pages/Dashboard';
+import Home from './components/Menu';
 import Login from './Pages/Login';
 import Turmas from './Pages/Turmas';
 

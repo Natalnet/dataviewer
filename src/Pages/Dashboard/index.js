@@ -5,7 +5,6 @@ import BigCard from '../../components/BigCard/BigCard';
 import ViewChart from '../../components/ViewChart/index';
 import Students from "../../components/Students";
 import { Box } from '@material-ui/core'
-import Media from '../../components/Media'
 
 import studentsList from '../../json/df_student_practice_mean_performance_all_subjects.json';
 import performanceList from '../../json/graph_performance_student_list.json';
@@ -28,30 +27,17 @@ import mediaAllMeanList from '../../json/df_class_practice_mean_performance_by_s
 import mediaAllMeanTest from '../../json/df_class_test_mean_performance_by_subject.json'
 import mediaAllDifficultyList from '../../json/df_classAverage_list.json'
 import mediaAllDifficultyTest from '../../json/df_classAverage_test.json'
-import { useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-export default function Dashboard() {
+
+import maxDayTime from '../../json/df_max_day_time.json';
+
+export default function Dashboard(props) {
 
   const [option, setOption] = useState(1);
   const [option2, setOption2] = useState(1);
-  const history = useHistory();
-  const location = useLocation();
   //const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
-  const [mediaList, setList] = useState([]);
-  const [mediaTest, setTest] = useState([]);
-  const [moreLessList, setMoreLessList] = useState([]);
-  const [moreLessTest, setMoreLessTest] = useState([]);
-  useEffect(()=>{
-    if(!location.state){
-      return history.push("/login");
-    }
-    setList(location.state.g1);
-    setTest(location.state.g2);
-    setMoreLessList(location.state.g3);
-    setMoreLessTest(location.state.g3);
-  },[location.state, history])
+
   function handleClick(option) {
     if (option === firstOption)
       setOption(1);
@@ -64,6 +50,7 @@ export default function Dashboard() {
     else
       setOption2(2);
   }
+  
   // function handleClickThirdCard(option) {
   //   if (option === firstOption)
   //     setOption3(1);
@@ -72,26 +59,22 @@ export default function Dashboard() {
   // }
 
   return (
-    <div>
-      <Container>
-        <Media />
-      </Container>
       <Container>
         <BigCard title="Desempenho nas listas"
           firstOption={option === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
           secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
           handleClick={handleClick}>
           {option === 1 ?
-            <ViewChart moreLess={moreLessList} dataKeyX={"list"} dataKeyBar0={"highPerformance"}
+            <ViewChart moreLess={props.GENL} dataKeyX={"list"} dataKeyBar0={"highPerformance"}
               nameBar0={'Alto Rendimento'} dataKeyBar1={'lowPerformance'}
               fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
               dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'}
-              performance={performanceSubject} byDifficulty={aprovDisaprovList}
+              performance={performanceSubject} byDifficulty={aprovDisaprovList} maxDayTime = {maxDayTime}
             />
             :
             <Students students={studentsList} dataKeyX={"list"} dataKeyBar={"medialist"} name={"Média da lista"}
               performance={performanceList} bySubject={bySubjectList} byDifficulty={byDifficultyList}
-              type={"lista"} media={mediaList} mediaMean={mediaMeanList} mediaDifficulty={mediaDifficultyList}
+              type={"lista"} media={props.GTNL} mediaMean={mediaMeanList} mediaDifficulty={mediaDifficultyList}
               mediaAllMean={mediaAllMeanList} mediaAllDifficulty={mediaAllDifficultyList}
             />}
         </BigCard>
@@ -100,7 +83,7 @@ export default function Dashboard() {
           secondOption={option2 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
           handleClick={handleClickSecondCard}>
           {option2 === 1 ?
-            <ViewChart moreLess={moreLessTest} dataKeyX={"test"} dataKeyBar0={"highPerformance"}
+            <ViewChart moreLess={props.GENP} dataKeyX={"test"} dataKeyBar0={"highPerformance"}
               nameBar0={'Alto Rendimento'} dataKeyBar1={'lowPerformance'}
               fill1={'#F08080'} nameBar1={'Baixo Rendimento'}
               dataKeyBar2={'faltosos'} fill2={'#808080'} nameBar2={'Faltosos'}
@@ -108,7 +91,7 @@ export default function Dashboard() {
             :
             <Students students={studentsTest} dataKeyX={"test"} dataKeyBar={"mediatest"} name={"Média do teste"}
               performance={performanceTest} bySubject={bySubjectTest} byDifficulty={byDifficultyTest}
-              type={"prova"} media={mediaTest} mediaMean={mediaMeanTest} mediaDifficulty={mediaDifficultyTest}
+              type={"prova"} media={props.GTNP} mediaMean={mediaMeanTest} mediaDifficulty={mediaDifficultyTest}
               mediaAllMean={mediaAllMeanTest} mediaAllDifficulty={mediaAllDifficultyTest}
             />}
         </BigCard>
@@ -118,7 +101,6 @@ export default function Dashboard() {
           handleClick={handleClickThirdCard}>
           {option3 === 1 ? <ViewChart /> : <Students />}
         </BigCard>*/}
-        </Container> 
-    </div>
+      </Container>
   );
 }

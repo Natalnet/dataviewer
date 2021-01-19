@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const BigCard = styled.div`
     width: 48em;
-    margin-top: 5em;
+    margin-top: 2em;
     min-width: 24em;
     background: #fff;
     height: 28em;

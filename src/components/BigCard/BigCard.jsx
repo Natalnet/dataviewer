@@ -2,7 +2,7 @@ import React from "react";
 
 
 /* Components General */
-import { HeaderCard, TitleCard, Options, Option, Line } from "../Card/Card";
+import { HeaderCard, TitleCard, Options, Option, Line } from "../Card";
 
 import { BigCard } from './style';
 
