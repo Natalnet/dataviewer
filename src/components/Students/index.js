@@ -10,7 +10,7 @@ import { Body, Div, StudentData, StudentImage, Data, Name, Note, Indicator } fro
 import Grafic from '../Grafic/StudentGrafic';
 
 export default function App({ students, performance, bySubject, byDifficulty, 
-    dataKeyX, dataKeyBar, name, type, media, mediaMean, mediaDifficulty, mediaAllMean, mediaAllDifficulty }) {
+    dataKeyX, dataKeyBar, name, type, mediaMean, mediaDifficulty, mediaAllMean, mediaAllDifficulty }) {
     const [alunos, setAlunos] = useState(students);
     const [open, setOpen] = useState(false);
     const [matricula, setMatricula] = useState('');
@@ -106,18 +106,18 @@ export default function App({ students, performance, bySubject, byDifficulty,
                                     <Name>{aluno.user}</Name>
                                     <Name>Matricula: {aluno.registration}</Name>
                                     <Note>Média por {type}: {type==="lista" ? 
-                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].medialist.toFixed(2) : 
-                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].mediatest.toFixed(2)}%</Note>
+                                    performance.filter(item=> item.registration.trim() === aluno.registration.trim())[0].medialist.toFixed(2) : 
+                                    performance.filter(item=> item.registration.trim() === aluno.registration.trim())[0].mediatest.toFixed(2)}%</Note>
                                     <Note>Média por assuntos: {mediaMean.filter(item=> item.registration.trim() === aluno.registration.trim())[0].meanAllSubjects.toFixed(2)}%</Note>
                                     <Note>Média por dificuldade: {mediaDifficulty.filter(item=> item.registration.trim() === aluno.registration.trim())[0].averageAllDifficulty.toFixed(2)}%</Note>
                                 </Data>
                             </Div>
                             {type==="lista" ? 
-                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].medialist.toFixed(2) >= 50 ?
+                                    performance.filter(item=> item.registration.trim() === aluno.registration.trim())[0].medialist.toFixed(2) >= 50 ?
                                     <Indicator success={true} />
                                     : <Indicator success={false} />
                                  : 
-                                    media.filter(item=> item.registration.trim() === aluno.registration.trim())[0].mediatest.toFixed(2) >= 50 ?
+                                    performance.filter(item=> item.registration.trim() === aluno.registration.trim())[0].mediatest.toFixed(2) >= 50 ?
                                     <Indicator success={true} />
                                     : <Indicator success={false} />
                                 }
@@ -135,15 +135,16 @@ export default function App({ students, performance, bySubject, byDifficulty,
                         {chart === 'Lista' ?
                             <Grafic registration={matricula}
                                 json={performance} dataKeyX={dataKeyX} dataKeyBar={dataKeyBar}
-                                fill={"#467fcf"} name={name} />
+                                fill={"#467fcf"} name={name} dataKeyBar1={"mediaListClass"} 
+                                fill1={"rgb(130, 202, 157)"} name1={"Média da turma"}/>
                             : chart === 'Assunto' ? <Grafic registration={matricula}
-                                json={bySubject} dataKeyX={"subject"} dataKeyBar={"studentMeanSubject"}
-                                fill={"#467fcf"} name={"Média do aluno por assunto"} media={mediaAllMean}
-                                dataKeyBar1={"classMeanSubject"} 
+                                json={bySubject} dataKeyX={"subject"} dataKeyBar={"mediaSubject"}
+                                fill={"#467fcf"} name={"Média do aluno por assunto"}
+                                dataKeyBar1={"mediaSubjectClass"} 
                                     fill1={"rgb(130, 202, 157)"} name1={"Média da turma"}/>
                                 : <Grafic registration={matricula} json={byDifficulty} dataKeyX={"difficulty"}
-                                    dataKeyBar={"averageDifficulty"} name={"Média do aluno por nível de dificuldade"} 
-                                    fill={"#467fcf"} media={mediaAllDifficulty} dataKeyBar1={"classAverage"} 
+                                    dataKeyBar={"mediaDifficulty"} name={"Média do aluno por nível de dificuldade"} 
+                                    fill={"#467fcf"} dataKeyBar1={"mediaDifficultyClass"} 
                                     fill1={"rgb(130, 202, 157)"} name1={"Média da turma"} />
                         }
                     </div>

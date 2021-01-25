@@ -4,9 +4,9 @@ import React from "react";
 /* Components General */
 import { HeaderCard, TitleCard, Options, Option, Line } from "../Card";
 
-import { BigCard } from './style';
+import { BigCard, BigCardTime } from './style';
 
-export default (props) => {
+export function Card(props) {
 
   const firstOption = props.firstOption;
   const secondOption = props.secondOption;
@@ -28,5 +28,29 @@ export default (props) => {
       </HeaderCard>
       {props.children}
     </BigCard>
+  );
+};
+export function CardTime(props) {
+
+  const firstOption = props.firstOption;
+  const secondOption = props.secondOption;
+
+  return (
+    <BigCardTime>
+      <HeaderCard>
+        <TitleCard>{props.title}</TitleCard>
+        <Options>
+          {/*Estou executando a função passando o parâmetro desejado */}
+          <Option onClick={() => props.handleClick(firstOption)}>
+            {firstOption}
+          </Option>
+          <Line />
+          <Option onClick={() => props.handleClick(secondOption)}>
+            {secondOption}
+          </Option>
+        </Options>
+      </HeaderCard>
+      {props.children}
+    </BigCardTime>
   );
 };

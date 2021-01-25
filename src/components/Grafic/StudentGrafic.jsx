@@ -31,9 +31,9 @@ function App(props) {
           label={{ value: 'Percentual por nota', angle: -90, viewBox: { x: 0, y: 45, width: 50, height: 50 } }} />
         <Tooltip />
         <Legend />
-        <Bar type = "number" dataKey={props.dataKeyBar} stackId="a" fill={props.fill} name={props.name} />
+        <Bar type = "number" dataKey={props.dataKeyBar} fill={props.fill} name={props.name} />
         {props.dataKeyBar1 ?
-          <Bar type = "number" dataKey={props.dataKeyBar1} stackId="a" fill={props.fill1} name={props.name1} /> : ''}
+          <Bar type = "number" dataKey={props.dataKeyBar1} fill={props.fill1} name={props.name1} /> : ''}
       </BarChart>
     </>
   );
