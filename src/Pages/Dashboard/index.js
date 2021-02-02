@@ -5,21 +5,11 @@ import { Card } from '../../components/BigCard/BigCard';
 import ViewChart from '../../components/ViewChart/index';
 import Students from "../../components/Students";
 import { Box } from '@material-ui/core'
-
-import studentsList from '../../json/df_student_practice_mean_performance_all_subjects.json';
-import studentsTest from '../../json/df_student_test_mean_performance_all_subjects.json';
-import mediaDifficultyList from '../../json/df_averageAllDifficulty_list.json';
-import mediaDifficultyTest from '../../json/df_averageAllDifficulty_test.json';
-import mediaMeanList from '../../json/df_student_practice_mean_performance_all_subjects.json';
-
-import mediaMeanTest from '../../json/df_student_test_mean_performance_all_subjects.json';
-import mediaAllMeanList from '../../json/df_class_practice_mean_performance_by_subject.json'
-import mediaAllMeanTest from '../../json/df_class_test_mean_performance_by_subject.json'
-import mediaAllDifficultyList from '../../json/df_classAverage_list.json'
-import mediaAllDifficultyTest from '../../json/df_classAverage_test.json'
 import { useLocation } from 'react-router-dom';
 
-
+/* Aqui é a classe que gerencia os json's e apresenta-os na tela como gráficos.
+   Possuem mais 2 subclasses, ViewChart que é relacionado aos gráficos de turma
+   e Students para os gráficos por aluno. */
 export default function Dashboard(props) {
   const location = useLocation();
   const graphs = location.state;
@@ -28,6 +18,7 @@ export default function Dashboard(props) {
   //const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
+
   function handleClick(option) {
     if (option === firstOption)
       setOption(1);
@@ -55,13 +46,13 @@ export default function Dashboard(props) {
         secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
         handleClick={handleClick}>
         {option === 1 ?
-          <ViewChart moreLess={graphs.GENL} dataKeyX={"list"}
+          <ViewChart moreLess={graphs.GENL} dataKeyX={"shortTitle"}
             performance={graphs.GTAL} byDifficulty={graphs.GTDL} />
           :
-          <Students students={studentsList} dataKeyX={"list"} dataKeyBar={"medialist"} name={"Média da lista"}
+          <Students mediaList={graphs.media_GTNL} dataKeyX={"shortTitle"}
+            dataKeyBar={"medialist"} name={"Média da lista"}
             performance={graphs.GTNL} bySubject={graphs.GEAL} byDifficulty={graphs.GEDL}
-            type={"lista"} mediaMean={mediaMeanList} mediaDifficulty={mediaDifficultyList}
-            mediaAllMean={mediaAllMeanList} mediaAllDifficulty={mediaAllDifficultyList}
+            type={"lista"} students={graphs.media_GEAL} mediaDifficulty={graphs.media_GEDL}
           />}
       </Card>
       <Card title="Desempenho nas provas"
@@ -72,10 +63,9 @@ export default function Dashboard(props) {
           <ViewChart moreLess={graphs.GENP} dataKeyX={"test"}
             performance={graphs.GTAP} byDifficulty={graphs.GTDP} />
           :
-          <Students students={studentsTest} dataKeyX={"test"} dataKeyBar={"mediatest"} name={"Média do teste"}
+          <Students mediaList={graphs.media_GTNP} dataKeyX={"test"} dataKeyBar={"mediatest"} name={"Média do teste"}
             performance={graphs.GTNP} bySubject={graphs.GEAP} byDifficulty={graphs.GEDP}
-            type={"prova"} mediaMean={mediaMeanTest} mediaDifficulty={mediaDifficultyTest}
-            mediaAllMean={mediaAllMeanTest} mediaAllDifficulty={mediaAllDifficultyTest}
+            type={"prova"} students={graphs.media_GEAP} mediaDifficulty={graphs.media_GEDP}
           />}
       </Card>
       {/* <Card title="Desempenho geral"

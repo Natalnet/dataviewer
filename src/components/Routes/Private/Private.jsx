@@ -4,7 +4,9 @@ import StoreContext from '../../Store/Context';
 
 export default function RoutesPrivate ({ component: Component, ...rest}) {
   const { token } = useContext(StoreContext);
-
+  
+  /* Caso o token tenha sido definido, o usuário é redirecionado para a página
+    que ele quer, do contrário, ele é redirecionado para a página de login */
   return (
     <Route
       {...rest}

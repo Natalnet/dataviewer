@@ -16,6 +16,7 @@ export default function App() {
             <StoreProvider>
                 <Switch>
                     <Route path="/login" component={Login} />
+                    {/*RoutesPrivate é uma rota que está verificando se o token de acesso está disponível.*/}
                     <RoutesPrivate path="/turmas" component={Turmas} />
                     <RoutesPrivate path="/" component={Home} />
                 </Switch>

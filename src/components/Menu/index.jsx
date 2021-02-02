@@ -46,7 +46,7 @@ export default function IconTabs() {
     setValue(newValue);
   };
   function handleBack() {
-    const id = localStorage.getItem('token').replace('"', '').replace('"', '');
+    const id = sessionStorage.getItem('token').replace('"', '').replace('"', '');
     const login = logins.filter(item => item.id_teacher !== null
       && item.id_teacher.trim() === id.trim());
     history.push('/turmas', login);

@@ -32,24 +32,35 @@ const useStyles = makeStyles((theme) => ({
     color: '#495057',
   }
 }));
-
+/* Esta é a classe de sequência do "Login", onde é possível visualizar as turmas
+   relacionadas ao professor escolhido. */
 export default function App(props) {
+  //Para utilizar o makeStyles.
   const classes = useStyles();
+  //Essa variável é para recuperar o que foi passado pelo history como parâmetro.
   const location = useLocation();
+  //Guardando as turmas passadas em uma variável.
   const turmas = location.state;
+  //Para navegar entre as telas.
   const history = useHistory();
 
   useEffect(() => {
+    //Caso não tenha nenhum dado de turma, não há como apresentar. Então ele retorna ao login.
     if (!location.state) {
       history.push("/login");
     }
   }, [location.state, history])
   function handleClick(id) {
+    //Buscando os json's da api, relacionado a aquela turma específica.
     api.get(`/get_graphs/${id}`).then(response => {
+      //Salvando todos os gráficos
       const graphs = response.data;
+      //Passando os gráficos para a próxima tela.
       history.push('/', graphs);
     });
   }
+  //Caso o usuário queira retornar a tela inicial para escolher outro professor,
+  //é possível pelo botão. Pensado para o mobile.
   function handleBack() {
     history.push('/login');
   }

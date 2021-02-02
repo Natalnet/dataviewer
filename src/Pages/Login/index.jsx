@@ -12,7 +12,9 @@ import {
   CssBaseline
 } from '@material-ui/core';
 import { FilterButton, FilterInput, FilterSpace } from '../../components/Students/style';
-
+/* Esta classe é a primeira tela para visualização do front-end. É preciso definir um token que 
+   aqui está sendo definido como o id do professor escolhido.
+   Se não houver token, ele vai ser sempre redirecionado para cá. */
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(24),
@@ -42,15 +44,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function App() {
-  const classes = useStyles();
-  const [logins, setLogins] = useState([]);
+  //Para utilizar o makeStyles do material-ui é necessário esta variável
+  const classes = useStyles(); 
+  //Esta variável está sendo utilizada para guardar todos os dados da requisição
+  const [logins, setLogins] = useState([]); 
+  //Do react-router-dom, utilizado para navegar entre as telas.
   const history = useHistory();
+  //Para definir o token está sendo chamado essa variável.
   const { setToken } = useContext(StoreContext);
+  //Esta variável está sendo utilizada para guardar os nomes dos professores.
   const [names, setNames] = useState([]);
 
   useEffect(() => {
+    //Utilizando o axios para fazer a requisição, usando a url padrão definida.
     api.get("/get_class").then(response => {
+      //Guardando a resposta da requisição para utilizar posteriormente 
       setLogins(response.data);
+      //Iterando sobre os id's dos professores para retirar os dados iguais, evitando duplicação.
       setNames(response.data.filter((thing, index, self) =>
         index === self.findIndex((t) => (
           t.id_teacher === thing.id_teacher
@@ -59,18 +69,30 @@ export default function App() {
   }
     , []);
   function handleClick(id) {
+    //Utilizado dos dados guardados posteriormente para salvar o token.
+    //Comparando o id do professor clicado com a variável global. 
     const login = logins.filter(item => item.id_teacher !== null
       && item.id_teacher.trim() === id);
-    if (login.length !== 0) {
+      //O resultado desse filtro é um conjunto de turmas com o mesmo professor
+      if (login.length !== 0) {
+      //Como preciso somente do id do professor para salvar como token, 
+      //coloco o primeiro resultado
       setToken(login[0].id_teacher);
+      //Passando as turmas para a próxima tela.
       return history.push("/turmas", login);
     }
   }
 
   function handleChange(e) {
+    //Definindo uma variável de busca para facilitar o encontro do nome do professor.
     let busca = e.target.value;
+    /*Caso tenha alguma coisa, ele compara os nomes como caseInsensitive. 
+     *Independente se está maiusculo, passando tudo para minusculo.
+     *Caso não tenha nada, retorna todos os nomes, fazendo a 
+     *mesma iteração para remover duplicatas.*/
     if (busca !== '')
-      setNames(names.filter(item => (item.name_teacher.toLowerCase().includes(busca.toLowerCase()))));
+      setNames(names.filter(item => (item.name_teacher
+        .toLowerCase().includes(busca.toLowerCase()))));
     else
       setNames(logins.filter((thing, index, self) =>
         index === self.findIndex((t) => (
@@ -90,13 +112,15 @@ export default function App() {
           </Typography>
         </div>
         <FilterSpace>
-          <FilterInput type="text" onChange={handleChange} placeholder="Digite seu nome para facilitar a busca" />
+          <FilterInput type="text" onChange={handleChange} 
+          placeholder="Digite seu nome para facilitar a busca" />
           <FilterButton className="fas fa-filter" />
         </FilterSpace>
         <List component="nav" className={classes.list} aria-label="Turmas">
           {names.map(item => (
             <ListItem key={item.id_teacher}>
-              <Link component="button" onClick={() => handleClick(item.id_teacher)} className={classes.link} >
+              <Link component="button" onClick={() => handleClick(item.id_teacher)} 
+              className={classes.link} >
                 {item.name_teacher}
               </Link>
             </ListItem>
