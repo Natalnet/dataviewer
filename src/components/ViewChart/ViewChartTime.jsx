@@ -5,9 +5,9 @@ import Lists from '../Lists';
 import Grafic from '../Lists/Mean';
 import Chart4 from '../Chart_04/index';
 
+
 export default function App({ dataQuestion, dataSubmissions, dataSubject, dataDifficulty }) {
   const [chart, setChart] = useState('Lista');
-
   function viewChart(value) {
     setChart(value);
   }

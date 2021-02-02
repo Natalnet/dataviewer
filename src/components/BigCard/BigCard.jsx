@@ -15,6 +15,7 @@ export function Card(props) {
     <BigCard>
       <HeaderCard>
         <TitleCard>{props.title}</TitleCard>
+        {props.firstOption && props.secondOption ? 
         <Options>
           {/*Estou executando a função passando o parâmetro desejado */}
           <Option onClick={() => props.handleClick(firstOption)}>
@@ -25,13 +26,14 @@ export function Card(props) {
             {secondOption}
           </Option>
         </Options>
+        : ''}
       </HeaderCard>
       {props.children}
     </BigCard>
   );
 };
 export function CardTime(props) {
-
+  
   const firstOption = props.firstOption;
   const secondOption = props.secondOption;
 
@@ -39,6 +41,7 @@ export function CardTime(props) {
     <BigCardTime>
       <HeaderCard>
         <TitleCard>{props.title}</TitleCard>
+        {props.firstOption && props.secondOption ? 
         <Options>
           {/*Estou executando a função passando o parâmetro desejado */}
           <Option onClick={() => props.handleClick(firstOption)}>
@@ -49,6 +52,7 @@ export function CardTime(props) {
             {secondOption}
           </Option>
         </Options>
+        : ''}
       </HeaderCard>
       {props.children}
     </BigCardTime>

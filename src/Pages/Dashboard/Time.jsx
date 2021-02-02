@@ -1,19 +1,22 @@
 import React from 'react';
 import Container from '../../components/Container/Container';
-import Students from '../../components/Students';
 import ViewChartTime from '../../components/ViewChart/ViewChartTime';
 import { CardTime } from '../../components/BigCard/BigCard';
-import {Box} from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { useState } from 'react';
 import maxDayTime from '../../json/df_max_day_time.json';
 import questionSecounds from '../../json/df_questions_secounds.json';
 import maxDayTimeSubject from '../../json/classQuestionsMaxTimeAndDaysAttemptPerSubject.json';
 import maxDayTimeDifficulty from '../../json/df_MaxConsuming.json';
+import { useLocation } from 'react-router-dom';
+import Histogram from '../../components/Lists/Histogram';
 
 export default function App() {
   const [option, setOption] = useState(1);
   const firstOption = "Turma";
-  const secondOption = "Alunos";
+  const secondOption = "Histograma";
+  const location = useLocation();
+
   function handleClick(option) {
     if (option === firstOption)
       setOption(1);
@@ -27,10 +30,12 @@ export default function App() {
         secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
         handleClick={handleClick}>
         {option === 1 ?
+
           <ViewChartTime dataQuestion={maxDayTime} dataSubmissions={questionSecounds}
-          dataSubject={maxDayTimeSubject} dataDifficulty={maxDayTimeDifficulty} />
+            dataSubject={maxDayTimeSubject} dataDifficulty={maxDayTimeDifficulty} />
           :
-          <Students />}
+          <Histogram dataList={location.state.GTDGL} dataSubject={location.state.GTDGA} dataDifficulty={location.state.GTDGD} />
+        }
       </CardTime>
     </Container>
   );
