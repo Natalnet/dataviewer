@@ -50,13 +50,14 @@ export default function App(props) {
       history.push("/login");
     }
   }, [location.state, history])
-  function handleClick(id) {
+  function handleClick(id, name) {
     //Buscando os json's da api, relacionado a aquela turma específica.
     api.get(`/get_graphs/${id}`).then(response => {
       //Salvando todos os gráficos
       const graphs = response.data;
+      
       //Passando os gráficos para a próxima tela.
-      history.push('/', graphs);
+      history.push('/', {graphs, name});
     });
   }
   //Caso o usuário queira retornar a tela inicial para escolher outro professor,
@@ -76,7 +77,7 @@ export default function App(props) {
         <List component="nav" className={classes.list} aria-label="Turmas">
           {turmas.map(item => (
             <ListItem key={item.id_class}>
-              <Link component="button" onClick={() => handleClick(item.id_class)} className={classes.link} >
+              <Link component="button" onClick={() => handleClick(item.id_class, item.name_class)} className={classes.link} >
                 {item.name_class}
               </Link>
             </ListItem>

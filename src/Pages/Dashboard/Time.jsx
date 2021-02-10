@@ -16,6 +16,7 @@ export default function App() {
   const firstOption = "Turma";
   const secondOption = "Histograma";
   const location = useLocation();
+  const {graphs}=location.state;
 
   function handleClick(option) {
     if (option === firstOption)
@@ -34,7 +35,7 @@ export default function App() {
           <ViewChartTime dataQuestion={maxDayTime} dataSubmissions={questionSecounds}
             dataSubject={maxDayTimeSubject} dataDifficulty={maxDayTimeDifficulty} />
           :
-          <Histogram dataList={location.state.GTDGL} dataSubject={location.state.GTDGA} dataDifficulty={location.state.GTDGD} />
+          <Histogram dataList={graphs.GTDGL} dataSubject={graphs.GTDGA} dataDifficulty={graphs.GTDGD} />
         }
       </CardTime>
     </Container>

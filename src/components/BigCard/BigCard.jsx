@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     minWidth: '24em',
     width: '48em',
-    minHeight: '24em',
+    minHeight: '30em',
     justifyContent: 'space-between'
   },
 }));

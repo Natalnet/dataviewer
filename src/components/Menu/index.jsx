@@ -14,8 +14,7 @@ const useStyles = makeStyles({
   tab: {
     flexGrow: 1,
     maxWidth: 700,
-    marginTop: 20,
-  }
+  },
 });
 
 export default function IconTabs() {
@@ -24,7 +23,7 @@ export default function IconTabs() {
   const [logins, setLogins] = useState([]);
   const location = useLocation();
   const history = useHistory();
-  
+
   const [mediaList, setList] = useState([]);
   const [mediaTest, setTest] = useState([]);
   const [moreLessList, setMoreLessList] = useState([]);
@@ -37,10 +36,10 @@ export default function IconTabs() {
     if (!location.state) {
       return history.push("/login");
     }
-    setList(location.state.GTNL);
-    setTest(location.state.GTNP);
-    setMoreLessList(location.state.GENL);
-    setMoreLessTest(location.state.GENP);
+    setList(location.state.graphs.GTNL);
+    setTest(location.state.graphs.GTNP);
+    setMoreLessList(location.state.graphs.GENL);
+    setMoreLessTest(location.state.graphs.GENP);
   }, [history, location.state])
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -54,12 +53,10 @@ export default function IconTabs() {
 
   return (
     <>
-      <Container>
-        <Button onClick={handleBack} >Retornar para selecionar turmas</Button>
-        <Media />
-      </Container>
-      <Container>
-          <Tabs className = {classes.tab}
+      <div style={{ backgroundColor: 'white' }} >
+        <Container>
+          <Button onClick={handleBack} >Retornar para selecionar turmas</Button>
+          <Tabs className={classes.tab}
             value={value}
             onChange={handleChange}
             variant="fullWidth"
@@ -70,14 +67,17 @@ export default function IconTabs() {
             <Tab icon={<ClassIcon />} aria-label="phone" />
             <Tab icon={<AccessTimeIcon />} aria-label="favorite" />
           </Tabs>
-      </Container>
-        <TabPanel value={value} index={0}>
-          <Dashboard GTNL={mediaList} GTNP={mediaTest} GENL={moreLessList}
-            GENP={moreLessTest} />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <DashboardTime />
-        </TabPanel>
+          <Media />
+        </Container>
+      </div>
+      <h1 style={{display: 'flex', justifyContent: 'center', marginTop: 20}}>{location.state.name}</h1>
+      <TabPanel value={value} index={0}>
+        <Dashboard GTNL={mediaList} GTNP={mediaTest} GENL={moreLessList}
+          GENP={moreLessTest} />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <DashboardTime />
+      </TabPanel>
     </>
   );
 }

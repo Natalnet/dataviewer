@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
    e Students para os gráficos por aluno. */
 export default function Dashboard(props) {
   const location = useLocation();
-  const graphs = location.state;
+  const {graphs} = location.state;
   const [option, setOption] = useState(1);
   const [option2, setOption2] = useState(1);
   //const [option3, setOption3] = useState(1);
