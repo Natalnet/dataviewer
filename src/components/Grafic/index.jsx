@@ -7,19 +7,33 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
+import DefaultTooltipContent from 'recharts/lib/component/DefaultTooltipContent';
 
 export default function App(props) {
-    const CustomTooltip = ({ active, payload, label }) => {
-      if (active) {
-        return (
-          <div className="custom-tooltip">
-            <p className="label">{`${label} : ${payload[0].value}`}</p>
-          </div >
-        );
-      }
-    };
+  const CustomTooltip = props => {
+    // payload[0] doesn't exist when tooltip isn't visible
+    if (props.payload[0] != null) {
+      // mutating props directly is against react's conventions
+      // so we create a new payload with the name and value fields set to what we want
+      const newPayload = [
+        {
+          // all your data which created the tooltip is located in the .payload property
+          
+          value: props.payload[0].payload.list,
+          // you can also add "unit" here if you need it
+        },
+        ...props.payload,
+      ];
+  
+      // we render the default, but with our overridden payload
+      return <DefaultTooltipContent {...props} payload={newPayload} />;
+    }
+  
+    // we just render the default
+    return <DefaultTooltipContent {...props} />;
+  };
 
     return (
       <ResponsiveContainer width="100%" height="68%">
@@ -36,7 +50,7 @@ export default function App(props) {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={props.dataKeyX} />
           <YAxis unit={props.yUnit ? props.yUnit : ''} label={{ value: 'Quantidade de alunos', angle: -90, viewBox: { x: 20, y: 100, width: 50, height: 50 } }} />
-          <Tooltip  />
+          <Tooltip content={<CustomTooltip />} />
           <Legend verticalAlign="top" />
           <Bar dataKey={props.dataKeyBar0} fill={props.fill0} name={props.nameBar0} />
           {props.dataKeyBar1 ?
