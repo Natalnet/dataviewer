@@ -38,7 +38,6 @@ export default function Dashboard(props) {
   //   else
   //     setOption3(2);
   // }
-
   return (
     <Container>
       <Card title="Desempenho nas listas"
@@ -55,6 +54,7 @@ export default function Dashboard(props) {
             type={"lista"} students={graphs.media_GEAL} mediaDifficulty={graphs.media_GEDL}
           />}
       </Card>
+       {graphs.GENP[0].test !== undefined ? 
       <Card title="Desempenho nas provas"
         firstOption={option2 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
         secondOption={option2 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
@@ -68,6 +68,7 @@ export default function Dashboard(props) {
             type={"prova"} students={graphs.media_GEAP} mediaDifficulty={graphs.media_GEDP}
           />}
       </Card>
+       : ''}
       {/* <Card title="Desempenho geral"
           firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
           secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
