@@ -11,13 +11,20 @@ import Grafic from '../Grafic/StudentGrafic';
 
 export default function App({ students, performance, bySubject, byDifficulty,
     dataKeyX, dataKeyBar, name, type, mediaList, mediaDifficulty }) {
+    //Variáveis de estado
+    //Retorna todos os alunos da turma
     const [alunos, setAlunos] = useState(students);
+    //Variável de mostra do modal
     const [open, setOpen] = useState(false);
+    //Retorna a matrícula do aluno escolhido
     const [matricula, setMatricula] = useState('');
+    //Retorna o nome do aluno escolhido
     const [nome, setNome] = useState('');
+    //Tipo de tela a ser mostrada
     const [chart, setChart] = useState('Lista');
-
+    
     useState(() => {
+        //Função para ordenar de forma alfabetica os nomes dos alunos
         let auxiliarAlunos = [...alunos].sort(function (a, b) {
             const nomeA = a.user.toUpperCase();
             const nomeB = b.user.toUpperCase();
@@ -33,21 +40,22 @@ export default function App({ students, performance, bySubject, byDifficulty,
         })
         setAlunos(auxiliarAlunos);
     }, [])
-
+    //Retorna o tipo de tela escolhida para mostrar o gráfico
     function viewChart(value) {
         setChart(value);
     }
+    //Função que chama o modal passando o nome e a matrícula do aluno
     function handleOpen(nome, matricula) {
         setOpen(true);
         setNome(nome);
         setMatricula(matricula);
     };
-
+    //Função que fecha o modal
     const handleClose = () => {
         setOpen(false);
         setChart("Lista");
     };
-
+    //Função que retorna os alunos com nome parecido ao digitado na barra
     function handleChange(e) {
         let busca = e.target.value;
         if (busca !== '')
@@ -56,9 +64,10 @@ export default function App({ students, performance, bySubject, byDifficulty,
         else
             setAlunos(students);
     }
-
-    function filtrar(param) {
+    //função de ordenação
+    function ordena(param) {
         let auxiliarAlunos;
+        //Ordena por nome em ordem alfabética
         if (param === "Nome") {
 
             auxiliarAlunos = [...alunos].sort(function (a, b) {
@@ -75,12 +84,15 @@ export default function App({ students, performance, bySubject, byDifficulty,
 
             })
             setAlunos(auxiliarAlunos);
-        } else if (param === "Nota") {
+        } 
+        //Ordena por nota da maior para a menor
+        else if (param === "Nota") {
             auxiliarAlunos = [...alunos].sort(function (a, b) {
                 return b.studentMediaSubject - a.studentMediaSubject;
             })
             setAlunos(auxiliarAlunos);
-        } else {
+        } //Ordena por desempenho do menor para o maior
+        else {
             auxiliarAlunos = [...alunos].sort(function (a, b) {
                 return a.studentMediaSubject - b.studentMediaSubject;
             })
@@ -95,7 +107,7 @@ export default function App({ students, performance, bySubject, byDifficulty,
                     <FilterButton className="fas fa-filter" />
                 </FilterSpace>
             </Header>
-            <MenuChart viewChart={filtrar} name1={'Nome'} name2={'Nota'} name3={'Desempenho'} />
+            <MenuChart viewChart={ordena} name1={'Nome'} name2={'Nota'} name3={'Desempenho'} />
             <Body>
                 {
                     alunos.map(aluno => (

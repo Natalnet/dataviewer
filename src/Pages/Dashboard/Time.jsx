@@ -18,6 +18,7 @@ export default function App() {
   const location = useLocation();
   const {graphs}=location.state;
 
+  //Retorna a tela de escolha do usuário, dentre Histograma e turma
   function handleClick(option) {
     if (option === firstOption)
       setOption(1);

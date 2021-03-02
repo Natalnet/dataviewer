@@ -15,6 +15,7 @@ import {
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
+//Criando um componente de célula da tabela customizado
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -24,7 +25,7 @@ const StyledTableCell = withStyles((theme) => ({
     fontSize: 14,
   },
 }))(TableCell);
-
+//Criando um componente de linha da tabela customizado
 const StyledTableRow = withStyles((theme) => ({
   root: {
     '&:nth-of-type(odd)': {
@@ -33,7 +34,7 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-
+//Passando um css usando o material-ui
 const useStyles = makeStyles({
   table: {
     minWidth: 200,
@@ -48,10 +49,12 @@ export default function App() {
   const [proporcaoLista, setProporcaoLista] = React.useState(50);
   const [proporcaoProva, setProporcaoProva] = React.useState(50);
 
+  //Passando uma edição da tabela que irá se comunicar com o back end no futuro
   function editData(type) {
     setType(type);
     setOpen(true);
   }
+  //Mudar o valor da proporção da média que será definido pelo professor
   function handleChange(e) {
     if (type === 'Lista') {
       setProporcaoLista(e.target.value);
@@ -59,6 +62,7 @@ export default function App() {
       setProporcaoProva(e.target.value);
     }
   }
+  //Passando as alterações para o back end
   function handleClick(e) {
     if (e.key === 'Enter' || e.key === undefined) {
       if (type === 'Lista') {
@@ -70,12 +74,14 @@ export default function App() {
       setOpen(false);
     }
   }
+  //Mostrar ou não a tabela
   function showContent() {
     if (show)
       setShow(false);
     else
       setShow(true);
   }
+  //Fechar o modal
   function handleClose() {
     setOpen(false);
   }

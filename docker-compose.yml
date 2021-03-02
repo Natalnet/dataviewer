@@ -1,11 +1,16 @@
+#Versão do app
 version: "3"
-
+#Serviços necessários
 services:
-  app:
+#React container
+  react:
     container_name: app
     build: .
     ports:
-      - "3000:3000"
+      - 3000:3000
+    #Comando de inicialização, deve ser mudado quando for ambiente de produção
     command: yarn start
+    #Para ouvir as alterações durante o desenvolvimento
     volumes:
-      - .:/usr/app
+      - .:/app
+    tty: true

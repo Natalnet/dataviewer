@@ -9,9 +9,10 @@ import {
   List,
   ListItem,
   makeStyles,
-  CssBaseline
 } from '@material-ui/core';
 import { FilterButton, FilterInput, FilterSpace } from '../../components/Students/style';
+import Error from '../../components/Error';
+
 /* Esta classe é a primeira tela para visualização do front-end. É preciso definir um token que 
    aqui está sendo definido como o id do professor escolhido.
    Se não houver token, ele vai ser sempre redirecionado para cá. */
@@ -54,6 +55,7 @@ export default function App() {
   const { setToken } = useContext(StoreContext);
   //Esta variável está sendo utilizada para guardar os nomes dos professores.
   const [names, setNames] = useState([]);
+  const [error, setError] = useState();
 
   useEffect(() => {
     //Utilizando o axios para fazer a requisição, usando a url padrão definida.
@@ -65,7 +67,7 @@ export default function App() {
         index === self.findIndex((t) => (
           t.id_teacher === thing.id_teacher
         ))));
-    });
+    }).catch(response => setError(response));
   }
     , []);
   function handleClick(id) {
@@ -101,7 +103,8 @@ export default function App() {
   }
   return (
     <Container component="main" maxWidth="xs" >
-      <CssBaseline />
+      {/*Definindo um container geral para todos os componentes
+         e mostrando juntos na tela.*/}
       <div className={classes.paper}>
         <div className={classes.text} >
           <Typography component="h1" variant="h4">
@@ -117,7 +120,7 @@ export default function App() {
           <FilterButton className="fas fa-filter" />
         </FilterSpace>
         <List component="nav" className={classes.list} aria-label="Turmas">
-          {names.map(item => (
+          {error ? <Error error={error} /> : names.map(item => (
             <ListItem key={item.id_teacher}>
               <Link component="button" onClick={() => handleClick(item.id_teacher)} 
               className={classes.link} >

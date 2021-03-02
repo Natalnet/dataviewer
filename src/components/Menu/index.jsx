@@ -30,20 +30,27 @@ export default function IconTabs() {
   const [moreLessTest, setMoreLessTest] = useState([]);
 
   useEffect(() => {
+    //Retorna dados da api, que nesse caso são os nomes
+    //dos professores e suas respectivas turmas
     api.get("/get_class").then(response => {
       setLogins(response.data);
     });
-    if (!location.state) {
+    //Teste para saber se existe um gráfico sendo passado para a tela
+    if (!location.state.graphs) {
+      //caso não exista ele volta para o login
       return history.push("/login");
     }
+    //Colocando os gráficos em variáveis de estado.
     setList(location.state.graphs.GTNL);
     setTest(location.state.graphs.GTNP);
     setMoreLessList(location.state.graphs.GENL);
     setMoreLessTest(location.state.graphs.GENP);
-  }, [history, location.state])
+  }, [history, location.state]);
+  //Mudando no menu a tab escolhida
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  //Função de retorno para mudar de turma
   function handleBack() {
     const id = sessionStorage.getItem('token').replace('"', '').replace('"', '');
     const login = logins.filter(item => item.id_teacher !== null

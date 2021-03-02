@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import {
   Container,
@@ -43,6 +43,8 @@ export default function App(props) {
   const turmas = location.state;
   //Para navegar entre as telas.
   const history = useHistory();
+  //Errors
+  const [error, setError] = useState("");
 
   useEffect(() => {
     //Caso não tenha nenhum dado de turma, não há como apresentar. Então ele retorna ao login.
@@ -51,14 +53,18 @@ export default function App(props) {
     }
   }, [location.state, history])
   function handleClick(id, name) {
+    setError("");
     //Buscando os json's da api, relacionado a aquela turma específica.
     api.get(`/get_graphs/${id}`).then(response => {
-      //Salvando todos os gráficos
-      const graphs = response.data;
-      
-      //Passando os gráficos para a próxima tela.
-      history.push('/', {graphs, name});
-    });
+      if (response.data === 'Error: connection refused by LoP server, try again')
+        setError('Error: connection refused by LoP server, try again');
+      else {
+        //Salvando todos os gráficos
+        const graphs = response.data;
+        //Passando os gráficos para a próxima tela.
+        history.push('/', { graphs, name });
+      }
+    })
   }
   //Caso o usuário queira retornar a tela inicial para escolher outro professor,
   //é possível pelo botão. Pensado para o mobile.
@@ -67,13 +73,21 @@ export default function App(props) {
   }
   return (
     <div>
+      {/*Definir um container diferente para os componentes faz 
+         com que eu possa organiza-los na tela de forma separada. */}
       <Container>
         <Button onClick={handleBack}>Retornar para escolher professor</Button>
       </Container>
       <Container component="main" maxWidth="xs" className={classes.paper}>
         <Typography className={classes.text} component="h1" variant="h4">
           Escolha uma turma para a gente começar
-      </Typography>
+        </Typography>
+        {/*Retornando a mensagem de erro caso haja. 
+           (span não toma espaço na tela caso esteja vazio)*/}
+        {error ?
+          <span style={{ color: "red" }} >{error}</span>
+          : ''}
+        {/*Lista todas as turmas associadas ao id do professor escolhido*/}
         <List component="nav" className={classes.list} aria-label="Turmas">
           {turmas.map(item => (
             <ListItem key={item.id_class}>

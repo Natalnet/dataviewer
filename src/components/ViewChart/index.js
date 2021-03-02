@@ -8,7 +8,7 @@ import Chart4 from '../Chart_04/index';
 
 export default function App({moreLess, dataKeyX, performance, byDifficulty}) {
     const [chart, setChart] = useState('Lista');
-
+    //Retorna qual o tipo de gráfico irá mostrar na tela
     function viewChart(value) {
         setChart(value);
     }

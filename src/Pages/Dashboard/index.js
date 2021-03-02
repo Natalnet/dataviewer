@@ -18,26 +18,23 @@ export default function Dashboard(props) {
   //const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
-
+  console.log(location);
+  //Função retorna o tipo de opção dos botões entre turma e alunos para transição de tela
+  //Para o gráfico de listas
   function handleClick(option) {
     if (option === firstOption)
       setOption(1);
     else
       setOption(2);
   }
+  //Função retorna o tipo de opção dos botões entre turma e alunos para transição de tela
+  //Para o gráfico de provas
   function handleClickSecondCard(option) {
     if (option === firstOption)
       setOption2(1);
     else
       setOption2(2);
   }
-
-  // function handleClickThirdCard(option) {
-  //   if (option === firstOption)
-  //     setOption3(1);
-  //   else
-  //     setOption3(2);
-  // }
   return (
     <Container>
       <Card title="Desempenho nas listas"
@@ -48,11 +45,7 @@ export default function Dashboard(props) {
           <ViewChart moreLess={graphs.GENL} dataKeyX={"shortTitle"}
             performance={graphs.GTAL} byDifficulty={graphs.GTDL} />
           :
-          <Students mediaList={graphs.media_GTNL} dataKeyX={"shortTitle"}
-            dataKeyBar={"medialist"} name={"Média da lista"}
-            performance={graphs.GTNL} bySubject={graphs.GEAL} byDifficulty={graphs.GEDL}
-            type={"lista"} students={graphs.media_GEAL} mediaDifficulty={graphs.media_GEDL}
-          />}
+          ''}
       </Card>
        {graphs.GENP[0].test !== undefined ? 
       <Card title="Desempenho nas provas"
@@ -69,12 +62,6 @@ export default function Dashboard(props) {
           />}
       </Card>
        : ''}
-      {/* <Card title="Desempenho geral"
-          firstOption={option3 === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
-          secondOption={option3 === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}
-          handleClick={handleClickThirdCard}>
-          {option3 === 1 ? <ViewChart /> : <Students />}
-        </Card>*/}
     </Container>
   );
 }

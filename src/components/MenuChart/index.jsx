@@ -4,6 +4,7 @@ import './style.css'
 
 export default function App(props) {
     const [selectedValue, setSelectedValue] = useState(props.name1);
+    //Função que mostra a tela que foi escolhida pelo usuário
     function handleChange(event) {
         setSelectedValue(event.target.value);
         props.viewChart(event.target.value);
