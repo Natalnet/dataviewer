@@ -3,7 +3,7 @@ version: "3"
 #Serviços necessários
 services:
 #React container
-  react:
+  app:
     container_name: app
     build: .
     ports:

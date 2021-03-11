@@ -9,7 +9,6 @@ COPY package*.json ./
 COPY yarn.lock ./
 RUN yarn
 COPY . .
-RUN yarn global add react-scripts@3.4.1 -g
 # Inicializa a aplicação
 EXPOSE 3000
 CMD ["yarn", "start"]

@@ -12,13 +12,12 @@ import { useLocation } from 'react-router-dom';
    e Students para os gráficos por aluno. */
 export default function Dashboard(props) {
   const location = useLocation();
-  const {graphs} = location.state;
+  const { graphs } = location.state;
   const [option, setOption] = useState(1);
   const [option2, setOption2] = useState(1);
   //const [option3, setOption3] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Alunos";
-  console.log(location);
   //Função retorna o tipo de opção dos botões entre turma e alunos para transição de tela
   //Para o gráfico de listas
   function handleClick(option) {
@@ -45,7 +44,11 @@ export default function Dashboard(props) {
           <ViewChart moreLess={graphs.GENL} dataKeyX={"shortTitle"}
             performance={graphs.GTAL} byDifficulty={graphs.GTDL} />
           :
-          ''}
+          <Students mediaList={graphs.media_GTNL} dataKeyX={"shortTitle"}
+            dataKeyBar={"medialist"} name={"Média da lista"}
+            performance={graphs.GTNL} bySubject={graphs.GEAL} byDifficulty={graphs.GEDL}
+            type={"lista"} students={graphs.media_GEAL} mediaDifficulty={graphs.media_GEDL}
+          />}
       </Card>
        {graphs.GENP[0].test !== undefined ? 
       <Card title="Desempenho nas provas"

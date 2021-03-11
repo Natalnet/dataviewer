@@ -56,14 +56,21 @@ export default function App(props) {
     setError("");
     //Buscando os json's da api, relacionado a aquela turma específica.
     api.get(`/get_graphs/${id}`).then(response => {
-      if (response.data === 'Error: connection refused by LoP server, try again')
-        setError('Error: connection refused by LoP server, try again');
-      else {
-        //Salvando todos os gráficos
-        const graphs = response.data;
+      //Salvando todos os gráficos
+      const graphs = response.data;
+      //Caso haja algum erro
+      if (graphs.GENL === undefined) {
+        setError(`Algo de errado ocorreu com a turma "${name}", tente novamente. ` +
+          "Caso persista tente entrar em contato com os desenvolvedores.");
+        console.error(graphs);
+      } else {
         //Passando os gráficos para a próxima tela.
         history.push('/', { graphs, name });
       }
+    }).catch(error => {
+      setError(`Algo de errado ocorreu com a turma "${name}", tente novamente. ` +
+      "Caso persista tente entrar em contato com os desenvolvedores.")
+      console.error(error);
     })
   }
   //Caso o usuário queira retornar a tela inicial para escolher outro professor,
