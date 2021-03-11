@@ -10,6 +10,8 @@ import {
   Button
 } from '@material-ui/core'
 import api from '../../utils/api';
+import spinnerImg from '../../utils/spinner.svg';
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(20),
@@ -46,16 +48,19 @@ export default function App(props) {
   //Errors
   const [error, setError] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     //Caso não tenha nenhum dado de turma, não há como apresentar. Então ele retorna ao login.
     if (!location.state) {
       history.push("/login");
     }
   }, [location.state, history])
-  function handleClick(id, name) {
+  async function handleClick(id, name) {
     setError("");
     //Buscando os json's da api, relacionado a aquela turma específica.
-    api.get(`/get_graphs/${id}`).then(response => {
+    setLoading(true);
+    await api.get(`/get_graphs/${id}`).then(response => {
       //Salvando todos os gráficos
       const graphs = response.data;
       //Caso haja algum erro
@@ -69,9 +74,10 @@ export default function App(props) {
       }
     }).catch(error => {
       setError(`Algo de errado ocorreu com a turma "${name}", tente novamente. ` +
-      "Caso persista tente entrar em contato com os desenvolvedores.")
+        "Caso persista tente entrar em contato com os desenvolvedores.")
       console.error(error);
-    })
+    });
+    setLoading(false);
   }
   //Caso o usuário queira retornar a tela inicial para escolher outro professor,
   //é possível pelo botão. Pensado para o mobile.
@@ -94,18 +100,23 @@ export default function App(props) {
         {error ?
           <span style={{ color: "red" }} >{error}</span>
           : ''}
-        {/*Lista todas as turmas associadas ao id do professor escolhido*/}
-        <List component="nav" className={classes.list} aria-label="Turmas">
-          {turmas.map(item => (
-            <ListItem key={item.id_class}>
-              <Link component="button" onClick={() => handleClick(item.id_class, item.name_class)} className={classes.link} >
-                {item.name_class}
-              </Link>
-            </ListItem>
-          )
-          )}
-        </List>
+
+        {loading ?
+          <img src={spinnerImg} alt="Loading" style={{ width: 250 }}></img>
+          :
+          <List component="nav" className={classes.list} aria-label="Turmas">
+            {/*Lista todas as turmas associadas ao id do professor escolhido*/}
+            {turmas.map(item => (
+              <ListItem key={item.id_class}>
+                <Link component="button" onClick={() => handleClick(item.id_class, item.name_class)} className={classes.link} >
+                  {item.name_class}
+                </Link>
+              </ListItem>
+            )
+            )}
+          </List>
+        }
       </Container>
-    </div>
+    </div >
   );
 }
