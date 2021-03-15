@@ -1,8 +1,7 @@
 import React from 'react';
-import Container from '../../components/Container/Container';
 import ViewChartTime from '../../components/ViewChart/ViewChartTime';
 import { CardTime } from '../../components/BigCard/BigCard';
-import { Box } from '@material-ui/core';
+import { Box, Container,makeStyles } from '@material-ui/core';
 import { useState } from 'react';
 import maxDayTime from '../../json/df_max_day_time.json';
 import questionSecounds from '../../json/df_questions_secounds.json';
@@ -11,7 +10,18 @@ import maxDayTimeDifficulty from '../../json/df_MaxConsuming.json';
 import { useLocation } from 'react-router-dom';
 import Histogram from '../../components/Lists/Histogram';
 
+
+const useStyles = makeStyles({
+  container: {
+    margin: '0 auto',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+});
+
 export default function App() {
+  const classes = useStyles();
   const [option, setOption] = useState(1);
   const firstOption = "Turma";
   const secondOption = "Histograma";
@@ -26,7 +36,7 @@ export default function App() {
       setOption(2);
   }
   return (
-    <Container>
+    <Container className={classes.container} >
       <CardTime title="Tempo de resolução nas listas"
         firstOption={option === 1 ? <Box fontWeight="fontWeightBold">{firstOption}</Box> : firstOption}
         secondOption={option === 2 ? <Box fontWeight="fontWeightBold">{secondOption}</Box> : secondOption}

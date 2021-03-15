@@ -3,8 +3,7 @@ import ClassIcon from '@material-ui/icons/Class';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import Dashboard from '../../Pages/Dashboard'
 import DashboardTime from '../../Pages/Dashboard/Time'
-import Container from '../Container/Container';
-import { Button, Tabs, Tab, makeStyles } from '@material-ui/core';
+import { Button, Container, Tabs, Tab, makeStyles } from '@material-ui/core';
 import Media from '../../components/Media'
 import TabPanel from './TabPanel';
 import api from '../../utils/api';
@@ -15,20 +14,21 @@ const useStyles = makeStyles({
     flexGrow: 1,
     maxWidth: 700,
   },
+  container: {
+    margin: '0 auto',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
 });
 
 export default function IconTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const [logins, setLogins] = useState([]);
-  const location = useLocation();
   const history = useHistory();
-
-  const [mediaList, setList] = useState([]);
-  const [mediaTest, setTest] = useState([]);
-  const [moreLessList, setMoreLessList] = useState([]);
-  const [moreLessTest, setMoreLessTest] = useState([]);
-
+  const location = useLocation();
+  
   useEffect(() => {
     //Retorna dados da api, que nesse caso são os nomes
     //dos professores e suas respectivas turmas
@@ -36,15 +36,10 @@ export default function IconTabs() {
       setLogins(response.data);
     });
     //Teste para saber se existe um gráfico sendo passado para a tela
-    if (!location.state.graphs) {
-      //caso não exista ele volta para o login
-      return history.push("/login");
-    }
-    //Colocando os gráficos em variáveis de estado.
-    setList(location.state.graphs.GTNL);
-    setTest(location.state.graphs.GTNP);
-    setMoreLessList(location.state.graphs.GENL);
-    setMoreLessTest(location.state.graphs.GENP);
+    if(location.state === undefined)
+      history.push("/login");
+      
+    
   }, [history, location.state]);
   //Mudando no menu a tab escolhida
   const handleChange = (event, newValue) => {
@@ -61,7 +56,7 @@ export default function IconTabs() {
   return (
     <>
       <div style={{ backgroundColor: 'white' }} >
-        <Container>
+        <Container className={classes.container} >
           <Button onClick={handleBack} >Retornar para selecionar turmas</Button>
           <Tabs className={classes.tab}
             value={value}
@@ -77,10 +72,9 @@ export default function IconTabs() {
           <Media />
         </Container>
       </div>
-      <h1 style={{display: 'flex', justifyContent: 'center', marginTop: 20}}>{location.state.name}</h1>
+      <h1 style={{display: 'flex', justifyContent: 'center', marginTop: 20}}>{location.state === undefined ? '' : location.state.name}</h1>
       <TabPanel value={value} index={0}>
-        <Dashboard GTNL={mediaList} GTNP={mediaTest} GENL={moreLessList}
-          GENP={moreLessTest} />
+        <Dashboard  />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <DashboardTime />
