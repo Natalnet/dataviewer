@@ -5,12 +5,17 @@ services:
 #React container
   app:
     container_name: app
-    build: .
-    ports:
-      - 3000:3000
-    #Comando de inicialização, deve ser mudado quando for ambiente de produção
-    command: yarn start
+    build: 
+      context: .
+      dockerfile: Dockerfile
     #Para ouvir as alterações durante o desenvolvimento
     volumes:
-      - .:/app
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 80:80
+    environment:
+      - NODE_ENV=development
+    #Comando de inicialização, deve ser mudado quando for ambiente de produção
+    command: yarn start
     tty: true
