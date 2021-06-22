@@ -28,8 +28,8 @@ Após a instalação dos pré requisitos a sequência de comandos para inicializ
 * yarn dev (para liberar a porta para escutar novas atualizações)
 #### Comandos docker
 Há um script com dois comandos para inicialização do React no servidor com o docker:
-./run-app-deply.sh --prod (Para produção)
-./run-app-deply.sh --dev (Para desenvolvimento)
+* ./run-app-deply.sh --prod (Para produção)
+* ./run-app-deply.sh --dev (Para desenvolvimento)
 ### Features
 - [x] Página de login
 - [x] Página de turmas
