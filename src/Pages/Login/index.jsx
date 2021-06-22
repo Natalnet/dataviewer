@@ -62,7 +62,7 @@ export default function App() {
   //Utilizando o axios para fazer a requisição, usando a url padrão definida.
   async function fetchData() {
     setLoading(true);
-    await api.get("/get_class").then(response => {
+    await api.get("/get_classes").then(response => {
       //Guardando a resposta da requisição para utilizar posteriormente 
       setLogins(response.data);
       //Iterando sobre os id's dos professores para retirar os dados iguais, evitando duplicação.

@@ -60,7 +60,7 @@ export default function App(props) {
     setError("");
     //Buscando os json's da api, relacionado a aquela turma específica.
     setLoading(true);
-    await api.get(`/get_graphs/${id}`).then(response => {
+    await api.get(`/get_graphs_teacher/${id}`).then(response => {
       //Salvando todos os gráficos
       const graphs = response.data;
       //Caso haja algum erro

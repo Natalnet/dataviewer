@@ -32,7 +32,7 @@ export default function IconTabs() {
   useEffect(() => {
     //Retorna dados da api, que nesse caso são os nomes
     //dos professores e suas respectivas turmas
-    api.get("/get_class").then(response => {
+    api.get("/get_classes").then(response => {
       setLogins(response.data);
     });
     //Teste para saber se existe um gráfico sendo passado para a tela
