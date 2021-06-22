@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import DefaultTooltipContent from 'recharts/lib/component/DefaultTooltipContent';
+import DefaultTooltipContent from 'recharts/types/component/DefaultTooltipContent';
 
 export default function App(props) {
   const CustomTooltip = props => {
