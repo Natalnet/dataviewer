@@ -9,30 +9,23 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import DefaultTooltipContent from 'recharts/types/component/DefaultTooltipContent';
+import './style.css';
 
 export default function App(props) {
-  const CustomTooltip = props => {
-    // payload[0] doesn't exist when tooltip isn't visible
-    if (props.payload[0] != null) {
-      // mutating props directly is against react's conventions
-      // so we create a new payload with the name and value fields set to what we want
-      const newPayload = [
-        {
-          // all your data which created the tooltip is located in the .payload property
-          
-          value: props.payload[0].payload.list,
-          // you can also add "unit" here if you need it
-        },
-        ...props.payload,
-      ];
-  
-      // we render the default, but with our overridden payload
-      return <DefaultTooltipContent {...props} payload={newPayload} />;
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p className="label">{`${label}`}</p> 
+          <p>{`${payload[0].payload.list}`}</p>
+          <p>{`${payload[0].name}: ${payload[0].value}`}</p>
+          <p>{`${payload[1].name}: ${payload[1].value}`}</p>
+          <p>{`${payload[2].name}: ${payload[2].value}`}</p>
+        </div>
+      );
     }
   
-    // we just render the default
-    return <DefaultTooltipContent {...props} />;
+    return null;
   };
 
     return (

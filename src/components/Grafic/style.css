@@ -1,7 +1,12 @@
-.recharts-wrapper{
+.recharts-wrapper {
   max-width: 50%;
   max-height: 50%;
 }
-.recharts-legend-wrapper{
+.recharts-legend-wrapper {
   position: relative !important;
+}
+.recharts-tooltip-wrapper {
+  background-color: #f0f0ef;
+  border-radius: 8px;
+  padding: 8px;
 }
