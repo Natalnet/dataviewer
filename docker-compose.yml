@@ -1,9 +1,9 @@
 version: '3'
 services:
   react:
-    container_name: Dataviewer-prod
+    container_name: container-front
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./container-front/Dockerfile
     ports:
       - '8080:80'
