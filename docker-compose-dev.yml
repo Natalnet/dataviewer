@@ -7,7 +7,7 @@ services:
     container_name: Dataviewer-dev
     build: 
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: ./container-front/Dockerfile-dev
     #Para ouvir as alterações durante o desenvolvimento
     volumes:
       - '.:/app'
