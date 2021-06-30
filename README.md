@@ -25,7 +25,7 @@ Podemos inicializar a aplicação depois de ter os seguintes pré requisitos ins
 #### Comandos de inicialização
 Após a instalação dos pré requisitos a sequência de comandos para inicialização é:
 * yarn (para instalação dos pacotes no node_modules)
-* yarn dev (para liberar a porta para escutar novas atualizações)
+* yarn start (para liberar a porta para escutar novas atualizações)
 #### Comandos docker
 Há um script com dois comandos para inicialização do React no servidor com o docker:
 * ./run-app-deply.sh --prod (Para produção)
