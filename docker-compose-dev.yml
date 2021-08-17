@@ -1,0 +1,21 @@
+#Versão do app
+version: "3"
+#Serviços necessários
+services:
+#React container
+  app:
+    container_name: Dataviewer-dev
+    build: 
+      context: .
+      dockerfile: ./container-front/Dockerfile-dev
+    #Para ouvir as alterações durante o desenvolvimento
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 80:80
+    environment:
+      - NODE_ENV=development
+    #Comando de inicialização, deve ser mudado quando for ambiente de produção
+    command: yarn start
+    tty: true

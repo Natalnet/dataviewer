@@ -1,16 +1,9 @@
-#Versão do app
-version: "3"
-#Serviços necessários
+version: '3'
 services:
-#React container
-  app:
-    container_name: app
-    build: .
+  react:
+    container_name: container-front
+    build:
+      context: .
+      dockerfile: ./container-front/Dockerfile
     ports:
-      - 3000:3000
-    #Comando de inicialização, deve ser mudado quando for ambiente de produção
-    command: yarn start
-    #Para ouvir as alterações durante o desenvolvimento
-    volumes:
-      - .:/app
-    tty: true
+      - '8080:80'
