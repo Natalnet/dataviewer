@@ -12,6 +12,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import logoDataviewer from '../../assets/logo.svg';
 import marcaDataviewer from '../../assets/marca.svg';
+import Class from '../../components/Turma';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -49,6 +50,10 @@ const useStyles = makeStyles(() =>
     semestre: {
       fontSize: '16px',
       lineHeight: '19px',
+    },
+    limite: {
+      maxHeight: '640px',
+      overflow: 'scroll',
     },
   })
 );
@@ -125,13 +130,70 @@ const App: React.FC = () => {
                           color="primary"
                         />
                       }
-                      label="Primary"
+                      label="2020.1"
+                    />
+                  </div>
+                  <div>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state}
+                          onChange={handleChangeState}
+                          name="checkedA"
+                          color="primary"
+                        />
+                      }
+                      label="2021.1"
+                    />
+                  </div>
+                </div>
+                <div className={classes.selecao}>
+                  <p className={classes.filtrar}>Ordenar por</p>
+                  <span className={classes.semestre}>Semestre</span>
+                  <div>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state}
+                          onChange={handleChangeState}
+                          name="checkedB"
+                          color="primary"
+                        />
+                      }
+                      label="2020.1"
+                    />
+                  </div>
+                  <div>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state}
+                          onChange={handleChangeState}
+                          name="checkedA"
+                          color="primary"
+                        />
+                      }
+                      label="2021.1"
                     />
                   </div>
                 </div>
               </Grid>
               <Grid item xs={9}>
-                <h1>Teste</h1>
+                <Grid container className={classes.limite}>
+                  {turmas.map((turma) => (
+                    <Grid item xs={6} key={turma.id_class}>
+                      <Class
+                        name={turma.name_class}
+                        code={turma.code}
+                        semester={turma.semester}
+                        students={turma.studentsCount}
+                        teachers={turma.teachersCount}
+                        year={turma.year}
+                        idTurma={turma.id_class}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
               </Grid>
             </Grid>
           </Paper>
