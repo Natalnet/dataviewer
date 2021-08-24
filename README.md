@@ -32,9 +32,11 @@ Há um script com dois comandos para inicialização do React no servidor com o 
 * ./run-app-deply.sh --dev (Para desenvolvimento)
 ### Features
 - [x] Página de login
+- [ ] Documentação da página de login
 - [x] Página de turmas
+- [ ] Documentação da página de turmas
 - [x] Conexão com a api
-- [x] Dashboard
+- [ ] Dashboard
 ### Conhecimentos Gerais
 #### Métodos HTTP
   Esses métodos serão usados para comunicação com o Backend utilizando a biblioteca axios, existem outros, mas esses são os principais:
@@ -59,7 +61,7 @@ Há um script com dois comandos para inicialização do React no servidor com o 
   Os Route Params são parâmetros de identificação de recursos para atualizar a base de dados (Atualizar/Deletar). Também é passado via url e sua estrutura fica:
   /nomedarota/:id
   ##### Request body
-  É o parâmetro que é utilizado na hora de criar ou atualizar a base de dados, juntamente com os métodos Post, Put ou Patch. É passado em formato json. Por padrão o Express não reconhece o Json, então adicionamos uma linha para essa leitura.
+  É o parâmetro que é utilizado na hora de criar ou atualizar a base de dados, juntamente com os métodos Post, Put ou Patch. É passado em formato json. 
 
 <h4 align="center">
 	🚧  ReactJS 🚀 Em construção...  🚧

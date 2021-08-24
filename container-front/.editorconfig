@@ -4,9 +4,15 @@
 root = true
 
 [*]
+# Identação do tipo espaço
 indent_style = space
+# Tamanho da identação
 indent_size = 2
+# Formato de final da linha compatível com linux e windows
 end_of_line = lf
+# Formato padrão de letras e acentos
 charset = utf-8
+# Apagar espaços em branco não utilizados
 trim_trailing_whitespace = true
+# Sempre inserir uma linha em branco no final do código
 insert_final_newline = true

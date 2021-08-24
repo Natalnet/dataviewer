@@ -25,7 +25,7 @@ import logo from '../../assets/logo.svg';
 import marca from '../../assets/marca.svg';
 import caminho from '../../assets/caminho.svg';
 import dataviewer from '../../assets/dataviewer.svg';
-import api from '../../utils/api';
+import api from '../../services/api';
 import Button from '../../components/Button';
 
 // tema da tela de login
