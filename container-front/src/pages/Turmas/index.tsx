@@ -85,7 +85,12 @@ const App: React.FC = () => {
   // Usado para navegação entre telas
   const history = useHistory();
   // Serve para definir o estado dos checkbox
-  const [checkbox, setStateCheckbox] = useState(false);
+  const [checkbox, setStateCheckbox] = useState({
+    checkedA: false,
+    checkedB: false,
+    checkedC: false,
+    checkedD: false,
+  });
   useEffect(() => {
     // Caso haja turmas para acessar, então ele mostra a tela,
     // caso não haja, ele redireciona para a tela de login.
@@ -113,9 +118,12 @@ const App: React.FC = () => {
   // Modificando o estado da variável booleana
   const handleChangeStateCheckbox = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setStateCheckbox(event.target.checked);
+      setStateCheckbox({
+        ...checkbox,
+        [event.target.name]: event.target.checked,
+      });
     },
-    []
+    [checkbox]
   );
   return (
     <Container maxWidth="xl">
@@ -141,7 +149,7 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={checkbox}
+                          checked={checkbox.checkedA}
                           onChange={handleChangeStateCheckbox}
                           name="checkedB"
                           color="primary"
@@ -154,7 +162,7 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={checkbox}
+                          checked={checkbox.checkedB}
                           onChange={handleChangeStateCheckbox}
                           name="checkedA"
                           color="primary"
@@ -171,7 +179,7 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={checkbox}
+                          checked={checkbox.checkedC}
                           onChange={handleChangeStateCheckbox}
                           name="checkedB"
                           color="primary"
@@ -184,7 +192,7 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={checkbox}
+                          checked={checkbox.checkedD}
                           onChange={handleChangeStateCheckbox}
                           name="checkedA"
                           color="primary"

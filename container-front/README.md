@@ -98,7 +98,7 @@ Essa função é utilizada nos eventos de onClick do botão. Deve ser específic
 
 ### useCallback
 
-O useCallback é um hook do react que evita recriar uma função do zero sempre que o componente é atualizado, se alterado ela recria apenas a função e evita o uso desnecessário da memória. Ela é usada em conjunto com as funções descritas acima e deve ser usada em qualquer outra função que for criada no projeto.
+O useCallback é um hook do react que evita recriar uma função do zero sempre que o componente é atualizado, se alterado ela recria apenas a função e evita o uso desnecessário da memória. Tem a estrutura parecida com o useEffect, usando um parâmetro de referencia para sua atualização. Ela é usada em conjunto com as funções descritas acima e deve ser usada em qualquer outra função que for criada no projeto.
 
 <h4 align="center">
 	🚧  ReactJS 🚀 Em construção...  🚧
