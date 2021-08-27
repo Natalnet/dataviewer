@@ -3,6 +3,7 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import Rotas from './routes';
 
+// Tema Base para todo o projeto
 const theme = createTheme({
   overrides: {
     MuiCssBaseline: {

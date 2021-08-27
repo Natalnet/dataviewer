@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import {
   Container,
   createStyles,
@@ -8,7 +7,7 @@ import {
   makeStyles,
   Paper,
 } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import logoDataviewer from '../../assets/logo.svg';
 import marcaDataviewer from '../../assets/marca.svg';
@@ -57,6 +56,7 @@ const useStyles = makeStyles(() =>
     },
   })
 );
+
 interface Turma {
   author: string;
   code: string;
@@ -72,34 +72,51 @@ interface Turma {
   teachersCount: number;
   year: number;
 }
+
 const App: React.FC = () => {
+  // Variável para adicionar estilo aos componentes
   const classes = useStyles();
+  // Essa variável recebe os dados do history passados na tela de login
   const location = useLocation();
+  // Serve para mostrar a quatidade de turmas na tela
   const [quantidadeTurmas, setQuantidadeTurmas] = useState(0);
+  // Os dados das turmas são guardados aqui
   const [turmas, setTurmas] = useState<Turma[]>([]);
+  // Usado para navegação entre telas
   const history = useHistory();
-  const [state, setState] = useState(false);
-  // const [semester, setSemester] = useState<number[]>([]);
+  // Serve para definir o estado dos checkbox
+  const [checkbox, setStateCheckbox] = useState(false);
   useEffect(() => {
+    // Caso haja turmas para acessar, então ele mostra a tela,
+    // caso não haja, ele redireciona para a tela de login.
     if (location.state) {
+      // Salvando as turmas passadas pelo history
       setTurmas(location.state as Turma[]);
+      // Salvando a quantidade de turmas
       setQuantidadeTurmas(turmas.length);
-      // setSemester();
+      // Salvando na sessão os dados de turmas,
+      // caso feche o navegador esses dados são deletados.
       sessionStorage.setItem('turmas:Dataviewer', JSON.stringify(turmas));
     } else if (sessionStorage.getItem('turmas:Dataviewer')) {
+      // Salvando as turmas que foram guardadas na sessão
       setTurmas(
         JSON.parse(
           sessionStorage.getItem('turmas:Dataviewer') as string
         ) as Turma[]
       );
     } else {
+      // Redirecionando o usuário para a tela inicial
       history.push('/');
     }
   }, [location, history, turmas]);
 
-  const handleChangeState = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setState(event.target.checked);
-  };
+  // Modificando o estado da variável booleana
+  const handleChangeStateCheckbox = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setStateCheckbox(event.target.checked);
+    },
+    []
+  );
   return (
     <Container maxWidth="xl">
       <Grid container spacing={3}>
@@ -124,8 +141,8 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={state}
-                          onChange={handleChangeState}
+                          checked={checkbox}
+                          onChange={handleChangeStateCheckbox}
                           name="checkedB"
                           color="primary"
                         />
@@ -137,8 +154,8 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={state}
-                          onChange={handleChangeState}
+                          checked={checkbox}
+                          onChange={handleChangeStateCheckbox}
                           name="checkedA"
                           color="primary"
                         />
@@ -154,8 +171,8 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={state}
-                          onChange={handleChangeState}
+                          checked={checkbox}
+                          onChange={handleChangeStateCheckbox}
                           name="checkedB"
                           color="primary"
                         />
@@ -167,8 +184,8 @@ const App: React.FC = () => {
                     <FormControlLabel
                       control={
                         <Checkbox
-                          checked={state}
-                          onChange={handleChangeState}
+                          checked={checkbox}
+                          onChange={handleChangeStateCheckbox}
                           name="checkedA"
                           color="primary"
                         />

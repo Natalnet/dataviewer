@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   makeStyles,
@@ -156,6 +155,7 @@ const App: React.FC = () => {
     api.get('/get_classes').then((response): AxiosResponse<ServerResponse> => {
       // Guardando a resposta da requisição para utilizar posteriormente
       setLogins(response.data);
+
       // Iterando sobre os id's dos professores para retirar os dados iguais,
       // evitando duplicação.
       setNames(
@@ -171,25 +171,31 @@ const App: React.FC = () => {
     });
   }, []);
 
-  function handleChange(event: React.ChangeEvent<{ value: unknown }>) {
-    // Salvando o id para uso do select
-    setIdTeacher(event.target.value as string);
-  }
-  function handleClick(id: string) {
-    // Utilizado dos dados guardados posteriormente para salvar o token.
-    // Comparando o id do professor clicado com a variável global.
-    const login = logins.filter(
-      (item) => item.id_teacher !== null && item.id_teacher.trim() === id
-    );
-    // O resultado desse filtro é um conjunto de turmas com o mesmo professor
-    if (login.length !== 0) {
-      // Como preciso somente do id do professor para salvar como token,
-      // coloco o primeiro resultado
-      // setToken(login[0].id_teacher);
-      // Passando as turmas para a próxima tela.
-      history.push('/turmas', login);
-    }
-  }
+  const handleChangeIdTeacher = useCallback(
+    (event: React.ChangeEvent<{ value: unknown }>) => {
+      // Salvando o id para uso do select
+      setIdTeacher(event.target.value as string);
+    },
+    []
+  );
+  const handleClickLogar = useCallback(
+    (id: string) => {
+      // Utilizado dos dados guardados posteriormente para salvar o token.
+      // Comparando o id do professor clicado com a variável global.
+      const login = logins.filter(
+        (item) => item.id_teacher !== null && item.id_teacher.trim() === id
+      );
+      // O resultado desse filtro é um conjunto de turmas com o mesmo professor
+      if (login.length !== 0) {
+        // Como preciso somente do id do professor para salvar como token,
+        // coloco o primeiro resultado
+        // setToken(login[0].id_teacher);
+        // Passando as turmas para a próxima tela.
+        history.push('/turmas', login);
+      }
+    },
+    [history, logins]
+  );
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -242,7 +248,7 @@ const App: React.FC = () => {
                       id="demo-simple-select-filled"
                       value={id_teacher}
                       input={<BootstrapInput />}
-                      onChange={handleChange}
+                      onChange={handleChangeIdTeacher}
                     >
                       <MenuItem value="">
                         <em>None</em>
@@ -253,7 +259,7 @@ const App: React.FC = () => {
                         </MenuItem>
                       ))}
                     </Select>
-                    <Button onClick={() => handleClick(id_teacher)}>
+                    <Button onClick={() => handleClickLogar(id_teacher)}>
                       Entrar
                     </Button>
                   </FormControl>

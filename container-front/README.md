@@ -1,21 +1,26 @@
 # Padrões de projeto
 
-- Padrões adotados pelo frontend
-  - Árvore de arquivos
-    - public
-    - src
-      - assets
-      - components
-      - pages
-      - utils
-      - hooks
-      - routes.tsx
-    - .editorconfig
-    - .eslintrc.json
-    - Dockerfile
-    - package.json
-    - prettier.config.json
-    - tsconfig.json
+- [Padrões de projeto](#padrões-de-projeto)
+  - [Padrões adotados pelo frontend](#padrões-adotados-pelo-frontend)
+    - [Árvore de arquivos](#árvore-de-arquivos)
+      - [public](#public)
+      - [src](#src)
+        - [assets](#assets)
+        - [components](#components)
+        - [pages](#pages)
+        - [services](#services)
+        - [hooks](#hooks)
+        - [routes.tsx](#routestsx)
+      - [.editorconfig](#editorconfig)
+      - [.eslintrc.json](#eslintrcjson)
+      - [Dockerfile](#dockerfile)
+      - [package.json](#packagejson)
+      - [prettier.config.json](#prettierconfigjson)
+      - [tsconfig.json](#tsconfigjson)
+  - [Padronização das funções](#padronização-das-funções)
+    - [handleChange](#handlechange)
+    - [handleClick](#handleclick)
+    - [useCallback](#usecallback)
 
 ## Padrões adotados pelo frontend
 
@@ -78,6 +83,22 @@ Onde fica todos os pacotes necessários para rodar a aplicação, sempre quando 
 #### tsconfig.json
 
 Arquivo de configuração de tipagem typescript.
+
+## Padronização das funções
+
+Existem algumas nomeclaturas de funções que são específicas para algumas coisas, listarei aqui todas as necessárias.
+
+### handleChange
+
+Essa função serve para toda e qualquer mudança no estado de alguma variável através de interação do usuário. É seguida pelo nome de qual variável ela vai mudar. Ex: handleChangeName.
+
+### handleClick
+
+Essa função é utilizada nos eventos de onClick do botão. Deve ser específicada com o nome da ação que o botão vai fazer. Ex: handleClickAbrirPopUp
+
+### useCallback
+
+O useCallback é um hook do react que evita recriar uma função do zero sempre que o componente é atualizado, se alterado ela recria apenas a função e evita o uso desnecessário da memória. Ela é usada em conjunto com as funções descritas acima e deve ser usada em qualquer outra função que for criada no projeto.
 
 <h4 align="center">
 	🚧  ReactJS 🚀 Em construção...  🚧
