@@ -9,10 +9,11 @@ import {
 } from '@material-ui/core';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import logoDataviewer from '../../assets/logo.svg';
-import marcaDataviewer from '../../assets/marca.svg';
 import Class from '../../components/Turma';
+import Logo from '../../components/Logo';
+// import api from '../../services/api';
 
+// Estilização da página
 const useStyles = makeStyles(() =>
   createStyles({
     logo: {
@@ -56,7 +57,7 @@ const useStyles = makeStyles(() =>
     },
   })
 );
-
+// Dados recebidos do backend
 interface Turma {
   author: string;
   code: string;
@@ -91,6 +92,8 @@ const App: React.FC = () => {
     checkedC: false,
     checkedD: false,
   });
+  // Pegando os dados da api
+  // const [graphs, setGraphs] = useState([]);
   useEffect(() => {
     // Caso haja turmas para acessar, então ele mostra a tela,
     // caso não haja, ele redireciona para a tela de login.
@@ -125,13 +128,14 @@ const App: React.FC = () => {
     },
     [checkbox]
   );
+  const handleClickCard = async () => {
+    // setGraphs(await api.get(`/get_graphs_teacher/${idTurma}`));
+    history.push('/dashboard');
+  };
   return (
     <Container maxWidth="xl">
       <Grid container spacing={3}>
-        <Grid item xs={12} className={classes.logo}>
-          <img src={logoDataviewer} alt="nome dataviewer" />
-          <img src={marcaDataviewer} alt="marca dataviewer" width="33.53" />
-        </Grid>
+        <Logo />
       </Grid>
       <Grid container justifyContent="center">
         <Grid item xs={10} className={classes.logo}>
@@ -206,7 +210,12 @@ const App: React.FC = () => {
               <Grid item xs={9}>
                 <Grid container className={classes.limite}>
                   {turmas.map((turma) => (
-                    <Grid item xs={6} key={turma.id_class}>
+                    <Grid
+                      item
+                      xs={6}
+                      key={turma.id_class}
+                      onClick={handleClickCard}
+                    >
                       <Class
                         name={turma.name_class}
                         code={turma.code}
@@ -214,7 +223,6 @@ const App: React.FC = () => {
                         students={turma.studentsCount}
                         teachers={turma.teachersCount}
                         year={turma.year}
-                        idTurma={turma.id_class}
                       />
                     </Grid>
                   ))}

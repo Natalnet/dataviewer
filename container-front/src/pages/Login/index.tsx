@@ -20,12 +20,11 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 import { AxiosResponse } from 'axios';
-import logo from '../../assets/logo.svg';
-import marca from '../../assets/marca.svg';
 import caminho from '../../assets/caminho.svg';
 import dataviewer from '../../assets/dataviewer.svg';
 import api from '../../services/api';
 import Button from '../../components/Button';
+import Logo from '../../components/Logo';
 
 // tema da tela de login
 const theme = createTheme({
@@ -108,9 +107,6 @@ const useStyles = makeStyles((tema: Theme) =>
       lineHeight: '25px',
       width: '578px',
       height: '122px',
-    },
-    logo: {
-      marginTop: '24px',
     },
     imgLogo: {
       marginTop: '72px',
@@ -201,10 +197,7 @@ const App: React.FC = () => {
       <CssBaseline />
       <Container maxWidth="xl" className={classes.root}>
         <Grid container spacing={3}>
-          <Grid item xs={12} className={classes.logo}>
-            <img src={logo} alt="Dataviewer" />
-            <img src={marca} alt="Marca dataviewer" width="33.53" height="29" />
-          </Grid>
+          <Logo />
           <Grid item xs={12} sm={6}>
             <h1 className={classes.h1}>Data Viewer</h1>
             <p className={classes.text}>

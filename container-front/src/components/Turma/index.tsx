@@ -1,7 +1,5 @@
+import React from 'react';
 import { Container, createStyles, Grid, makeStyles } from '@material-ui/core';
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import api from '../../utils/api';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -50,7 +48,6 @@ interface Turma {
   students: number;
   semester: number;
   teachers: number;
-  idTurma: string;
 }
 
 const App: React.FC<Turma> = ({
@@ -60,18 +57,11 @@ const App: React.FC<Turma> = ({
   students,
   semester,
   teachers,
-  idTurma,
 }: Turma) => {
   const classes = useStyles();
-  const history = useHistory();
-  const [graphs, setGraphs] = useState([]);
-  const handleClick = async () => {
-    setGraphs(await api.get(`/get_graphs_teacher/${idTurma}`));
-    history.push('/dashboard', graphs);
-  };
 
   return (
-    <Container className={classes.paper} onClick={handleClick}>
+    <Container className={classes.paper}>
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <h1 className={classes.name}>{name}</h1>
