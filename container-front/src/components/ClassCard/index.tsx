@@ -20,6 +20,7 @@ const useStyles = makeStyles(() =>
       fontWeight: 500,
       fontStyle: 'normal',
       filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+      margin: '0px 8px 0px 0px',
     },
     code: {
       color: '#96B9FF',
