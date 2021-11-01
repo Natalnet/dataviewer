@@ -19,12 +19,13 @@ import {
   InputBase,
   CssBaseline,
 } from '@material-ui/core';
-import { AxiosResponse } from 'axios';
+// import { AxiosResponse } from 'axios';
 import caminho from '../../assets/caminho.svg';
 import dataviewer from '../../assets/dataviewer.svg';
-import api from '../../services/api';
+// import api from '../../services/api';
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
+import getClasses from '../../assets/json/get_classes.json';
 
 // tema da tela de login
 const theme = createTheme({
@@ -123,9 +124,9 @@ const useStyles = makeStyles((tema: Theme) =>
 );
 
 // Tipando os dados recebidos pelo servidor
-interface ServerResponse {
-  data: ServerData[];
-}
+// interface ServerResponse {
+//   data: ServerData[];
+// }
 // Dados que são usados no projeto
 interface ServerData {
   id_teacher: string;
@@ -148,23 +149,24 @@ const App: React.FC = () => {
 
   useEffect(() => {
     // Requisitando a api os dados de turmas
-    api.get('/get_classes').then((response): AxiosResponse<ServerResponse> => {
-      // Guardando a resposta da requisição para utilizar posteriormente
-      setLogins(response.data);
+    setLogins(getClasses);
+    // api.get('/get_classes').then((response): AxiosResponse<ServerResponse> => {
+    //   // Guardando a resposta da requisição para utilizar posteriormente
+    //   setLogins(response.data);
 
-      // Iterando sobre os id's dos professores para retirar os dados iguais,
-      // evitando duplicação.
-      setNames(
-        response.data.filter(
-          (thing: { id_teacher: string }, index: number, self: ServerData[]) =>
-            index ===
-            self.findIndex(
-              (t: { id_teacher: string }) => t.id_teacher === thing.id_teacher
-            )
-        )
-      );
-      return response;
-    });
+    //   // Iterando sobre os id's dos professores para retirar os dados iguais,
+    //   // evitando duplicação.
+    setNames(
+      getClasses.filter(
+        (thing: { id_teacher: string }, index: number, self: ServerData[]) =>
+          index ===
+          self.findIndex(
+            (t: { id_teacher: string }) => t.id_teacher === thing.id_teacher
+          )
+      )
+    );
+    //   return response;
+    // });
   }, []);
 
   const handleChangeIdTeacher = useCallback(

@@ -112,11 +112,12 @@ const App: React.FC = () => {
           sessionStorage.getItem('turmas:Dataviewer') as string
         ) as Turma[]
       );
+      setQuantidadeTurmas(turmas.length);
     } else {
       // Redirecionando o usuário para a tela inicial
       history.push('/');
     }
-  }, [location, history, turmas]);
+  }, [location.state, history, turmas]);
 
   // Modificando o estado da variável booleana
   const handleChangeStateCheckbox = useCallback(

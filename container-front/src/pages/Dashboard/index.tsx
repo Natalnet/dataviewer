@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Container,
   createStyles,
   Grid,
   makeStyles,
   Paper,
+  Tabs,
+  Tab,
   Theme,
 } from '@material-ui/core';
 import clsx from 'clsx';
-import MenuContainer from '../../components/MenuContainer';
 import Logo from '../../components/Logo';
 import ClassCard from '../../components/ClassCard';
 import Menu from '../../components/Menu';
+import TabPanel from '../../components/TabPanel';
 // import { useLocation } from 'react-router-dom';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      backgroundColor: 'transparent',
+      boxShadow: 'unset',
     },
     container: {
       marginTop: '5em',
     },
     gridItem: {
-      padding: '12px 0px 0px 0px !important',
       [theme.breakpoints.down('sm')]: {
         maxWidth: '100%',
         justifyContent: 'center',
@@ -58,8 +61,27 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: '0px 8px 0px 112px',
       },
       [theme.breakpoints.down('sm')]: {
-        margin: '0px 8px 0px 0px',
+        margin: '8px 8px 0px 0px',
       },
+    },
+    fonts: {
+      fontFamily: 'Poppins',
+      fontWeight: 400,
+      fontSize: '24px',
+      lineHeight: '36px',
+      fontStyle: 'normal',
+      color: '#C0C0C0',
+      textTransform: 'none',
+      '&:hover': {
+        backgroundColor: '#00000026',
+        color: '#373737',
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 11,
+      },
+    },
+    tabPanel: {
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     },
   })
 );
@@ -68,6 +90,21 @@ const App: React.FC = () => {
   // const location = useLocation();
   // Para usar os estilos nos componentes
   const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChangeTabs = (
+    event: React.ChangeEvent<Record<string, unknown>>,
+    newValue: number
+  ) => {
+    setValue(newValue);
+  };
+
+  const a11yProps = useCallback((indexAlly: unknown) => {
+    return {
+      id: `full-width-tab-${indexAlly}`,
+      'aria-controls': `full-width-tabpanel-${indexAlly}`,
+    };
+  }, []);
 
   return (
     <Container maxWidth="xl" className={classes.root}>
@@ -81,7 +118,38 @@ const App: React.FC = () => {
           <Menu />
         </Grid>
         <Grid item xs className={classes.container}>
-          <MenuContainer />
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Paper className={classes.root}>
+              <Tabs
+                value={value}
+                onChange={handleChangeTabs}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+              >
+                <Tab
+                  label="Desempenho"
+                  className={classes.fonts}
+                  {...a11yProps(0)}
+                />
+                <Tab
+                  label="Gestão de tempo"
+                  className={classes.fonts}
+                  {...a11yProps(1)}
+                />
+                <Tab
+                  label="Aprendizagem"
+                  className={classes.fonts}
+                  {...a11yProps(2)}
+                />
+              </Tabs>
+            </Paper>
+          </Grid>
         </Grid>
       </Grid>
       <Grid container className={classes.gridContainer2}>
@@ -105,11 +173,13 @@ const App: React.FC = () => {
             faltosos={7}
           />
         </Grid>
-        <Grid item xs className={classes.gridItem}>
-          <Paper>
-            <h1 className={classes.h1}>Listas</h1>
+        <TabPanel value={value} index={0}>
+          <Paper className={classes.tabPanel}>
+            <Grid item xs className={classes.gridItem}>
+              <h1 className={classes.h1}>Listas</h1>
+            </Grid>
           </Paper>
-        </Grid>
+        </TabPanel>
       </Grid>
     </Container>
   );
