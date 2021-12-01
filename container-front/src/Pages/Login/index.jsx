@@ -128,7 +128,7 @@ export default function App() {
         </FilterSpace>
         <List component="nav" className={classes.list} aria-label="Turmas">
           {loading ? <img src={spinnerImg} alt="Loading" style={{ width: 250 }}></img> : false}
-          {error ? <Error error={error} /> : names.map(item => (
+          {error ? <Error error={`${error}`} /> : names.map(item => (
             <ListItem key={item.id_teacher}>
               <Link component="button" onClick={() => handleClick(item.id_teacher)}
                 className={classes.link} >
