@@ -1,87 +1,68 @@
 import React, { useCallback } from 'react';
 import {
-  Container,
   createStyles,
   Grid,
   makeStyles,
   Paper,
   Tabs,
-  Tab,
   Theme,
 } from '@material-ui/core';
-import clsx from 'clsx';
 import Logo from '../../components/Logo';
 import ClassCard from '../../components/ClassCard';
 import Menu from '../../components/Menu';
+import {
+  ContainerRoot,
+  GridItem,
+  GridItemMD,
+  GridContainer,
+  GridContainer1,
+  GridContainer2,
+  PaperRoot,
+  TabFonts,
+  H1,
+} from './styles';
 import TabPanel from '../../components/TabPanel';
 // import { useLocation } from 'react-router-dom';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      backgroundColor: 'transparent',
-      boxShadow: 'unset',
-    },
-    container: {
-      marginTop: '5em',
-    },
-    gridItem: {
-      [theme.breakpoints.down('sm')]: {
-        maxWidth: '100%',
-        justifyContent: 'center',
-      },
-    },
-    gridContainer: {
-      [theme.breakpoints.down('sm')]: {
-        maxHeight: '24em',
-      },
-      maxHeight: '10em',
-    },
-    gridContainer2: {
-      [theme.breakpoints.down('sm')]: {
-        display: 'block',
-      },
-    },
-    menu: {
-      fontFamily: 'Roboto',
-      fontWeight: 500,
-      fontSize: 18,
-      lineHeight: 21,
-      color: '#c0c0c0',
-    },
-    h1: {
-      margin: 0,
-      fontSize: 20,
-      fontFamily: 'Roboto',
-      textAlign: 'center',
-    },
-    gridItemMD: {
-      zIndex: -1,
-      [theme.breakpoints.down('md')]: {
-        margin: '0px 8px 0px 112px',
-      },
-      [theme.breakpoints.down('sm')]: {
-        margin: '8px 8px 0px 0px',
-      },
-    },
-    fonts: {
-      fontFamily: 'Poppins',
-      fontWeight: 400,
-      fontSize: '24px',
-      lineHeight: '36px',
-      fontStyle: 'normal',
-      color: '#C0C0C0',
-      textTransform: 'none',
-      '&:hover': {
-        backgroundColor: '#00000026',
-        color: '#373737',
-      },
-      [theme.breakpoints.down('sm')]: {
-        fontSize: 11,
-      },
-    },
     tabPanel: {
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      height: '24em',
+      [theme.breakpoints.down('sm')]: {
+        width: '23em',
+        marginTop: '4%',
+      },
+    },
+    tabPanelTests: {
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      margin: '0.9% 0% 0% 21%',
+      height: '24em',
+      [theme.breakpoints.down('md')]: {
+        margin: '0.9% 0% 0% 29%',
+        width: '40em',
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '23em',
+        marginTop: '4%',
+        position: 'relative',
+        right: '4.1em',
+      },
+    },
+    tabPanelRanking: {
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      margin: '2% 1%',
+      width: '26em',
+      height: '24em',
+      [theme.breakpoints.down('md')]: {
+        margin: '2% 0% 0 75%',
+        width: '14.5em',
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '23em',
+        marginTop: '4%',
+        position: 'relative',
+        right: '17.5em',
+      },
     },
   })
 );
@@ -107,24 +88,24 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Container maxWidth="xl" className={classes.root}>
+    <ContainerRoot maxWidth="xl">
       <Grid container spacing={3}>
-        <Grid item xs className={classes.gridItem}>
+        <GridItem item xs>
           <Logo />
-        </Grid>
+        </GridItem>
       </Grid>
-      <Grid container className={classes.gridContainer}>
-        <Grid item xs={1} className={classes.gridItem}>
+      <GridContainer container>
+        <GridItem item xs={1}>
           <Menu />
-        </Grid>
-        <Grid item xs className={classes.container}>
+        </GridItem>
+        <GridContainer1 item xs>
           <Grid
             container
             direction="row"
             justifyContent="center"
             alignItems="center"
           >
-            <Paper className={classes.root}>
+            <PaperRoot>
               <Tabs
                 value={value}
                 onChange={handleChangeTabs}
@@ -132,35 +113,22 @@ const App: React.FC = () => {
                 textColor="primary"
                 centered
               >
-                <Tab
-                  label="Desempenho"
-                  className={classes.fonts}
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  label="Gestão de tempo"
-                  className={classes.fonts}
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  label="Aprendizagem"
-                  className={classes.fonts}
-                  {...a11yProps(2)}
-                />
+                <TabFonts label="Desempenho" {...a11yProps(0)} />
+                <TabFonts label="Gestão de tempo" {...a11yProps(1)} />
+                <TabFonts label="Aprendizagem" {...a11yProps(2)} />
               </Tabs>
-            </Paper>
+            </PaperRoot>
           </Grid>
-        </Grid>
-      </Grid>
-      <Grid container className={classes.gridContainer2}>
-        <Grid
+        </GridContainer1>
+      </GridContainer>
+      <GridContainer2 container>
+        <GridItemMD
           container
           direction="row"
           justifyContent="flex-end"
           alignItems="center"
           item
           xs={3}
-          className={clsx(classes.gridItem, classes.gridItemMD)}
         >
           <ClassCard
             name="TURMA 0317a LIP"
@@ -172,16 +140,56 @@ const App: React.FC = () => {
             assiduos={8}
             faltosos={7}
           />
-        </Grid>
+        </GridItemMD>
         <TabPanel value={value} index={0}>
-          <Paper className={classes.tabPanel}>
-            <Grid item xs className={classes.gridItem}>
-              <h1 className={classes.h1}>Listas</h1>
-            </Grid>
-          </Paper>
+          <GridItem item>
+            <Paper className={classes.tabPanel}>
+              <H1>Listas</H1>
+            </Paper>
+          </GridItem>
         </TabPanel>
-      </Grid>
-    </Container>
+        <TabPanel value={value} index={0}>
+          <GridItem item>
+            <Paper className={classes.tabPanelTests}>
+              <H1>Provas</H1>
+            </Paper>
+          </GridItem>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <GridItem item>
+            <Paper className={classes.tabPanel}>
+              <H1>Submissão</H1>
+            </Paper>
+          </GridItem>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <GridItem item>
+            <Paper className={classes.tabPanelTests}>
+              <H1>Questões</H1>
+            </Paper>
+          </GridItem>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <GridItem item>
+            <Paper className={classes.tabPanel}>
+              <H1>Nível de aprendizagem da turma</H1>
+            </Paper>
+          </GridItem>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <GridItem item>
+            <Paper className={classes.tabPanelTests}>
+              <H1>Índice de Acertos e Erros</H1>
+            </Paper>
+          </GridItem>
+        </TabPanel>
+        <GridItem item>
+          <Paper className={classes.tabPanelRanking}>
+            <H1>Ranking</H1>
+          </Paper>
+        </GridItem>
+      </GridContainer2>
+    </ContainerRoot>
   );
 };
 
