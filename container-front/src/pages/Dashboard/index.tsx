@@ -22,8 +22,7 @@ import {
   H1,
 } from './styles';
 import TabPanel from '../../components/TabPanel';
-import Grafic from '../../components/Grafic';
-import moreLess from '../../assets/json/graph_more_less_list_class.json';
+import Listas from '../../components/Listas';
 // import { useLocation } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -146,26 +145,7 @@ const App: React.FC = () => {
         </GridItemMD>
         <TabPanel value={value} index={0}>
           <GridItem item>
-            <Paper className={classes.tabPanel}>
-              <H1>Listas</H1>
-              <Grafic
-                data={moreLess}
-                dataKeyX="shortTitle"
-                dataKeyBar0="more"
-                fill0="#07DB47"
-                nameBar0="Bom Desempenho"
-                dataKeyBar1="less"
-                fill1="#DB2927"
-                nameBar1="Baixo Desempenho"
-                dataKeyBar2="missing"
-                fill2="#124375"
-                nameBar2="Faltosos"
-                dataKeyBar3={undefined}
-                fill3={undefined}
-                nameBar3={undefined}
-                yUnit={undefined}
-              />
-            </Paper>
+            <Listas />
           </GridItem>
         </TabPanel>
         <TabPanel value={value} index={0}>

@@ -67,7 +67,7 @@ const App: React.FC<Props> = ({
   };
 
   return (
-    <ResponsiveContainer width="90%" height="85%">
+    <ResponsiveContainer width="90%" height="75%">
       <BarChart
         data={data}
         margin={{
